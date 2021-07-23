@@ -1,0 +1,3524 @@
+/*
+Theme Name: Bourz
+Version: 7.0
+Theme URI: https://theburnhambox.com/bourz
+Description: Life, Entertainment & Fashion Blog Theme
+Author: Burnhambox
+Text Domain: Bourz
+Author URI: https://theburnhambox.com
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+/*///////////////////////////////
+////// TABLE OF CONTENTS ////////
+/////////////////////////////////
+
+1. Body & General / #brnhmbx_bourz_body
+
+2. Header / #brnhmbx_bourz_header
+
+	2.1. Spot Messages
+	2.2. Header Menu
+	2.3. Top Search & Social
+	2.4. Sticky Menu
+
+3. Layout / #brnhmbx_bourz_layout
+
+4. Article / #brnhmbx_bourz_article
+
+	4.1. Listing
+	4.2. Post Style Z
+	4.3. Header Area
+	4.4. Author Bar
+	4.5. Social Bar
+
+5. Widgets / #brnhmbx_bourz_widgets
+
+	5.1. Widget Areas
+	5.2. Widget Items
+	5.3. WP Tag Cloud
+	5.4. Social Widget
+	5.5. Search Widget
+	5.6. WP Calendar Widget
+	5.7. Recent Comments Widget
+	5.8. Image Widget
+	5.9. Ads Widget
+	5.10. WP RSS Widget
+	5.11. Post Widget - Listing Styles
+
+6. Related Posts / #brnhmbx_bourz_related_posts
+
+7. Post Comments / #brnhmbx_bourz_post_comments
+
+8. Pages / #brnhmbx_bourz_pages
+
+	8.1. Google Maps
+	8.2. Archive Pages
+	8.3. Page 404
+
+9. Footer / #brnhmbx_bourz_footer
+
+10. Navigation / #brnhmbx_bourz_navigation
+
+	10.1. Primary Navigation
+	10.2. Slicknav
+	10.3. Header & Footer Navigation
+	10.4. Page Navigation
+
+11. Slider / #brnhmbx_bourz_slider
+
+12. Misc / #brnhmbx_bourz_misc
+
+13. Contact Form 7 / #brnhmbx_bourz_contact_form_7
+
+14. WP Defaults / #brnhmbx_bourz_wp_defaults
+
+15. Animation / #brnhmbx_bourz_animation
+
+16. Banner Management / #brnhmbx_bourz_banner_management
+
+17. Mail Chimp / #brnhmbx_bourz_mail_chimp
+
+18. Instagram Slider Widget / #brnhmbx_bourz_instagram
+
+19. Woo Commerce / #brnhmbx_bourz_woo
+
+	19.1. General & Misc
+	19.2. Pagination
+	19.3. Messages
+	19.4. Tabs
+	19.5. Reviews
+	19.6. Big Image
+	19.7. Cart & Checkout
+	19.8. Product Search Widget
+
+20. Author Box / #bourz_author_box
+
+21. Gutenberg / #brnhmbx_bourz_gutenberg
+
+/////////////////////////////////
+/////////////////////////////////
+///////////////////////////////*/
+
+/*////////////////////////////////////////////////////////////
+////////// 1. Body & General / #brnhmbx_bourz_body STARTS //////////
+////////////////////////////////////////////////////////////*/
+
+body {
+	width: 100%;
+	min-width: 320px;
+	overflow-x: hidden;
+	margin-top: 50px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+address {
+	margin-bottom: 1em;
+}
+
+code {
+	font-size: 14px;
+}
+
+kbd {
+    font-family: monospace;
+	font-size: 14px;
+}
+
+pre {
+	font-family: monospace;
+	font-size: 14px;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	padding: 20px;
+	line-height: 1.4em;
+}
+
+q:before,
+q:after {
+	content: '"';
+}
+
+var {
+	font-family: monospace;
+	font-size: 14px;
+}
+
+table {
+	border: 1px solid;
+}
+
+th, td {
+	padding: 10px;
+	border: 1px solid;
+}
+
+dt {
+	font-weight: bold;
+}
+
+abbr {
+	font-style: italic;
+}
+
+p {
+	margin: 0 0 1em 0;
+	line-height: 1.6em;
+}
+
+em {
+	font-style: italic;
+}
+
+hr {
+	border: none;
+    height: 1px;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+input {
+	height: 40px;
+	border: none;
+	padding: 0 15px 0 15px;
+	font-size: 14px;
+	width: 100%;
+	-webkit-border-radius: 0;
+}
+
+textarea {
+	width: 100%;
+	height: 200px;
+	border: none;
+	resize: none;
+	padding: 15px;
+	font-size: 14px;
+	-webkit-border-radius: 0;
+}
+
+input.button, input[type="submit"], button {
+    -webkit-appearance: none; /*Safari/Chrome*/
+    -moz-appearance: none; /*Firefox*/
+    -ms-appearance: none; /*IE*/
+    -o-appearance: none; /*Opera*/
+    appearance: none;
+    -webkit-border-radius: 0;
+	border-radius: 0px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 700;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 15px 0px 15px;
+	width: auto;
+}
+
+input[type="password"] {
+	max-width: 300px;
+}
+
+input[type="checkbox"] {
+	height: 30px;
+	line-height: 30px;
+
+	width: auto;
+}
+
+input[type="radio"] {
+	width: auto;
+}
+
+select {
+	width: 100%;
+	border: none;
+	padding: 10px 10px 10px 10px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+blockquote {
+	padding: 20px;
+	margin: 0px 0px 1em 0px;
+	border-left: 2px solid;
+    vertical-align: baseline;
+	font-style: italic;
+}
+
+blockquote p {
+	margin: 0;
+}
+
+img {
+	display: block;
+}
+
+label.screen-reader-text {
+	display: none;
+}
+
+.body-outer {
+	width: 100%;
+}
+
+.site-mid {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px 20px 20px;
+}
+
+/*////////// #brnhmbx_bourz_body ENDS //////////*/
+
+/*//////////////////////////////////////////////////////
+////////// 2. Header / #brnhmbx_bourz_header STARTS //////////
+//////////////////////////////////////////////////////*/
+
+.top-line-outer {
+	width: 100%;
+}
+
+.top-line-container {
+	margin: 0 auto;
+	max-width: 1240px;
+}
+
+.top-line-inner {
+	padding: 0px 20px 0px 20px;
+	margin: 0px 20px 0px 20px;
+}
+
+.site-top {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 50px;
+	display: none;
+}
+
+.site-menu-outer {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+h1.logo-text {
+	margin: 0px;
+}
+
+.site-top-container {
+	width: 100%;
+	vertical-align: middle;
+	font-size: 0;
+}
+
+.header-social {
+	display: inline-block !important;
+	width: auto;
+	text-align: left;
+	line-height: 1em;
+	vertical-align: middle;
+}
+/* */
+
+/* 2.1. Spot Messages */
+.spot-messages {
+	float: left;
+	width: 100%;
+	line-height: 35px;
+	height: 35px;
+}
+
+.spot-messages span {
+	display: none;
+}
+
+.spot-messages a:hover {
+	opacity: 0.7;
+}
+
+.spot-messages i {
+	margin-right: 10px;
+	margin-left: 1px;
+}
+/* */
+
+/* 2.2. Header Menu */
+.header-menu-outer {
+	float: left;
+	width: 100%;
+	display: none;
+}
+
+.site-menu-outer .assign-menu {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.header-menu-outer .assign-menu {
+	line-height: 35px;
+	text-align: right;
+	font-size: 12px;
+}
+
+.header-menu-outer .assign-menu {
+	line-height: 35px;
+	text-align: right;
+	font-size: 12px;
+}
+
+.footer-menu-outer .assign-menu {
+	font-size: 12px;
+}
+
+.header-menu-touch {
+	margin-bottom: 20px;
+	border-top: 2px dashed;
+	margin-right: 20px;
+	padding-top: 20px;
+}
+/* */
+
+/* 2.3. Top Search & Social */
+.top-extra-outer {
+	float: right;
+	vertical-align: middle;
+	font-size: 16px;
+	text-align: right;
+	width: auto;
+}
+
+.top-extra {
+	display: table;
+}
+
+.top-extra-inner {
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+}
+
+.top-extra-inner li.empty {
+	margin-top: -10px !important;
+}
+
+.top-search {
+	position: absolute;
+	margin-right: 30px;
+	margin-top: -29px;
+	display: none;
+	z-index: 10;
+	right: 0;
+}
+
+.top-search input {
+	width: 240px;
+}
+
+.brnhmbx-top-search-button {
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 25px;
+	cursor: pointer;
+}
+/* */
+
+/* 2.4. Sticky Menu */
+.sticky-logo-outer { display: inline-table; vertical-align: middle; margin: 0px 30px 0px 0px; text-align: left; }
+.sticky-logo-container { display: table-cell; vertical-align: middle; }
+.sticky-logo-container img { height: 25px; }
+#sticky-menu { display: none; width: 100%; min-height: 50px; position: fixed; z-index: 9999999; top: -400px; -webkit-transition: all 1s ease; transition: all 1s ease; }
+.sticky-menu-inner { width: 100%; max-width: 1240px; padding: 0px 20px 0px 20px; margin: 0 auto; }
+.menu-sticky { margin-top: 400px; }
+/* */
+
+/*////////// #brnhmbx_bourz_header ENDS //////////*/
+
+/*//////////////////////////////////////////////////////
+////////// 3. Layout / #brnhmbx_bourz_layout STARTS //////////
+//////////////////////////////////////////////////////*/
+
+.article-wrapper-outer {
+	float: none;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+[class*="col-"] {
+	vertical-align: top;
+}
+
+.col-1-2,
+.col-1-2-sidebar,
+.col-1-2:nth-child(2n+2),
+.col-1-2-sidebar:nth-child(2n+2) {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.row-1-1-2 .col-1-2-sidebar {
+	width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.col-1-3,
+.col-1-3:nth-child(2n+2),
+.col-1-3:nth-child(3n+3) {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.row-2-3 .col-1-3 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.site-content {
+	padding-bottom: 0px;
+}
+
+.main-container,
+.main-container-sidebar,
+.main-container-sidebar-cc2 {
+	margin: 0 auto;
+}
+
+.article-inner {
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+/* */
+
+/*////////// #brnhmbx_bourz_layout ENDS //////////*/
+
+/*////////////////////////////////////////////////////////
+////////// 4. Article / #brnhmbx_bourz_article STARTS //////////
+////////////////////////////////////////////////////////*/
+
+.article-content-outer,
+.article-content-outer-sidebar {
+	margin: 0px 20px 20px 20px;
+	padding-top: 20px;
+}
+
+.sticky-icon {
+	padding: 0px 5px 0px 5px;
+	margin-left: 5px;
+}
+
+article img {
+	max-width: 100%;
+	height: auto;
+	border: none !important;
+}
+
+article.post {
+	margin-bottom: 20px;
+}
+
+article.post ul {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+article.post-attachment img {
+	display: inline-block;
+}
+
+article.post-attachment {
+	width: 100%;
+	min-height: 400px;
+	padding: 40px;
+	display: table;
+	text-align: center;
+}
+
+article.post-video .bx-pager-outer {
+	display: none;
+}
+
+article.post-aside .article-content-outer,
+article.post-aside .article-content-outer-sidebar,
+article.post-link .article-content-outer,
+article.post-link .article-content-outer-sidebar {
+	margin: 0px;
+	padding: 0px;
+}
+
+.fea-img-container img {
+	margin: 0 auto;
+}
+
+/* 4.1. Listing */
+.home-listing-title-inner {
+	width: 85%;
+	font-size: 25px;
+	line-height: 1.1em;
+	margin: 0;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.home-listing-title-z-inner {
+	width: 85%;
+	font-size: 16px;
+	line-height: 1.1em;
+	margin: 0;
+}
+
+.home-excerpt-outer {
+	padding: 20px;
+	margin: 0 auto;
+	max-width: 680px;
+}
+
+.home-excerpt {
+	line-height: 1.6em;
+	margin: 10px 0px 10px 0px;
+}
+
+.home-cat-tag-page {
+	line-height: 1.6em;
+}
+
+.home-excerpt-outer .home-cat-tag-page.pager-only {
+	margin-bottom: 5px;
+}
+
+.article-content-outer .home-cat-tag-page.pager-only,
+.article-content-outer-sidebar .home-cat-tag-page.pager-only {
+	margin-bottom: 20px;
+}
+
+.btnReadMore {
+	margin-top: 10px;
+	font-weight: 700;
+}
+/* */
+
+/* 4.2. Post Style Z */
+.post-styleZ {
+	float: left;
+	width: 100%;
+	min-width: 260px;
+}
+
+.post-styleZ-inner {
+	height: 80px;
+	width: 100%;
+}
+
+.post-styleZ-img {
+	width: 120px;
+	height: 80px;
+	float: left;
+	position: absolute;
+}
+
+.post-styleZ-info {
+	float: left;
+	height: 80px;
+	display: table;
+	width: 100%;
+	padding-left: 20px;
+}
+
+.post-styleZ-info-with-t {
+	padding-left: 140px;
+}
+/* */
+
+/* 4.3. Header Area */
+.header-area,
+.header-area-sidebar {
+	padding: 10px 20px 1px 20px
+}
+
+.header-area-title {
+	font-size: 40px;
+	line-height: 1em;
+	width: 85%;
+	margin-bottom: 20px;
+	margin-top: 0px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.header-area .header-area-date,
+.header-area-sidebar .header-area-date {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.header-area-excerpt {
+	font-size: 16px;
+	line-height: 1.3em;
+	margin-bottom: 20px;
+}
+
+.header-area .listing-comment,
+.header-area .listing-comment-w-o-date,
+.header-area-sidebar .listing-comment,
+.header-area-sidebar .listing-comment-w-o-date {
+	margin-bottom: 17px;
+}
+
+.header-area .listing-comment,
+.header-area-sidebar .listing-comment {
+	float: left;
+}
+
+.header-area .btnReadMore,
+.header-area-sidebar .btnReadMore {
+	display: none;
+}
+/* */
+
+/* 4.4. Author Bar */
+.author-bar {
+	margin-bottom: 20px;
+}
+
+.author-bar-avatar {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.author-bar-date-views {
+	display: inline-block;
+	margin-right: 25px;
+}
+/* */
+
+/* 4.5. Social Bar */
+.share-bar {
+	display: inline-block;
+	float: left;
+	margin-top: 3px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.share-bar span {
+	padding-right: 17px;
+	display: inline-block;
+}
+
+.share-icon-outer {
+	display: inline-block;
+	height: 18px;
+	margin-right: 7px;
+	font-size: 0;
+}
+
+.share-icon-outer a {
+	padding: 0 3px 0 3px;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.si-long { display: none; }
+.si-short { display: inline; }
+
+.si-facebook a, .si-facebook a:visited,
+.si-twitter a, .si-twitter a:visited,
+.si-google a, .si-google a:visited,
+.si-pinterest a, .si-pinterest a:visited { color: #FFF !important; }
+.si-facebook:hover, .si-twitter:hover, .si-google:hover, .si-pinterest:hover { background-color: #FFF !important; }
+.si-facebook { background-color: #3b5998 !important; }
+.si-facebook:hover a { color: #3b5998 !important; }
+.si-twitter { background-color: #55acee !important; }
+.si-twitter:hover a { color: #55acee !important; }
+.si-google { background-color: #dc4e41 !important; }
+.si-google:hover a { color: #dc4e41 !important; }
+.si-pinterest { background-color: #bd2126 !important; }
+.si-pinterest:hover a { color: #bd2126 !important; }
+.share-icon-outer.si-google { display: none !important; }
+/* */
+
+/*////////// #brnhmbx_bourz_article ENDS //////////*/
+
+/*////////////////////////////////////////////////////////
+////////// 5. Widgets / #brnhmbx_bourz_widgets STARTS //////////
+////////////////////////////////////////////////////////*/
+
+/* 5.1. Widget Areas */
+.sidebar {
+	margin-left: 0px;
+	float: left;
+	width: 100%;
+}
+
+.sidebar li {
+	list-style: none;
+}
+
+.header-widgets-container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px 0 20px;
+}
+
+.footer-widget-area,
+.upper-widget-area,
+.header-widget-area,
+.home-widget-area {
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.footer-widget-area-inner,
+.footer-widget-area-inner-col2,
+.upper-widget-area-inner,
+.upper-widget-area-inner-col2,
+.header-widget-area-inner,
+.header-widget-area-inner-col2,
+.home-widget-area-inner,
+.home-widget-area-inner-col2,
+.home-widget-area-inner-col2-sidebar {
+	padding-left: 0px;
+	margin: 0px;
+}
+
+.footer-widget-area li,
+.upper-widget-area li,
+.header-widget-area li,
+.home-widget-area li {
+	list-style: none;
+}
+
+.widget-item-footer-outer,
+.widget-item-footer-outer-col2,
+.widget-item-footer-outer-col4 {
+	min-width: 150px;
+	width: 100%;
+	margin-right: 0px;
+	position: relative;
+	margin-bottom: 40px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.widget-item-upper-outer,
+.widget-item-upper-outer-col2,
+.widget-item-header-outer,
+.widget-item-header-outer-col2,
+.widget-item-home-outer,
+.widget-item-home-outer-col2,
+.widget-item-home-outer-col2-sidebar {
+	min-width: 150px;
+	width: 100%;
+	margin-right: 0px;
+	position: relative;
+	margin-bottom: 20px;
+	font-size: 0;
+}
+
+.widget-item-footer-outer:last-child,
+.widget-item-footer-outer-col2:last-child,
+.widget-item-footer-outer-col4:last-child,
+.widget-item-upper-outer:last-child,
+.widget-item-upper-outer-col2:last-child,
+.widget-item-header-outer:last-child,
+.widget-item-header-outer-col2:last-child,
+.widget-item-home-outer:last-child,
+.widget-item-home-outer-col2:last-child,
+.widget-item-home-outer-col2-sidebar:last-child {
+	margin-right: 0;
+	margin-bottom: 0;
+}
+/* */
+
+/* 5.2. Widget Items */
+.widget-item {
+	text-align: left;
+	margin-bottom: 20px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.widget-item-footer {
+	text-align: left;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.widget-item:last-child {
+	margin-bottom: 0px;
+}
+
+.widget-item-upper-outer:last-child,
+.widget-item-upper-outer-col2:last-child,
+.widget-item-header-outer:last-child,
+.widget-item-header-outer-col2:last-child {
+	margin-bottom: 20px;
+}
+
+.widget-item img,
+.widget-item-footer img {
+    max-width: 100%;
+	height: auto;
+}
+
+.widget-item-inner {
+	padding: 20px;
+}
+
+.widget-item-footer .widget-item-inner {
+	padding: 0px;
+}
+
+.widget-item-inner ul {
+    padding-left: 0;
+	margin: 0;
+}
+
+.widget-item-inner ul li li {
+	padding-left: 20px;
+}
+
+.widget-item h2,
+.widget-item-footer h2 {
+	font-size: 16px;
+	text-align: center;
+	padding: 5px 0 15px 0;
+	margin: 0;
+}
+
+.widget-item.widget_search h2,
+.widget-item-footer.widget_search h2 {
+	padding: 5px 0 25px 0;
+}
+
+.widget-item-opt-hdr {
+	text-align: center;
+	font-size: 12px;
+	margin-top: 3px;
+	margin-bottom: 15px;
+}
+
+.widget-item.widget_archive .widget-item-inner select,
+.widget-item.widget_categories .widget-item-inner select,
+.widget-item-footer.widget_archive .widget-item-inner select,
+.widget-item-footer.widget_categories .widget-item-inner select {
+	margin-top: 10px;
+}
+
+.widget_categories .widget-item-inner,
+.widget_archive .widget-item-inner,
+.widget_calendar .widget-item-inner,
+.widget_nav_menu .widget-item-inner,
+.widget_meta .widget-item-inner,
+.widget_pages .widget-item-inner,
+.widget_recent_comments .widget-item-inner,
+.widget_recent_entries .widget-item-inner,
+.widget_search .widget-item-inner,
+.widget_tag_cloud .widget-item-inner,
+.widget_text .widget-item-inner,
+.widget_rss .widget-item-inner {
+	font-size: 14px;
+	line-height: 1.6em;
+}
+/* */
+
+/* 5.3. WP Tag Cloud */
+.tagcloud a {
+	display: inline-block;
+}
+
+.wp-tag-cloud li {
+	float: left;
+	margin-right: 10px;
+	margin-top: 10px;
+	line-height: 16px;
+	height: 18px;
+}
+
+.wp-tag-cloud li a {
+	padding: 0 3px 0 3px;
+	line-height: 18px;
+}
+/* */
+
+/* 5.4. Social Widget */
+.social-widget-outer {
+	display: inline-block;
+}
+
+.social-widget li {
+	float: left;
+	width: 40px;
+	height: 30px;
+	margin-right: 10px;
+}
+
+.social-widget li a {
+	display: block;
+	text-align: center;
+	line-height: 40px;
+}
+
+.social-widget li i {
+	font-size: 18px;
+}
+
+.social-widget li:nth-child(5n),
+.social-widget li:last-child {
+	margin-right: 0px;
+}
+/* */
+
+/* 5.5. Search Widget */
+.search-widget {
+	width: 100%;
+	padding-top: 10px;
+}
+
+.search-widget-inner {
+	margin: 0 10px 10px 10px;
+	border: 2px solid;
+}
+
+.search-widget-input-box {
+	float: left;
+	width: 87%;
+}
+
+.search-widget-input {
+	width: 100%;
+}
+
+.search-widget-s-icon,
+.search-widget-s-pro-icon {
+	cursor: pointer;
+	display: table !important;
+	float: right;
+	text-align: right;
+	width: 13%;
+	height: 45px;
+}
+/* */
+
+/* 5.6. WP Calendar Widget */
+#wp-calendar {
+	border-collapse: collapse;
+	border: none;
+	width: 100%;
+}
+
+#wp-calendar td,
+#wp-calendar th {
+	text-align: center;
+}
+
+#wp-calendar caption {
+	padding: 7px 0 0 0;
+	height: 40px;
+	text-align: center;
+}
+
+#wp-calendar thead,
+#wp-calendar tfoot {
+	line-height: 40px;
+}
+
+#wp-calendar tbody {
+	line-height: 40px;
+}
+
+#wp-calendar #prev,
+#wp-calendar #next {
+	padding: 0 10px;
+}
+
+#wp-calendar #prev {
+	text-align: left;
+}
+
+#wp-calendar #next {
+	text-align: right;
+}
+
+#wp-calendar th,
+#wp-calendar td {
+	padding: 0;
+	border: none;
+}
+/* */
+
+/* 5.7. Recent Comments Widget */
+.recent-comment-item {
+	display: table;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.recent-comment-item:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.recent-comment-img {
+	display: table-cell;
+	vertical-align: top;
+	width: 60px;
+	padding-right: 20px;
+}
+
+.recent-comment-hdr {
+	font-size: 12px;
+	margin-top: 2px;
+	line-height: 1.2em;
+}
+
+.recent-comment-author {
+	font-size: 14px;
+	line-height: 1.2em;
+	margin-top: 4px;
+}
+/* */
+
+/* 5.8. Image Widget */
+.image-widget-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.image-widget-wrapper img {
+    width: 100%;
+}
+
+.image-widget-wrapper img + .image-widget-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image-widget-content {
+	width: 100%;
+	height: 100%;
+}
+
+.image-widget-inner {
+	display: table;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.image-widget-title-outer {
+	background-color: transparent;
+	border: 2px solid;
+	padding: 10px;
+	margin: 20px;
+}
+
+.image-widget-title {
+	padding: 15px;
+	min-height: 60px;
+	line-height: 1em;
+}
+
+.image-widget-text {
+	padding-top: 3px;
+	line-height: 1.2em;
+}
+/* */
+
+/* 5.9. Ads Widget */
+.adwidget img {
+	width: 100%;
+	display: block;
+}
+/* */
+
+/* 5.10. WP RSS Widget */
+a.rsswidget img {
+	display: none;
+}
+
+.rss-date {
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.rssSummary {
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.widget_rss li a {
+	display: block;
+	font-size: 14px;
+}
+
+.widget_rss cite {
+	font-size: 12px;
+	display: block;
+	padding-bottom: 20px;
+}
+
+.widget_rss ul li:last-child cite {
+	padding-bottom: 0px;
+}
+/* */
+
+/* 5.11. Post Widget - Listing Styles */
+.listing-img-outer {
+	position: relative;
+}
+
+.listing-img-3-outer {
+	position: relative;
+	background-color: #000;
+}
+
+.listing-img-outer img,
+.listing-img-3-outer img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.listing-box-container {
+	width: 100%;
+}
+
+.listing-box-2-outer {
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	padding: 10px;
+}
+
+.listing-box-3-outer {
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.listing-box,
+.listing-box-3,
+.listing-box-d {
+	width: 100%;
+	padding: 15px 20px 20px 20px;
+}
+
+.listing-date {
+	font-size: 12px;
+	display: inline-block;
+}
+
+.listing-date-z {
+	font-size: 12px;
+	display: none;
+}
+
+.listing-comment {
+	font-size: 12px;
+	display: inline-block;
+	float: right;
+}
+
+.listing-comment-w-o-date {
+	font-size: 12px;
+	display: inline-block;
+	float: left;
+}
+
+.listing-comment-icon {
+	font-size: 18px;
+	padding-right: 8px;
+	float: left;
+	display: inline-block;
+	margin-top: -2px;
+}
+
+.listing-comment-number {
+	margin-top: 3px;
+	display: inline-block;
+	float: right;
+}
+
+.listing-title {
+	width: 100%;
+	line-height: 1.1em;
+	margin-top: 5px;
+	display: inline-block;
+	font-size: 20px;
+}
+
+.brnhmbx-posts-widget .listing-box-b,
+.brnhmbx-posts-widget .listing-box-d {
+	text-align: center;
+	padding: 7px 20px 12px 20px;
+}
+
+.brnhmbx-posts-widget .listing-title {
+	line-height: 1em;
+	font-size: 16px;
+}
+
+.upper-widget-area .brnhmbx-post-widget .listing-title,
+.header-widget-area .brnhmbx-post-widget .listing-title,
+.home-widget-area .brnhmbx-post-widget .listing-title {
+	line-height: 1.1em;
+	font-size: 25px;
+}
+
+.upper-widget-area .brnhmbx-posts-widget .listing-title,
+.header-widget-area .brnhmbx-posts-widget .listing-title,
+.home-widget-area .brnhmbx-posts-widget .listing-title {
+	line-height: 1.1em;
+	font-size: 18px;
+}
+
+.brnhmbx-posts-widget:last-child .mb20 {
+	margin-bottom: 0px;
+}
+
+.widget-listing-z {
+	margin-bottom: 20px;
+	float: left;
+	width: 100%;
+	min-width: 150px;
+	height: 80px;
+	padding: 10px;
+}
+
+.widget-listing-z img {
+	width: 90px;
+	height: 60px;
+	float: left;
+	position: absolute;
+}
+
+.widget-listing-z-info {
+	height: 60px;
+	float: left;
+	display: table;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.widget-listing-z-info-with-t {
+	padding-left: 110px;
+}
+
+.widget-listing-z-title {
+	font-size: 14px;
+	line-height: 1.3em;
+	display: block;
+}
+/* */
+
+/*////////// #brnhmbx_bourz_widgets ENDS //////////*/
+
+/*////////////////////////////////////////////////////////////////////
+////////// 6. Related Posts / #brnhmbx_bourz_related_posts STARTS //////////
+////////////////////////////////////////////////////////////////////*/
+
+.related-posts-outer,
+.related-posts-outer-sidebar {
+	margin: 0;
+}
+
+.related-posts {
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+
+.related-post-item,
+.related-post-item-sidebar {
+	float: left;
+	min-width: 150px;
+	width: 100%;
+	margin-right: 0px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.related-post-item img,
+.related-post-item-sidebar img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.related-post-item:last-child,
+.related-post-item-sidebar:last-child {
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+/*////////// #brnhmbx_bourz_related_posts ENDS //////////*/
+
+/*////////////////////////////////////////////////////////////////////
+////////// 7. Post Comments / #brnhmbx_bourz_post_comments STARTS //////////
+////////////////////////////////////////////////////////////////////*/
+
+.comments-outer,
+.comments-outer-sidebar {
+	padding: 10px 20px 20px 20px;
+}
+
+.comments {
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+	overflow: hidden;
+}
+
+.comments-hdr {
+	border-bottom: 2px solid;
+}
+
+.comments-num {
+	vertical-align: super;
+	margin: 5px 0px 0px 5px;
+	position: absolute;
+}
+
+.comments-list {
+	padding: 40px 0px 0px 0px;
+}
+
+.comments-list ul li.comment:first-child .comment-item-outer:after,
+.comments-list ul li.pingback:first-child .comment-item-outer:after {
+	height: 0px;
+}
+
+.comments-list ul.children li.comment:first-child .comment-item-outer:after,
+.comments-list ul.pingback li.comment:first-child .comment-item-outer:after {
+	height: 2px;
+}
+
+.comments-list ul,
+.comments-list ol {
+	padding-left: 0px;
+	margin: 0px;
+	list-style: none;
+}
+
+.comment.depth-2,
+.comment.depth-3 {
+	padding-left: 0px;
+}
+
+.comment-item-outer {
+	position: relative;
+	margin-bottom: 80px;
+}
+
+.comment-item-outer:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 2px;
+	width: 40px;
+	margin-top: -40px;
+}
+
+.comment-item {
+	display: table;
+	width: 100%;
+}
+
+.comment-author-img {
+	display: block;
+	width: 60px;
+	padding-right: 20px;
+}
+
+.comment-content {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+.comment-info {
+	float: left;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.comment-info-inner {
+	display: table;
+	height: 40px;
+}
+
+.comment-reply-edit {
+	float: left;
+	padding: 10px 0px 0px 0px;
+	width: 100%;
+}
+
+.btnReply {
+	float: left;
+	margin-right: 20px;
+}
+
+.btnEdit {
+	float: left;
+}
+
+.comment-edit-link,
+.comment-reply-link {
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 15px 0px 15px;
+	display: block;
+}
+
+.comment-text {
+	margin-top: 20px;
+}
+
+.comment-text-w-a {
+	margin-left: 0px;
+}
+
+.comment-text ul {
+	list-style: inside;
+	padding-left: 0;
+	margin: 0;
+}
+
+.comment-text ol {
+	list-style-type: decimal;
+	list-style-position: inside;
+	padding-left: 0;
+	margin: 0;
+}
+
+.comment-text ul li li,
+.comment-text ol li li {
+	padding-left: 30px;
+}
+
+.comment-awaiting {
+	display: inline-block;
+	padding: 0px 5px 0px 5px;
+	margin-bottom: 20px;
+}
+
+.comments-paging {
+	margin: -40px 0px 40px 0px;
+	text-align: center;
+}
+
+.comments-paging .page-numbers {
+	padding: 15px;
+}
+
+.comment-reply-title {
+	font-size: 16px;
+}
+
+.comment-form input[type="text"] {
+	max-width: 300px;
+}
+
+.comment-form textarea {
+	max-width: 600px;
+}
+
+.comment-input-hdr {
+	padding: 10px 0px 10px 0px;
+}
+
+.form-submit {
+	margin: 20px 0px 0px 0px;
+}
+
+.comment-form p.comment-subscription-form {
+	font-size: 14px;
+	padding: 10px 0 0 0;
+	margin: 0;
+}
+
+.comment-form p.comment-subscription-form label {
+	vertical-align: top;
+	line-height: 30px;
+	padding-left: 5px;
+}
+
+/*////////// #brnhmbx_bourz_post_comments ENDS //////////*/
+
+/*////////////////////////////////////////////////////
+////////// 8. Pages / #brnhmbx_bourz_pages STARTS //////////
+////////////////////////////////////////////////////*/
+
+/* 8.1. Google Maps */
+#googleMap {
+	width: 100%;
+}
+/* */
+
+/* 8.2. Archive Pages */
+.filter-bar {
+	display: table;
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	padding: 0px 20px 0px 20px;
+	line-height: 1.2em;
+}
+/* */
+
+/* 8.3. Page 404 */
+.page-404 {
+	display: table;
+	width: 100%;
+	height: 400px;
+	padding: 40px;
+	text-align: center;
+}
+
+.nothing-found {
+	padding: 40px;
+	text-align: center;
+}
+
+.nothing-found i,
+.page-404 i {
+	margin-right: 10px;
+}
+/* */
+
+/*////////// #brnhmbx_bourz_pages ENDS //////////*/
+
+/*//////////////////////////////////////////////////////
+////////// 9. Footer / #brnhmbx_bourz_footer STARTS //////////
+//////////////////////////////////////////////////////*/
+
+.footer-box-outer {
+	width: 100%;
+}
+
+.footer-box-inner {
+	width: 100%;
+	padding: 40px 20px 20px 20px;
+	margin: 0 auto;
+	display: block;
+}
+
+.footer-bottom-outer {
+	width: 100%;
+}
+
+.footer-bottom {
+	padding: 20px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.footer-text {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.footer-menu-outer {
+	width: 100%;
+	text-align: left;
+}
+
+.footer-social {
+	width: 100%;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.social-menu-item {
+	margin-right: 25px;
+}
+
+.social-menu-item:last-child {
+	margin-right: 0px;
+}
+
+.social-menu-item i {
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.social-menu-item span {
+	display: none;
+}
+
+/*////////// #brnhmbx_bourz_footer ENDS //////////*/
+
+/*///////////////////////////////////////////////////////////////
+////////// 10. Navigation / #brnhmbx_bourz_navigation STARTS //////////
+///////////////////////////////////////////////////////////////*/
+
+/* 10.1. Primary Navigation */
+#site-menu,
+#site-menu-sticky {
+	display: none;
+	padding-left: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.site-nav2 {
+	float: right;
+	overflow: hidden;
+	font-size: 14px;
+}
+
+.site-nav2 ul:before,
+.site-nav2 ul:after {
+	content: '';
+	display: table;
+}
+
+.site-nav2 ul:after {
+	clear: both;
+}
+
+.site-nav2 ul {
+	list-style: none;
+	z-index: 9999;
+}
+
+.site-nav2 li {
+	float: left;
+	list-style: none;
+	line-height: 1.8em;
+}
+
+.site-nav2 li a {
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.site-nav2 #site-menu,
+.site-nav2 #site-menu-sticky {
+	margin-left: -15px;
+}
+
+.site-nav2 li:last-child a {
+	margin-right: 0px;
+}
+
+.site-nav2 li ul li:last-child a {
+	margin-right: 15px;
+}
+
+.site-nav2 li ul {
+	position: absolute;
+	display: none;
+	height: auto;
+	width: 240px;
+	text-align: left;
+	margin-top: 5px;
+	padding-left: 0px;
+}
+
+.site-nav2 li:hover > ul {
+	display: block;
+}
+
+.site-nav2 li li {
+    position: relative;
+	display: block;
+	float: none;
+	width: 240px;
+}
+
+.site-nav2 li li a {
+   padding: 0;
+}
+
+.site-nav2 li ul a {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.site-nav2 li ul li:first-child {
+	margin-top: 10px;
+}
+
+.site-nav2 li ul li:last-child {
+	margin-bottom: 10px;
+}
+
+.site-nav2 li li ul {
+	position: absolute;
+    top: 0;
+    left: 100%;
+	padding-left: 0px;
+	margin-top: -10px;
+}
+
+.site-nav2 li li li ul {
+	padding-left: 0px;
+}
+/* */
+
+/* 10.2. Slicknav */
+.mobile-header {
+	position: fixed;
+	z-index: 999999;
+	width: 100%;
+	top: 0px;
+}
+
+.mobile-logo-outer {
+	display: inline-table;
+	height: 50px;
+	margin-left: 20px;
+}
+
+.mobile-logo-container {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.mobile-logo-container img {
+	height: 25px;
+}
+
+.brnhmbx-menu-button {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 22px;
+	line-height: 50px;
+	cursor: pointer;
+	float: right;
+	margin-right: 20px;
+}
+
+.social-accounts {
+	display: none;
+}
+
+.social-accounts-touch {
+	margin-bottom: 30px;
+}
+
+.slicknav_menu {
+	display: block;
+	min-width: 280px;
+	padding-left: 20px;
+}
+
+.slicknav_menu ul a {
+	font-size: 14px;
+}
+
+.slicknav_menu .widget_archive,
+.slicknav_menu .widget_calendar,
+.slicknav_menu .widget_categories,
+.slicknav_menu .widget_pages,
+.slicknav_menu .widget_rss,
+.slicknav_menu .widget_recent_entries,
+.slicknav_menu .widget_recent_comments,
+.slicknav_menu .widget_search,
+.slicknav_menu .widget_tag_cloud,
+.slicknav_menu .widget_text {
+	display: none;
+}
+
+.slicknav_menu .slicknav_btn {
+	display: none;
+}
+
+.slicknav_menu .slicknav_nav {
+	margin-left: -20px !important;
+	margin-top: 10px;
+}
+/* */
+
+/* 10.3. Header & Footer Navigation */
+.footer-nav ul:before,
+.footer-nav ul:after {
+	content: '';
+	display: table;
+}
+
+.footer-nav ul:after {
+	clear: both;
+}
+
+.footer-nav ul {
+	list-style: none;
+	z-index: 9999;
+	padding-left: 0px;
+}
+
+.footer-nav li {
+	float: none;
+}
+
+.footer-nav li:first-child a {
+	margin-left: 0px;
+}
+
+.footer-nav li:last-child a {
+	margin-right: 0px;
+}
+
+.footer-nav {
+	float: left;
+}
+
+.footer-nav li a {
+	display: block;
+	margin-left: 0px;
+	margin-right: 0px;
+	line-height: 2em !important;
+}
+
+.header-menu-touch .footer-nav li a {
+	line-height: 2em !important;
+}
+
+.header-menu-outer li.nav-sep {
+	line-height: 35px;
+	margin: 0px 15px 0px 15px;
+}
+
+.footer-menu-outer li.nav-sep {
+	line-height: 10px;
+	margin: 0px 15px 0px 15px;
+}
+
+.footer-nav li.nav-sep,
+.footer-nav li.nav-sep:last-child,
+.header-menu-touch .footer-nav li.nav-sep {
+	display: none;
+}
+
+.footer-nav .menu {
+	margin: 0px;
+}
+/* */
+
+/* 10.4. Page Navigation */
+.pagenavi {
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.pagenavi-fp {
+	text-align: left;
+}
+
+.pagenavi-lp {
+	text-align: right;
+}
+
+.pagenavi-cp {
+	text-align: center;
+}
+
+.pagenavi .page-numbers {
+	padding: 0px 15px 0px 15px;
+	display: none;
+}
+
+.pagenavi a.next.page-numbers {
+	float: right;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 15px 0px 15px;
+}
+
+.pagenavi a.prev.page-numbers {
+	float: left;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 15px 0px 15px;
+}
+
+.pagenavi .page-numbers:first-child {
+	padding-left: 0;
+}
+
+.pagenavi .page-numbers:last-child {
+	padding-right: 0;
+}
+
+.pagenavi .page-number-inner {
+	line-height: 40px;
+	display: inline-block;
+}
+
+.pagenavi .page-numbers:first-child.current {
+	padding-left: 15px;
+}
+
+.pagenavi .page-numbers:last-child.current {
+	padding-right: 15px;
+}
+
+span.page-numbers.dots {
+	opacity: 0.5;
+}
+
+.page-navi {
+	padding-bottom: 20px;
+}
+
+.page-navi-prev {
+	float: left;
+	width: 100%;
+	padding-right: 0px;
+	padding-bottom: 20px;
+	min-width: 280px;
+}
+
+.page-navi-next {
+	float: left;
+	width: 100%;
+	padding-left: 0px;
+	min-width: 280px;
+}
+
+.page-navi-btn {
+	width: 100%;
+	padding: 10px;
+}
+
+.page-navi-prev-img {
+	width: 60px;
+	height: 40px;
+	float: left;
+}
+
+.page-navi-next-img {
+	width: 60px;
+	height: 40px;
+	float: right;
+}
+
+.page-navi-prev-img img,
+.page-navi-next-img img {
+	width: 60px;
+	height: 40px;
+}
+
+.page-navi-prev-info {
+	float: left;
+	text-align: left;
+	height: 40px;
+	display: table;
+	width: 85%;
+	line-height: 1.2em;
+}
+
+.page-navi-prev-info .table-cell-middle.fs16 {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	max-width: 340px;
+}
+
+.page-navi-prev-arrow {
+	padding: 0px 20px 0px 10px;
+	font-size: 18px;
+	width: 30px;
+}
+
+.page-navi-next-info {
+	float: right;
+	text-align: right;
+	height: 40px;
+	display: table;
+	width: 85%;
+	line-height: 1.2em;
+}
+
+.page-navi-next-info .table-cell-middle.fs16 {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	max-width: 340px;
+}
+
+.page-navi-next-arrow {
+	padding: 0px 10px 0px 20px;
+	font-size: 18px;
+	width: 30px;
+}
+/* */
+
+/*////////// #brnhmbx_bourz_navigation ENDS //////////*/
+
+/*///////////////////////////////////////////////////////
+////////// 11. Slider / #brnhmbx_bourz_slider STARTS //////////
+///////////////////////////////////////////////////////*/
+
+.bourz-slider-container {
+	display: none;
+	padding-bottom: 20px;
+	overflow-x: hidden;
+}
+
+.slide-container {
+    position: relative;
+	text-align: center;
+    width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.slide-container img {
+    width: 100%;
+}
+
+.slide-container img + .slide-info-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide-info-outer {
+	width: 100%;
+	height: 100%;
+}
+
+.slide-info {
+	display: table;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.slide-info-2 {
+	display: table;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.slider-header {
+	font-size: 30px;
+	line-height: 0.8em;
+	padding-bottom: 5px;
+}
+
+.slider-caption {
+	font-size: 14px;
+	line-height: 1.5em;
+}
+
+.slider-date {
+	display: inline-block;
+	font-size: 12px;
+	padding-bottom: 10px;
+}
+
+.slider-comment-icon {
+	display: none;
+	padding-bottom: 7px;
+}
+
+.slider-comment-icon-inner {
+	font-size: 18px;
+	padding-right: 8px;
+	display: inline-block;
+	margin-top: -2px;
+}
+
+.slider-comment-icon-number {
+	font-size: 12px;
+	margin-top: 3px;
+	display: inline-block;
+}
+
+.slide-info-inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.slide-text-outer {
+	background-color: transparent;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.slide-text {
+	max-width: 600px;
+}
+
+.slide-text-padding {
+	padding: 15px 25px 15px 25px;
+}
+
+.slide-text-padding-2 {
+	padding: 15px 25px 45px 25px;
+}
+
+.slider-categories {
+	padding-top: 5px;
+	font-size: 12px;
+	display: none;
+}
+
+.bxslider,
+.bxslider-main,
+.bxslider-vid li {
+	list-style: none;
+	padding-left: 0px;
+	margin: 0 !important;
+}
+
+.bxslider-vid {
+	padding-left: 0px;
+}
+
+.bxslider-main {
+	margin-top: 0px;
+}
+
+.bxslider img,
+.bxslider-main img {
+	width: 100%;
+}
+
+.bx-viewport li {
+	min-height: 1px;
+	min-width: 1px;
+}
+
+.bx-wrapper .bx-prev {
+	left: -10px;
+}
+
+.bx-wrapper .bx-next {
+	right: -10px;
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed,
+.video-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+video {
+	width: 100%;
+}
+
+/*////////// #brnhmbx_bourz_slider ENDS //////////*/
+
+/*///////////////////////////////////////////////////
+////////// 12. Misc / #brnhmbx_bourz_misc STARTS //////////
+///////////////////////////////////////////////////*/
+
+.fw400 { font-weight: 400; }
+.fw700 { font-weight: 700; }
+.fst-italic { font-style: italic; }
+.fs10 { font-size: 10px; }
+.fs11 { font-size: 11px; }
+.fs12 { font-size: 12px; }
+.fs14 { font-size: 14px; }
+.fs16 { font-size: 16px; }
+.fs18 { font-size: 18px; }
+.fs19 { font-size: 19px; }
+.fs20 { font-size: 20px; }
+.fs24 { font-size: 24px; }
+
+.table-cell-middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.t-a-c {
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.left:after,
+.right:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.hiddenInfo {
+	display: none;
+}
+
+.zig-zag:after {
+    height: 0px;
+}
+
+.liner {
+	line-height: 0em;
+	text-align: center;
+}
+
+.liner span {
+	display: inline-block;
+	position: relative;
+}
+
+.liner span:before,
+.liner span:after {
+	content: "";
+	position: absolute;
+	border-bottom: 2px solid;
+	top: 0;
+	width: 20px;
+}
+
+.liner span:before {
+	right: 100%;
+	margin-right: 10px;
+}
+
+.liner span:after {
+	left: 100%;
+	margin-left: 10px;
+}
+
+.btn-to-top i {
+	padding-right: 10px;
+}
+
+.top-extra-inner .btn-to-top i {
+	padding-right: 0px;
+	margin-left: 25px;
+	vertical-align: middle;
+}
+
+.cancel-display-block {
+	display: block;
+}
+
+.pr15 {
+	padding-right: 15px;
+}
+
+.pb11 {
+	padding-bottom: 11px;
+}
+
+.p40 {
+	padding: 40px;
+}
+
+.ml5 {
+	margin-left: 5px;
+}
+
+.mb5 {
+	margin-bottom: 5px;
+}
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+p.comment-form-cookies-consent input#wp-comment-cookies-consent {
+	height: 16px;
+	line-height: 16px;
+	text-align: left;
+	display: inline-block;
+	width: auto;
+	margin-right: 10px;
+	vertical-align: top;
+	margin-top: 20px;
+}
+
+p.comment-form-cookies-consent label[for="wp-comment-cookies-consent"] {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 16px;
+	font-size: 14px;
+	margin-top: 20px;
+}
+
+/*////////// #brnhmbx_bourz_misc ENDS //////////*/
+
+/*///////////////////////////////////////////////////////////////////////
+////////// 13. Contact Form 7 / #brnhmbx_bourz_contact_form_7 STARTS //////////
+///////////////////////////////////////////////////////////////////////*/
+
+.wpcf7-form p {
+	font-size: 12px;
+	margin: 10px 0px 10px 0px;
+	font-weight: 700;
+}
+
+.wpcf7-form input {
+	max-width: 300px;
+	font-weight: normal;
+}
+
+.wpcf7-form input[type="submit"] {
+	font-weight: 700;
+}
+
+.wpcf7-form textarea {
+	max-width: 600px;
+	font-weight: normal;
+}
+
+.wpcf7-form .wpcf7-submit:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.wpcf7-form-control-wrap span,
+.wpcf7-response-output,
+.wpcf7-mail-sent-ok {
+	font-weight: bold;
+}
+
+div.wpcf7-validation-errors,
+div.wpcf7-mail-sent-ok,
+div.wpcf7-mail-sent-ng,
+div.wpcf7-spam-blocked {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+div.wpcf7 img.ajax-loader {
+	display: none;
+}
+
+/*////////// #brnhmbx_bourz_contact_form_7 ENDS //////////*/
+
+/*/////////////////////////////////////////////////////////////////
+////////// 14. WP Defaults / #brnhmbx_bourz_wp_defaults STARTS //////////
+/////////////////////////////////////////////////////////////////*/
+
+span.post-date {
+	display: block;
+}
+
+.wp-caption {
+	max-width: 100%;
+}
+
+.wp-caption img {
+	display: block;
+}
+
+.wp-caption-text {
+	font-size: 12px;
+	text-align: left;
+}
+
+div.wp-caption {
+	margin-bottom: 1em;
+}
+
+article .wp-caption {
+	position: relative;
+}
+
+article .wp-caption p.wp-caption-text {
+	padding: 0px 5px 0px 5px;
+	display: block;
+	position: absolute;
+	bottom: -1px;
+	margin: 0 10px 10px 10px;
+}
+
+.sticky { }
+.gallery-caption { }
+.bypostauthor { }
+img.alignright,
+div.alignright { float: right; margin: 0 0 1em 2em; }
+img.alignleft,
+div.alignleft { float: left; margin: 0 2em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+div.aligncenter { margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { margin-left: auto; margin-right: auto; }
+img.alignright:after,
+div.alignright:after,
+img.alignleft:after,
+div.alignleft:after,
+.alignright:after,
+.alignleft:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.more-link {
+	display: none;
+}
+
+/*////////// #brnhmbx_bourz_wp_defaults ENDS //////////*/
+
+/*/////////////////////////////////////////////////////////////
+////////// 15. Animation / #brnhmbx_bourz_animation STARTS //////////
+/////////////////////////////////////////////////////////////*/
+
+.animated { -webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:.4s;-moz-animation-duration:.4s;-ms-animation-duration:.4s;-o-animation-duration:.4s;animation-duration:.4s; }
+
+@-webkit-keyframes fadeInDown { 0% { opacity: 0; } 100% { opacity: 1; } }
+@-moz-keyframes fadeInDown { 0% { opacity: 0; } 100% { opacity: 1; } }
+@-o-keyframes fadeInDown { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes fadeInDown { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -o-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeOutUp { 0% { opacity: 1; } 100% { opacity: 0; } }
+@-moz-keyframes fadeOutUp { 0% { opacity: 1; } 100% { opacity: 0; } }
+@-o-keyframes fadeOutUp { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes fadeOutUp { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+.fadeOutUp {
+    -webkit-animation-name: fadeOutUp;
+    -moz-animation-name: fadeOutUp;
+    -o-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+}
+
+/*////////// #brnhmbx_bourz_animation ENDS //////////*/
+
+/*/////////////////////////////////////////////////////////////////////////////
+////////// 16. Banner Management / #brnhmbx_bourz_banner_management STARTS //////////
+/////////////////////////////////////////////////////////////////////////////*/
+
+.leaderboard-outer {
+	width: 100%;
+	margin: 0 0 20px 0;
+	text-align: center;
+}
+
+.leaderboard-outer-pp-bottom {
+	margin-top: 20px !important;
+}
+
+.leaderboard-outer-afs {
+	margin: 20px 0 0 0 !important;
+}
+
+.leaderboard-inner {
+	width: 100%;
+	font-size: 0;
+}
+
+.leaderboard-inner img {
+	width: 100%;
+}
+
+.leaderboard-full,
+.leaderboard-among,
+.leaderboard-responsive {
+	display: none;
+}
+
+.leaderboard-header {
+	display: inline-block;
+	float: right;
+}
+
+.leaderboard-header img {
+	width: 728px !important;
+	height: 90px !important;
+}
+
+.leaderboard-header-logo {
+	display: table;
+	height: 90px;
+}
+
+/*////////// #brnhmbx_bourz_banner_management ENDS //////////*/
+
+/*///////////////////////////////////////////////////////////////
+////////// 17. Mail Chimp / #brnhmbx_bourz_mail_chimp STARTS //////////
+///////////////////////////////////////////////////////////////*/
+
+.widget_mc4wp_form_widget {
+	font-size: 14px;
+}
+
+.widget-item.widget_mc4wp_form_widget h2 {
+	margin-bottom: 11px;
+}
+
+p.mc4wp-checkbox {
+	margin: 0px;
+}
+
+.mc4wp-form {
+	margin: 0px !important;
+}
+
+.mc4wp-form input[type="text"],
+.mc4wp-form input[type="email"] {
+	margin: 10px 0 10px 0;
+	max-width: 300px;
+	height: 40px;
+}
+
+.mc4wp-form input[type="email"] {
+	font-weight: bold;
+}
+
+.mc4wp-form input[type="submit"] {
+	width: 100%;
+	max-width: 300px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 15px 0px 15px;
+	display: block;
+}
+
+.widget-item .mc4wp-form input[type="text"],
+.widget-item .mc4wp-form input[type="email"] {
+	margin: 0 0 10px 0;
+}
+
+.widget-item .mc4wp-form input[type="text"],
+.widget-item .mc4wp-form input[type="email"],
+.widget-item-footer .mc4wp-form input[type="text"],
+.widget-item-footer .mc4wp-form input[type="email"] {
+	max-width: 100%;
+}
+
+.widget-item .mc4wp-form input[type="submit"],
+.widget-item-footer .mc4wp-form input[type="submit"] {
+	max-width: 100%;
+}
+
+.mc4wp-response p {
+	margin: 10px 0 0 0;
+}
+
+/*////////// #brnhmbx_bourz_mail_chimp ENDS //////////*/
+
+/*///////////////////////////////////////////////////////////////////////////
+////////// 18. Instagram Slider Widget / #brnhmbx_bourz_instagram STARTS //////////
+///////////////////////////////////////////////////////////////////////////*/
+
+.instagram-label { opacity: 0; position: absolute; padding: 10px 20px; z-index: 1; }
+
+.jr-insta-slider h2 {
+	margin-bottom: 11px;
+}
+
+.jr_col_1 img, .jr_col_2 img, .jr_col_3 img, .jr_col_4 img, .jr_col_5 img, .jr_col_6 img, .jr_col_7 img, .jr_col_8 img, .jr_col_9 img, .jr_col_10 img {
+	width: 100%;
+}
+
+/*////////// #brnhmbx_bourz_instagram ENDS //////////*/
+
+/*////////////////////////////////////////////////////////////////
+////////// 19. Woo Commerce / #brnhmbx_bourz_woo STARTS //////////
+////////////////////////////////////////////////////////////////*/
+
+/* 19.1. General & Misc */
+.brnhmbx-woo-border {
+	border-top: 2px solid;
+	border-color: #000;
+	position: relative;
+	margin-top: -40px;
+	margin-bottom: 40px;
+}
+
+.brnhmbx-wc-outer {
+	padding: 20px 20px 20px 20px;
+	margin-bottom: 20px;
+	text-align: left;
+	font-size: 16px;
+}
+
+ul.products li.product {
+	clear: none !important;
+	width: 100% !important;
+}
+
+.brnhmbx-wc-outer h1 {
+	font-size: 40px;
+	line-height: 45px;
+	margin-bottom: 20px;
+}
+
+.brnhmbx-wc-outer h2,
+.brnhmbx-wc-outer h3 {
+	font-size: 22px;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+.brnhmbx-wc-outer h1.page-title {
+	margin: -60px -60px 40px -60px;
+	padding: 60px 60px 30px 60px;
+	font-size: 40px;
+	line-height: 1em;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.woocommerce .input-checkbox,
+.woocommerce #rememberme {
+	vertical-align: middle;
+	height: auto;
+	width: auto;
+}
+
+.woocommerce .input-radio {
+	vertical-align: middle;
+	height: auto;
+	width: auto;
+	margin-top: -5px !important;
+}
+
+li.chosen {
+	margin-right: 10px !important;
+}
+
+label[for="rememberme"] input {
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+a.woocommerce-review-link,
+a.woocommerce-review-link:visited {
+	font-weight: normal;
+	display: inline-block;
+}
+
+input.select2-input {
+	font-size: 13px;
+}
+
+.select2-results {
+	font-size: 13px;
+	text-align: left;
+}
+
+.select2-results .select2-highlighted {
+	border-radius: 0px;
+	font-size: 13px;
+}
+
+.button.add_to_cart_button.product_type_variable,
+.button.add_to_cart_button.product_type_simple,
+button.single_add_to_cart_button.button.alt,
+.woocommerce .woocommerce-message a.button,
+.woocommerce .woocommerce-message a.button:visited,
+.woocommerce #review_form #respond .form-submit input.submit,
+ul.products li a.added_to_cart.wc-forward,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woo-p-widget a.added_to_cart.wc-forward,
+.woo-p-widget .product_type_simple {
+	-webkit-appearance: none; /*Safari/Chrome*/
+    -moz-appearance: none; /*Firefox*/
+    -ms-appearance: none; /*IE*/
+    -o-appearance: none; /*Opera*/
+    appearance: none;
+    -webkit-border-radius: 0;
+	border-radius: 0px;
+	cursor: pointer;
+	font-size: 14px !important;
+	font-weight: 700;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 15px 0px 15px !important;
+	width: auto;
+}
+
+.woocommerce #review_form #respond .form-submit input.submit {
+	margin-top: 5px;
+}
+
+.widget_brnhmbx_customwooproductwidget .woo-p-widget a.added_to_cart.wc-forward {
+	padding-top: 0px !important;
+	max-height: 29px !important;
+}
+
+.woocommerce div.product p.price span.amount {
+	font-size: 18px;
+}
+
+.woocommerce div.product p.price del span.amount {
+	font-size: 14px;
+}
+
+.woocommerce div.product p.price del {
+	margin-bottom: -15px;
+}
+
+div.quantity input.input-text.qty.text {
+	width: 40px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.products li a h3 {
+	font-size: 18px !important;
+	line-height: 24px;
+}
+
+.posted_in a,
+.posted_in a:visited,
+.tagged_as a,
+.tagged_as a:visited {
+	border-bottom: 1px solid;
+	margin-right: 12px;
+	line-height: 18px;
+	font-weight: normal;
+}
+
+.posted_in a:hover,
+.tagged_as a:hover,
+a.woocommerce-review-link:hover,
+.woocommerce a.reset_variations:hover,
+.woocommerce a.shipping-calculator-button:hover,
+.woocommerce a.woocommerce-remove-coupon:hover,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
+.woocommerce a.edit:hover {
+	opacity: 0.7;
+}
+
+ul.products {
+	text-align: center;
+}
+
+ul.products li a > div.star-rating {
+	margin: 0 auto !important;
+	margin-bottom: 16px !important;
+}
+
+ul.products li a span.price {
+	font-size: 18px !important;
+	font-weight: 700 !important;
+}
+
+.woocommerce span.onsale {
+	font-weight: normal;
+	border-radius: 0;
+	font-size: 12px;
+	min-height: 0px;
+	height: 24px;
+	line-height: 22px;
+	padding: 0 5px 0 5px;
+}
+
+.woocommerce .single_variation {
+	padding-bottom: 20px;
+}
+
+div.price_slider_amount .price_label {
+	line-height: 40px;
+}
+
+.woocommerce a.edit {
+	padding-top: 5px;
+}
+
+.woocommerce table.variations td.label {
+	padding-top: 20px;
+}
+
+.woocommerce table.variations select {
+	margin-bottom: 10px;
+}
+
+.woocommerce .group_table {
+	margin-bottom: 10px;
+	border: none;
+}
+
+.woocommerce .group_table td.label,
+.woocommerce .group_table td.price {
+	vertical-align: middle !important;
+}
+
+.woocommerce input.input-text {
+	max-width: 300px;
+}
+
+.woocommerce .login,
+.woocommerce .register {
+	border: none !important;
+	padding: 0 !important;
+}
+
+.woocommerce .woocommerce-product-rating {
+	margin-bottom: 10px !important;
+}
+
+.woocommerce .term-description {
+    vertical-align: baseline;
+	font-style: italic;
+	margin: -80px -60px 40px -60px;
+	padding: 20px 60px 20px 60px;
+	font-size: 16px;
+}
+
+.woocommerce .term-description p {
+	margin: 0;
+}
+
+.woocommerce .woocommerce-ordering {
+	margin-bottom: 40px;
+}
+
+.woocommerce a.button.loading:after {
+	font-family: WooCommerce;
+	content: "";
+	vertical-align: top;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 400;
+	position: absolute;
+	top: 0;
+	right: 1em;
+	-webkit-animation: spin 2s linear infinite;
+	-moz-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+}
+
+.woocommerce a.button.loading {
+	opacity: .5;
+	padding-right: 0px;
+}
+
+.woocommerce-result-count {
+	line-height: 50px;
+}
+
+.woocommerce .edit-account fieldset {
+	margin-bottom: 20px;
+}
+/* */
+
+/* 19.2. Pagination */
+.woocommerce nav.woocommerce-pagination ul li {
+	border: none;
+}
+
+.woocommerce-pagination .page-numbers {
+	border: none !important;
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+.woocommerce .woocommerce-pagination ul.page-numbers {
+	margin-left: 30px !important;
+}
+
+.woocommerce .woocommerce-pagination ul.page-numbers li span {
+	display: none;
+	font-weight: 700 !important;
+}
+
+.woocommerce .woocommerce-pagination ul.page-numbers li a.next,
+.woocommerce .woocommerce-pagination ul.page-numbers li a.prev {
+	display: inline-block;
+	width: 100%;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.page-numbers.dots {
+	padding-top: 10px !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.page-numbers.current,
+.woocommerce nav.woocommerce-pagination ul li a.page-numbers:hover {
+	background-color: transparent;
+}
+
+.woocommerce-pagination .prev.page-numbers,
+.woocommerce-pagination .next.page-numbers {
+	border-radius: 0px;
+	font-size: 14px !important;
+	font-weight: 700;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 15px 0px 15px !important;
+	width: auto;
+}
+/* */
+
+/* 19.3. Messages */
+.woocommerce .woocommerce-message {
+	padding: 26px 0px 26px 60px !important;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	line-height: 40px;
+}
+
+.woocommerce .woocommerce-message:before {
+	left: 30px;
+	margin-top: 11px;
+}
+
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-error {
+	padding: 20px 0px 26px 60px !important;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	line-height: 40px;
+}
+
+.woocommerce .woocommerce-info:before,
+.woocommerce .woocommerce-error:before {
+	margin-top: 5px;
+}
+
+.woocommerce .woocommerce-message a.button {
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+/* */
+
+/* 19.4. Tabs */
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	border-radius: 0px;
+	font-size: 14px;
+	font-weight: 700;
+	height: 40px;
+	padding: 0px 15px 0px 15px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	font-weight: 700 !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li:before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li:after {
+	border: none;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+.woocommerce table.shop_attributes,
+.woocommerce table.shop_attributes th,
+.woocommerce table.shop_attributes td {
+	border-style: solid;
+	padding: 10px;
+}
+/* */
+
+/* 19.5. Reviews */
+.woocommerce #reviews #comments ol.commentlist {
+	padding-left: 0px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+	border: none;
+	padding: 0px 0px 0px 10px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta strong[itemprop="author"] {
+	font-size: 16px;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.woocommerce legend {
+	padding: 20px 0px 20px 0px;
+	font-weight: bold;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text div.description {
+	font-size: 13px;
+	padding-top: 15px;
+	border-top: 1px solid;
+}
+
+.woocommerce #reviews #comments ol.commentlist li img.avatar {
+	padding: 0px;
+	width: 40px;
+	background: transparent;
+	border: none;
+}
+
+.woocommerce textarea#comment {
+	display: block;
+}
+
+.woocommerce-tabs .comment-reply-title {
+	padding-bottom: 20px;
+}
+
+.woocommerce-tabs p.comment-form-rating label[for="rating"] {
+	float: left;
+	line-height: 16px;
+	margin-right: 10px;
+}
+
+.woocommerce #comments nav.woocommerce-pagination ul li .page-numbers {
+	line-height: 40px;
+	font-weight: 700;
+}
+
+.woocommerce #comments nav.woocommerce-pagination ul li .next.page-numbers,
+.woocommerce #comments nav.woocommerce-pagination ul li .prev.page-numbers {
+	line-height: 46px;
+}
+/* */
+
+/* 19.6. Big Image */
+div.pp_woocommerce div.ppt,
+div.pp_woocommerce .pp_nav,
+div.pp_woocommerce .pp_description,
+div.pp_woocommerce .pp_social {
+	display: none !important;
+}
+
+.pp_content {
+	margin-bottom: -35px !important;
+}
+
+.woocommerce-product-gallery figure {
+	margin: 0;
+}
+/* */
+
+/* 19.7. Cart & Checkout */
+.cart-collaterals .cross-sells {
+	display: none;
+}
+
+.coupon input.input-text {
+	min-width: 150px;
+	border: none !important;
+}
+
+form.checkout_coupon p.form-row {
+	margin-bottom: 0px !important;
+}
+
+
+.woocommerce-cart .cart-collaterals .cart_totals table {
+	border-right: 0px;
+}
+
+tr.cart-subtotal th {
+	padding-right: 24px !important;
+}
+
+.woocommerce-cart table.cart img {
+	padding-top: 10px;
+}
+
+.woocommerce-checkout #payment {
+	border-radius: 0px;
+}
+
+.woocommerce-checkout #payment div.payment_box {
+	padding: 10px 20px 10px 20px;
+	font-size: 13px;
+	border-radius: 0px;
+	width: 100%;
+	margin-bottom: 0px !important;
+}
+
+.woocommerce-checkout #payment div.payment_box p {
+	text-indent: 0px;
+}
+
+ul.payment_methods li {
+	margin-bottom: 20px !important;
+}
+
+.payment_method_paypal img {
+	margin-top: -20px !important;
+	display: inline-block;
+	padding-top: 10px !important;
+}
+
+.brnhmbx_cart_remove_icon a {
+	margin-top: 3px;
+	padding-left: 1px;
+}
+
+.cart_list.product_list_widget li.empty {
+	padding-left: 0px;
+}
+
+.product_list_widget li {
+	margin-bottom: 10px !important;
+	line-height: 1.2em;
+}
+
+.product_list_widget li:first-child,
+.widget_layered_nav ul,
+.widget_layered_nav_filters ul,
+.widget-item-inner .price_slider_wrapper {
+	margin-top: 10px !important;
+}
+
+.product_list_widget li:last-child {
+	margin-bottom: 0px !important;
+}
+
+.product_list_widget li div.star-rating {
+	font-size: 12px;
+	margin: 5px 0;
+}
+
+li.mini_cart_item:last-child {
+	margin-bottom: 10px !important;
+}
+
+.widget-item-inner .product-categories {
+	margin-top: 10px;
+}
+
+.woocommerce .remove {
+	font-size: 18px !important;
+	line-height: 18px !important;
+	background: none !important;
+}
+
+.woocommerce a.remove:hover {
+	opacity: 0.5;
+	color: #F00 !important;
+}
+
+.woocommerce .shop_table.cart td.actions {
+	padding-top: 20px;
+}
+
+.woocommerce .shop_table,
+.woocommerce .shop_table td,
+.woocommerce .shop_table tr,
+.woocommerce .shop_table th,
+.woocommerce .shop_table thead,
+.woocommerce .shop_table tbody {
+	border: none !important;
+}
+
+#coupon_code {
+	line-height: 40px;
+	padding-left: 10px;
+}
+/* */
+
+/* 19.8. Product Search Widget */
+.brnhmbx-wc-product-search-widget {
+	background-color: #e4be64;
+}
+
+.brnhmbx-wc-product-search-widget .search-widget-inner {
+	background-color: #e4be64;
+	border-color: #4f4047;
+}
+
+.brnhmbx-wc-product-search-widget .search-widget-inner .search-widget-input {
+	background-color: #e4be64;
+	color: #4f4047;
+}
+
+.search-widget-s-pro-icon {
+	color: #4f4047;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	color: #817179;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #817179;
+	opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #817179;
+	opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: #817179;
+}
+/* */
+
+/*////////// #brnhmbx_bourz_woo ENDS //////////*/
+
+/*/////////////////////////////////////////////////////////////////////
+////////// 20. Author Box / #bourz_author_box STARTS //////////
+/////////////////////////////////////////////////////////////////////*/
+
+.author-box-outer {
+	margin-bottom: 20px;
+}
+
+.author-box,
+.author-box-sidebar {
+	padding: 20px;
+}
+
+.author-avatar {
+	line-height: 40px;
+	margin-bottom: 15px;
+	font-size: 12px;
+}
+
+.author-avatar img {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+.author-links {
+	margin-top: 15px;
+	font-size: 12px;
+	margin-right: 20px;
+	display: inline-block;
+}
+
+/*////////// #bourz_author_box ENDS //////////*/
+
+/*///////////////////////////////////////////////////////////////////
+////////// 21. Gutenberg / #brnhmbx_bourz_gutenberg STARTS //////////
+///////////////////////////////////////////////////////////////////*/
+
+/* Image */
+.wp-block-image .alignleft {
+	margin-right: 2em;
+}
+
+.wp-block-image .alignright {
+	margin-left: 2em;
+}
+
+/* Quote */
+.wp-block-quote.is-style-large {
+	float: none;
+	max-width: 100%;
+	margin-bottom: 1.5em;
+	border: 2px solid;
+	padding: 30px;
+}
+
+.wp-block-quote.is-style-large p {
+	font-style: italic;
+	font-size: 20px;
+}
+
+.wp-block-quote cite,
+.wp-block-quote.is-style-large cite {
+	font-size: 13px;
+	font-style: italic;
+}
+
+/* Pullquote */
+.wp-block-pullquote {
+	margin: 30px 0;
+	border-top: 3px solid;
+	border-bottom: 3px solid;
+}
+
+.wp-block-pullquote.is-style-solid-color {
+	padding: 30px 0;
+	border: 0;
+}
+
+.wp-block-pullquote blockquote {
+	max-width: 100%;
+	float: none;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	border: 0;
+}
+
+.wp-block-pullquote cite {
+	font-size: 13px;
+	font-style: italic !important;
+}
+
+/* Embed */
+.wp-block-embed {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-embed iframe,
+.wp-block-embed twitter-widget {
+	margin: 0 auto !important;
+}
+
+/* Audio */
+.wp-block-audio {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Cover Image */
+.wp-block-cover {
+	width: auto;
+}
+
+.wp-block-cover.aligncenter {
+	width: 100%;
+}
+
+/* Table */
+.wp-block-table {
+	width: 100%;
+}
+
+/* Verse */
+.wp-block-verse {
+	font-style: italic;
+	font-size: 16px;
+}
+
+/* Media & Text */
+.wp-block-media-text p {
+	line-height: 1.2em;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+/* Archives */
+.wp-block-archives.wp-block-archives-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+.wp-block-archives select {
+	font-size: 16px;
+	max-width: 300px;
+	height: 60px;
+	padding: 0 10px;
+}
+
+/* Categories */
+.wp-block-categories.wp-block-categories-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+.wp-block-categories select {
+	font-size: 16px;
+	max-width: 300px;
+	height: 60px;
+	padding: 0 10px;
+}
+
+/* Latest Posts */
+.wp-block-latest-posts {
+	padding-left: 0;
+	list-style: none !important;
+}
+
+/* Align Wide & Full */
+.brnhmbx-font-3.fs16 .alignwide {
+	margin-left: -20px;
+	margin-right: -20px;
+	max-width: 800px;
+}
+
+.brnhmbx-font-3.fs16 .alignfull {
+	margin-left: -60px;
+	margin-right: -60px;
+	max-width: 880px;
+}
+/* */
+
+/* Button */
+.wp-block-button .wp-block-button__link {
+	font-size: 16px;
+}
+/* */
+
+/* Separator */
+.wp-block-separator {
+	border: 1px solid;
+	height: 0;
+}
+/* */
+
+/* Figcaption */
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-image figcaption,
+.wp-block-gallery figcaption,
+.wp-block-embed figcaption,
+.wp-block-audio figcaption,
+.wp-block-video figcaption {
+	font-size: 12px;
+}
+/* */
+
+/* Gallery */
+.wp-block-gallery.alignleft { margin-right: 30px; }
+.wp-block-gallery.alignright { margin-left: 30px; }
+
+.wp-block-spacer {
+	clear: both;
+}
+/* */
+
+/* Latest Comments */
+.wp-block-latest-comments {
+	padding-left: 0;
+}
+/* */
+
+/*////////// #brnhmbx_bourz_gutenberg ENDS //////////*/

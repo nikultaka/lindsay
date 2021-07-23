@@ -1,0 +1,1 @@
+<div class="sidebar clearfix"><?php dynamic_sidebar( 'brnhmbx_bourz_sidebar_home' ); ?></div>

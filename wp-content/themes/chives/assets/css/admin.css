@@ -1,0 +1,33 @@
+/*
+ * admin css
+*/
+.chives-accordion {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+}
+.chives-accordion:after {
+    content: "+";
+    background-repeat: no-repeat;
+    margin: auto;
+    float: right;
+}
+.chives-panel {
+    display: none;
+}
+label {
+    font-weight: 500;
+}
+.block {
+    display: block;
+}
+.none {
+    display: none;
+}
+.widget-content .chosen-container {
+    display: none;
+}
+.widget-content p > .chosen-container {
+    display: block;
+}

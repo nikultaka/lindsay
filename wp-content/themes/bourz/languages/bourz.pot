@@ -1,0 +1,2135 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Bourz\n"
+"POT-Creation-Date: 2019-05-04 00:13+0300\n"
+"PO-Revision-Date: 2016-02-26 22:05+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: customizer.php:214
+msgid "1. Featured Image Settings"
+msgstr ""
+
+#: customizer.php:219
+msgid "2. Font Settings"
+msgstr ""
+
+#: customizer.php:224
+msgid "3. Site Background"
+msgstr ""
+
+#: customizer.php:229
+msgid "4. Header"
+msgstr ""
+
+#: customizer.php:234
+msgid "5. Slider Settings"
+msgstr ""
+
+#: customizer.php:239
+msgid "6. Sidebar, Upper & Home Widgets"
+msgstr ""
+
+#: customizer.php:244
+msgid "7. Layout Options"
+msgstr ""
+
+#: customizer.php:249
+msgid "8. Post & Page Colors"
+msgstr ""
+
+#: customizer.php:254
+msgid "9. Post Format: Standard"
+msgstr ""
+
+#: customizer.php:259
+msgid "10. Post Format: Gallery"
+msgstr ""
+
+#: customizer.php:264
+msgid "11. Post Format: Video"
+msgstr ""
+
+#: customizer.php:269
+msgid "12. Related Posts"
+msgstr ""
+
+#: customizer.php:274
+msgid "13. Post & Page Comments"
+msgstr ""
+
+#: customizer.php:279
+msgid "14. Footer"
+msgstr ""
+
+#: customizer.php:284
+msgid "15. Footer Widgets"
+msgstr ""
+
+#: customizer.php:289
+msgid "16. Show/Hide Elements"
+msgstr ""
+
+#: customizer.php:294
+msgid "17. Social Accounts"
+msgstr ""
+
+#: customizer.php:295
+msgid "Write the entire URL addresses.<br>Leave blank if not preferred."
+msgstr ""
+
+#: customizer.php:300
+msgid "18. Google Maps"
+msgstr ""
+
+#: customizer.php:305
+msgid "19. Translation"
+msgstr ""
+
+#: customizer.php:310
+msgid "20. Banner Management"
+msgstr ""
+
+#: customizer.php:315
+msgid "21. Custom CSS"
+msgstr ""
+
+#: customizer.php:316
+msgid "Write your CSS code to override styles."
+msgstr ""
+
+#: customizer.php:742 customizer.php:1334
+msgid "Important Note"
+msgstr ""
+
+#: customizer.php:743 customizer.php:1335
+msgid ""
+"When you upload an image into your media library, it gets the sizes below. "
+"If you change these settings AFTER you uploaded an image, the image will not "
+"change its sizes. So, you have to re-upload it or use a plugin like <a href="
+"\"https://wordpress.org/plugins/regenerate-thumbnails/\" target=\"_blank"
+"\">Regenerate Thumbnails</a> which is a very good practice."
+msgstr ""
+
+#: customizer.php:751
+msgid "1.1. Featured Image Width"
+msgstr ""
+
+#: customizer.php:752
+msgid ""
+"Theme default: \"1200\"<br>Write \"0\" to not to resize the images.<br>Works "
+"for newly added images only."
+msgstr ""
+
+#: customizer.php:761
+msgid "1.2. Featured Image Height"
+msgstr ""
+
+#: customizer.php:762
+msgid ""
+"Theme default: \"0\"<br>Write \"0\" to not to crop the images.<br>Works for "
+"newly added images only."
+msgstr ""
+
+#: customizer.php:771
+msgid "1.3. Thumbnail Image Width"
+msgstr ""
+
+#: customizer.php:772
+msgid ""
+"Theme default: \"600\"<br>Used in related posts, widgets etc.<br>Write \"0\" "
+"to not to crop the images.<br>Works for newly added images only."
+msgstr ""
+
+#: customizer.php:781
+msgid "1.4. Thumbnail Image Height"
+msgstr ""
+
+#: customizer.php:782
+msgid ""
+"Theme default: \"400\"<br>Used in related posts, widgets etc.<br>Write \"0\" "
+"to not to crop the images.<br>Works for newly added images only."
+msgstr ""
+
+#: customizer.php:791
+msgid "1.5. Home Thumbnail Options"
+msgstr ""
+
+#: customizer.php:792
+msgid "Does not affect post pages."
+msgstr ""
+
+#: customizer.php:805
+msgid "UPPERCASE dates, captions etc."
+msgstr ""
+
+#: customizer.php:811
+msgid "2.1. Primary Font"
+msgstr ""
+
+#: customizer.php:813
+msgid "Menu items, main headers etc.<br>Theme default: \"Palanquin\""
+msgstr ""
+
+#: customizer.php:817 customizer.php:835 customizer.php:853 customizer.php:871
+msgid "Use Italic Where Allowed"
+msgstr ""
+
+#: customizer.php:823 customizer.php:841 customizer.php:859 customizer.php:877
+msgid "Use Bold Where Allowed"
+msgstr ""
+
+#: customizer.php:829
+msgid "2.2. Secondary Font"
+msgstr ""
+
+#: customizer.php:831
+msgid "Homepage headers, excerpts etc.<br>Theme default: \"PT Serif\""
+msgstr ""
+
+#: customizer.php:847
+msgid "2.3. Tertiary Font"
+msgstr ""
+
+#: customizer.php:849
+msgid "Content font.<br>Theme default: \"Palanquin\""
+msgstr ""
+
+#: customizer.php:865
+msgid "2.4. Quaternary Font"
+msgstr ""
+
+#: customizer.php:867
+msgid "Dates, form headers etc.<br>Theme default: \"Karla\""
+msgstr ""
+
+#: customizer.php:883
+msgid "2.5. Font Switching"
+msgstr ""
+
+#: customizer.php:891
+msgid "Menu Items"
+msgstr ""
+
+#: customizer.php:892 customizer.php:904 customizer.php:916
+msgid "Theme default: \"Primary Font\""
+msgstr ""
+
+#: customizer.php:897
+msgid "Homepage Post Titles"
+msgstr ""
+
+#: customizer.php:898 customizer.php:910 customizer.php:922
+msgid "Theme default: \"Secondary Font\""
+msgstr ""
+
+#: customizer.php:903
+msgid "Post Page Titles"
+msgstr ""
+
+#: customizer.php:909
+msgid "Post Page Excerpt"
+msgstr ""
+
+#: customizer.php:915
+msgid "Post Navigation"
+msgstr ""
+
+#: customizer.php:921
+msgid "Related Posts"
+msgstr ""
+
+#: customizer.php:930
+msgid "3.1. Background Color"
+msgstr ""
+
+#: customizer.php:934
+msgid "3.2. Background Image"
+msgstr ""
+
+#: customizer.php:942
+msgid "Centered Background Image"
+msgstr ""
+
+#: customizer.php:948
+msgid "3.3. Background Repeat Options"
+msgstr ""
+
+#: customizer.php:949
+msgid "Only used if \"Centered\" is unchecked."
+msgstr ""
+
+#: customizer.php:965
+msgid "Upload a Favicon"
+msgstr ""
+
+#: customizer.php:974
+msgid "4.1. Logo Text"
+msgstr ""
+
+#: customizer.php:975
+msgid ""
+"Leave blank if you want to use the \"Site Title\". If a logo image is "
+"uploaded, this will never be shown."
+msgstr ""
+
+#: customizer.php:981
+msgid "4.2. Logo Font"
+msgstr ""
+
+#: customizer.php:983
+msgid "Theme default: \"Montserrat\""
+msgstr ""
+
+#: customizer.php:987
+msgid "4.3. Logo Font Size"
+msgstr ""
+
+#: customizer.php:988
+msgid "Theme default: \"30\"(px)"
+msgstr ""
+
+#: customizer.php:997
+msgid "4.4. Logo Text Color"
+msgstr ""
+
+#: customizer.php:1001
+msgid "4.5. Logo Image"
+msgstr ""
+
+#: customizer.php:1009
+msgid "Mobile Logo Image"
+msgstr ""
+
+#: customizer.php:1017
+msgid "4.6. Sticky Logo Image"
+msgstr ""
+
+#: customizer.php:1024
+msgid "4.7. Menu Position"
+msgstr ""
+
+#: customizer.php:1036
+msgid "4.8. Menu Container Width"
+msgstr ""
+
+#: customizer.php:1048
+msgid "4.9. Menu Container Height"
+msgstr ""
+
+#: customizer.php:1049
+msgid "min 35."
+msgstr ""
+
+#: customizer.php:1058
+msgid "4.10. Menu Container Left Padding"
+msgstr ""
+
+#: customizer.php:1068
+msgid "4.11. Menu Container Right Padding"
+msgstr ""
+
+#: customizer.php:1078
+msgid "4.12. Trigger Mobile Menu"
+msgstr ""
+
+#: customizer.php:1079
+msgid "Trigger mobile menu when window width is smaller than:"
+msgstr ""
+
+#: customizer.php:1088
+msgid "Clickable Parent Menu Items in Mobile Menu"
+msgstr ""
+
+#: customizer.php:1094
+msgid "4.13. Logo Position"
+msgstr ""
+
+#: customizer.php:1106
+msgid "4.14. Logo Height"
+msgstr ""
+
+#: customizer.php:1107
+msgid ""
+"Will be ignored if higher than \"Menu Container Height\" when \"Logo Position"
+"\" is \"Left\". Only used if a logo image is uploaded."
+msgstr ""
+
+#: customizer.php:1116
+msgid "4.15. Logo Top Padding"
+msgstr ""
+
+#: customizer.php:1117 customizer.php:1137 customizer.php:1283
+msgid "Only used if \"Logo Position\" is NOT \"Left\"."
+msgstr ""
+
+#: customizer.php:1126
+msgid "4.16. Logo Right Padding"
+msgstr ""
+
+#: customizer.php:1127
+msgid ""
+"Space between the logo and the menu. Only used if \"Logo Position\" is \"Left"
+"\"."
+msgstr ""
+
+#: customizer.php:1136
+msgid "4.17. Logo Bottom Padding"
+msgstr ""
+
+#: customizer.php:1146
+msgid "4.18. Sticky Header"
+msgstr ""
+
+#: customizer.php:1147
+msgid "Trigger sticky header when scroll position is higher than:"
+msgstr ""
+
+#: customizer.php:1156
+msgid "Sticky Header"
+msgstr ""
+
+#: customizer.php:1162
+msgid "4.19. Top Line Container Width"
+msgstr ""
+
+#: customizer.php:1174
+msgid "4.20. Tagline Options"
+msgstr ""
+
+#: customizer.php:1186
+msgid "4.21. Spot Messages"
+msgstr ""
+
+#: customizer.php:1187
+msgid ""
+"Only used if \"Show Spot Messages\" is selected. You can use <a href="
+"\"http://fortawesome.github.io/Font-Awesome/cheatsheet/\" target=\"_blank"
+"\">Font Awesome</a> here."
+msgstr ""
+
+#: customizer.php:1195
+msgid "Spot Message 1"
+msgstr ""
+
+#: customizer.php:1202
+msgid "Spot Message 2"
+msgstr ""
+
+#: customizer.php:1209
+msgid "Spot Message 3"
+msgstr ""
+
+#: customizer.php:1216
+msgid "Spot Message Duration"
+msgstr ""
+
+#: customizer.php:1217
+msgid "Theme default: \"4000\""
+msgstr ""
+
+#: customizer.php:1226
+msgid "4.22. Show/Hide"
+msgstr ""
+
+#: customizer.php:1235
+msgid "Padding Below Menu"
+msgstr ""
+
+#: customizer.php:1241
+msgid "Padding Below Top Line"
+msgstr ""
+
+#: customizer.php:1247
+msgid "Show Sticky Logo"
+msgstr ""
+
+#: customizer.php:1253 customizer.php:2261 customizer.php:2493
+msgid "Show Social Account Icons"
+msgstr ""
+
+#: customizer.php:1259
+msgid "Show Search"
+msgstr ""
+
+#: customizer.php:1265
+msgid "Show Header Menu"
+msgstr ""
+
+#: customizer.php:1271
+msgid "Top Line Text Color"
+msgstr ""
+
+#: customizer.php:1274
+msgid "Top Line Background Color"
+msgstr ""
+
+#: customizer.php:1277
+msgid "Transparent Top Line Background"
+msgstr ""
+
+#: customizer.php:1283
+msgid "Logo Background Color"
+msgstr ""
+
+#: customizer.php:1286
+msgid "Transparent Logo Background"
+msgstr ""
+
+#: customizer.php:1292
+msgid "Menu Background Color"
+msgstr ""
+
+#: customizer.php:1295
+msgid "Transparent Menu Background"
+msgstr ""
+
+#: customizer.php:1301
+msgid "Menu Border Color"
+msgstr ""
+
+#: customizer.php:1301
+msgid "Only used if \"Bordered Menu Container\" is checked."
+msgstr ""
+
+#: customizer.php:1304
+msgid "Bordered Menu Container"
+msgstr ""
+
+#: customizer.php:1310
+msgid "Menu Link Color"
+msgstr ""
+
+#: customizer.php:1313
+msgid "Menu Link Hover Color"
+msgstr ""
+
+#: customizer.php:1316
+msgid "Menu Level Background Color"
+msgstr ""
+
+#: customizer.php:1319
+msgid "Menu Level Link Color"
+msgstr ""
+
+#: customizer.php:1322
+msgid "Menu Level Link Hover Color"
+msgstr ""
+
+#: customizer.php:1325
+msgid "Header Menu Link Color"
+msgstr ""
+
+#: customizer.php:1328
+msgid "Header Menu Link Hover Color"
+msgstr ""
+
+#: customizer.php:1343
+msgid "5.1. Slide Image Width"
+msgstr ""
+
+#: customizer.php:1344
+msgid ""
+"Theme default: \"1200\"<br>Since the slider is responsive, display results "
+"may seem different. If you want to use \"Fullwidth\" option for instance, to "
+"set it 2560 and upload big images make sense.<br>Works for only new added "
+"images."
+msgstr ""
+
+#: customizer.php:1353
+msgid "5.2. Slide Image Height"
+msgstr ""
+
+#: customizer.php:1354
+msgid ""
+"Theme default: \"600\"<br>This value is fixed, not responsive.<br>Works for "
+"only new added images."
+msgstr ""
+
+#: customizer.php:1363
+msgid "5.3. Slider Position & View"
+msgstr ""
+
+#: customizer.php:1364
+msgid ""
+"When you choose \"Fullwidth\" for slider, it makes the container fullwidth, "
+"not the image. So, you should try to upload a bigger image or use a plugin "
+"like <a href=\"https://wordpress.org/plugins/regenerate-thumbnails/\" target="
+"\"_blank\">Regenerate Thumbnails</a> to resize the uploaded images if they "
+"are already big enough."
+msgstr ""
+
+#: customizer.php:1375
+msgid "5.4. Shortcode"
+msgstr ""
+
+#: customizer.php:1376
+msgid ""
+"Example usages:<br>Old Slider:<br>[bourzslider group=\"your_group\"]<br>New "
+"Slider:<br>[new_bourzslider group=\"your_group\"]"
+msgstr ""
+
+#: customizer.php:1382
+msgid "5.5. Slider Style"
+msgstr ""
+
+#: customizer.php:1394
+msgid "Center Text for Style B and C"
+msgstr ""
+
+#: customizer.php:1400
+msgid "5.6. Blog Posts in Slider"
+msgstr ""
+
+#: customizer.php:1409
+msgid "Show Blog Posts in Slider"
+msgstr ""
+
+#: customizer.php:1410
+msgid "Disables the shortcode if checked."
+msgstr ""
+
+#: customizer.php:1416
+msgid ""
+"Write a category slug to show the category posts in slider. Leave blank to "
+"show all posts. Only used if \"Show Blog Posts in Slider\" is checked."
+msgstr ""
+
+#: customizer.php:1422
+msgid ""
+"Number of the posts to show in slider:<br>Only used if \"Show Blog Posts in "
+"Slider\" is checked."
+msgstr ""
+
+#: customizer.php:1431
+msgid "Exclude the Slider Posts From Feed"
+msgstr ""
+
+#: customizer.php:1438
+msgid "5.7. Home View Options"
+msgstr ""
+
+#: customizer.php:1450
+msgid "5.8. Mobile Settings"
+msgstr ""
+
+#: customizer.php:1463
+msgid "5.9. Control Settings"
+msgstr ""
+
+#: customizer.php:1476
+msgid "Use Dark Bullets/Arrows"
+msgstr ""
+
+#: customizer.php:1482
+msgid "Use Rectangle Bullets"
+msgstr ""
+
+#: customizer.php:1488
+msgid "5.10. Pager Bullets Position"
+msgstr ""
+
+#: customizer.php:1489
+msgid "Only used if \"Show Pager Bullets\" or \"Show Both\" is selected."
+msgstr ""
+
+#: customizer.php:1500
+msgid "5.11. Autoplay Duration"
+msgstr ""
+
+#: customizer.php:1501
+msgid "Theme default: \"4000\"<br>Only used if \"Autoplay Slides\" is checked."
+msgstr ""
+
+#: customizer.php:1510 customizer.php:2080
+msgid "Autoplay Slides"
+msgstr ""
+
+#: customizer.php:1516
+msgid "5.12. Transition Effect"
+msgstr ""
+
+#: customizer.php:1527
+msgid "5.13. Show/Hide & Other Options"
+msgstr ""
+
+#: customizer.php:1536
+msgid "Show Post Dates"
+msgstr ""
+
+#: customizer.php:1543
+msgid "Show Post Comments Icon"
+msgstr ""
+
+#: customizer.php:1550 customizer.php:2390 customizer.php:2396
+msgid "Show Categories"
+msgstr ""
+
+#: customizer.php:1557 customizer.php:2364 customizer.php:2370
+msgid "Show Excerpt"
+msgstr ""
+
+#: customizer.php:1564
+msgid "Show Slider on Archive Pages"
+msgstr ""
+
+#: customizer.php:1570
+msgid "Show Slider on Post Pages"
+msgstr ""
+
+#: customizer.php:1576
+msgid "Infinite Loop"
+msgstr ""
+
+#: customizer.php:1577
+msgid ""
+"If checked, clicking \"Next\" while on the last slide will transition to the "
+"first slide and vice-versa."
+msgstr ""
+
+#: customizer.php:1583
+msgid "Start with a Random Slide"
+msgstr ""
+
+#: customizer.php:1589 customizer.php:1951 customizer.php:2152
+msgid "Header Color"
+msgstr ""
+
+#: customizer.php:1592
+msgid "Excerpt Color"
+msgstr ""
+
+#: customizer.php:1595
+msgid "Box Border Color"
+msgstr ""
+
+#: customizer.php:1609
+msgid "Box Color"
+msgstr ""
+
+#: customizer.php:1626
+msgid "6.1. Header Widget Columns"
+msgstr ""
+
+#: customizer.php:1627 customizer.php:1669 customizer.php:1711
+msgid "3 columns option is only used with layouts have no sidebar."
+msgstr ""
+
+#: customizer.php:1637
+msgid "Show Header Widgets"
+msgstr ""
+
+#: customizer.php:1643
+msgid "First Page Header Widgets"
+msgstr ""
+
+#: customizer.php:1644
+msgid "Shows header widgets only on the first page of pagination."
+msgstr ""
+
+#: customizer.php:1650
+msgid "Show Header Widgets on Pages"
+msgstr ""
+
+#: customizer.php:1656
+msgid "Show Header Widgets on Posts"
+msgstr ""
+
+#: customizer.php:1662
+msgid "Show Header Widgets on Archives"
+msgstr ""
+
+#: customizer.php:1668
+msgid "6.2. Upper Widget Columns"
+msgstr ""
+
+#: customizer.php:1679
+msgid "Show Upper Widgets"
+msgstr ""
+
+#: customizer.php:1685
+msgid "First Page Upper Widgets"
+msgstr ""
+
+#: customizer.php:1686
+msgid "Shows upper widgets only on the first page of pagination."
+msgstr ""
+
+#: customizer.php:1692
+msgid "Show Upper Widgets on Pages"
+msgstr ""
+
+#: customizer.php:1698
+msgid "Show Upper Widgets on Posts"
+msgstr ""
+
+#: customizer.php:1704
+msgid "Show Upper Widgets on Archives"
+msgstr ""
+
+#: customizer.php:1710
+msgid "6.3. Home Widget Columns"
+msgstr ""
+
+#: customizer.php:1721
+msgid "Show Home Widgets"
+msgstr ""
+
+#: customizer.php:1727
+msgid "First Page Home Widgets"
+msgstr ""
+
+#: customizer.php:1728
+msgid "Shows home widgets only on the first page of pagination."
+msgstr ""
+
+#: customizer.php:1734 customizer.php:1948 customizer.php:2240
+#: customizer.php:2293
+msgid "Background Color"
+msgstr ""
+
+#: customizer.php:1737 customizer.php:1972
+msgid "Bottom Shadow Color"
+msgstr ""
+
+#: customizer.php:1740 customizer.php:2296
+msgid "Title Color"
+msgstr ""
+
+#: customizer.php:1743 customizer.php:2299
+msgid "Headline Color"
+msgstr ""
+
+#: customizer.php:1746 customizer.php:2198 customizer.php:2302
+msgid "Button Background Color"
+msgstr ""
+
+#: customizer.php:1746 customizer.php:1749 customizer.php:2302
+#: customizer.php:2305
+msgid "Used for \"Tags/Categories Widget\" only."
+msgstr ""
+
+#: customizer.php:1749 customizer.php:2305
+msgid "Button Text Color"
+msgstr ""
+
+#: customizer.php:1752 customizer.php:1954 customizer.php:2308
+msgid "Content Color"
+msgstr ""
+
+#: customizer.php:1752 customizer.php:1755 customizer.php:1758
+#: customizer.php:1761 customizer.php:1764 customizer.php:2308
+#: customizer.php:2311 customizer.php:2314 customizer.php:2317
+#: customizer.php:2320
+msgid "Used for WP default widgets."
+msgstr ""
+
+#: customizer.php:1755 customizer.php:1960 customizer.php:2243
+#: customizer.php:2311
+msgid "Link Color"
+msgstr ""
+
+#: customizer.php:1758 customizer.php:1963 customizer.php:2246
+#: customizer.php:2314
+msgid "Link Hover Color"
+msgstr ""
+
+#: customizer.php:1761 customizer.php:1966 customizer.php:2317
+msgid "Input Background Color"
+msgstr ""
+
+#: customizer.php:1764 customizer.php:1969 customizer.php:2320
+msgid "Input Text Color"
+msgstr ""
+
+#: customizer.php:1770
+msgid "7.1. Container Width"
+msgstr ""
+
+#: customizer.php:1781
+msgid "7.2. Home Display Options"
+msgstr ""
+
+#: customizer.php:1796
+msgid "Show/Hide Specific Categories on Homepage"
+msgstr ""
+
+#: customizer.php:1797
+msgid ""
+"Write category IDs you want to show or hide. Use comma (,) between them."
+"<br>Example: 2,5,8"
+msgstr ""
+
+#: customizer.php:1813
+msgid "7.3. Archive Display Options"
+msgstr ""
+
+#: customizer.php:1828
+msgid "7.4. Listing Style Options"
+msgstr ""
+
+#: customizer.php:1829
+msgid ""
+"If the sum of Style A, B and Z is bigger than the number of posts per page, "
+"your settings will be ignored and all the posts will be shown in Style A."
+"<br><br>If the sum of Style A, B and Z is smaller than the number of posts "
+"per page, Style A will take effect to complete the count."
+msgstr ""
+
+#: customizer.php:1838
+msgid "Number of posts to show in \"Style A\":"
+msgstr ""
+
+#: customizer.php:1847
+msgid "Number of posts to show in \"Style B\":"
+msgstr ""
+
+#: customizer.php:1856
+msgid "Number of posts to show in \"Style Z\":"
+msgstr ""
+
+#: customizer.php:1864
+msgid "7.5. Listing Style Heights"
+msgstr ""
+
+#: customizer.php:1865
+msgid ""
+"If you have problems about equalizing the heights of your posts (homepage "
+"views), you can set a static size to make their heights equal."
+msgstr ""
+
+#: customizer.php:1874
+msgid "Minimum height for Style A item:"
+msgstr ""
+
+#: customizer.php:1883
+msgid "Minimum height for Style B item:"
+msgstr ""
+
+#: customizer.php:1891
+msgid "7.6. Sidebar Options"
+msgstr ""
+
+#: customizer.php:1900
+msgid "Show Sidebar on Standard Posts"
+msgstr ""
+
+#: customizer.php:1906
+msgid "Show Sidebar on Gallery Posts"
+msgstr ""
+
+#: customizer.php:1912
+msgid "Show Sidebar on Video Posts"
+msgstr ""
+
+#: customizer.php:1918
+msgid "Show Sidebar on Pages"
+msgstr ""
+
+#: customizer.php:1924
+msgid "Enable \"Sidebar - Archive\""
+msgstr ""
+
+#: customizer.php:1925 customizer.php:1932 customizer.php:1939
+msgid "Uncheck to use the default sidebar."
+msgstr ""
+
+#: customizer.php:1931
+msgid "Enable \"Sidebar - Page\""
+msgstr ""
+
+#: customizer.php:1938
+msgid "Enable \"Sidebar - Post\""
+msgstr ""
+
+#: customizer.php:1957 customizer.php:2201
+msgid "Secondary Content Color"
+msgstr ""
+
+#: customizer.php:1957
+msgid "Used for form headers etc."
+msgstr ""
+
+#: customizer.php:1975
+msgid "Post Page Title Area Background Color"
+msgstr ""
+
+#: customizer.php:1978
+msgid "Post Page Title Area Header Color"
+msgstr ""
+
+#: customizer.php:1981
+msgid "Post Page Title Area Secondary Content Color"
+msgstr ""
+
+#: customizer.php:1981
+msgid "Used for hits counter etc."
+msgstr ""
+
+#: customizer.php:1984
+msgid "Post Page Title Area Link Color"
+msgstr ""
+
+#: customizer.php:1987
+msgid "Post Page Title Area Link Hover Color"
+msgstr ""
+
+#: customizer.php:1990
+msgid "Post/Page Navigation Button Background Color"
+msgstr ""
+
+#: customizer.php:1993
+msgid "Post/Page Navigation Button Text Color"
+msgstr ""
+
+#: customizer.php:1999
+msgid "Show Featured Image on Post Pages"
+msgstr ""
+
+#: customizer.php:2005 customizer.php:2031 customizer.php:2089
+msgid "Show full post at Home Page"
+msgstr ""
+
+#: customizer.php:2011 customizer.php:2037 customizer.php:2095
+msgid "Show full post on Archive Pages"
+msgstr ""
+
+#: customizer.php:2017
+msgid "9.1. Featured Image Options"
+msgstr ""
+
+#: customizer.php:2043
+msgid "10.1. Featured Image Options"
+msgstr ""
+
+#: customizer.php:2055
+msgid "10.2. Gallery Position"
+msgstr ""
+
+#: customizer.php:2056
+msgid "Choose the gallery position on post page."
+msgstr ""
+
+#: customizer.php:2067
+msgid "10.3. Gallery Slider Settings"
+msgstr ""
+
+#: customizer.php:2068
+msgid ""
+"Video sliders will use these settings too but they can not have pager "
+"bullets."
+msgstr ""
+
+#: customizer.php:2101
+msgid "11.1. Featured Image Options"
+msgstr ""
+
+#: customizer.php:2116
+msgid "Show Related Posts"
+msgstr ""
+
+#: customizer.php:2122 customizer.php:2332 customizer.php:2338
+msgid "Show Date"
+msgstr ""
+
+#: customizer.php:2128
+msgid "12.1. Listing Style"
+msgstr ""
+
+#: customizer.php:2141
+msgid "12.2. Related Term"
+msgstr ""
+
+#: customizer.php:2155
+msgid "Date Color for Style A and B"
+msgstr ""
+
+#: customizer.php:2158
+msgid "Box Color for Style A and B"
+msgstr ""
+
+#: customizer.php:2186
+msgid "Show Post Comments"
+msgstr ""
+
+#: customizer.php:2192
+msgid "Show Page Comments"
+msgstr ""
+
+#: customizer.php:2201
+msgid "Used for date etc."
+msgstr ""
+
+#: customizer.php:2207
+msgid "14.1. Container Width"
+msgstr ""
+
+#: customizer.php:2218
+msgid "14.2. Copyright Text"
+msgstr ""
+
+#: customizer.php:2224
+msgid "14.3. Instagram Slider Widget"
+msgstr ""
+
+#: customizer.php:2225
+msgid "Instagram Widget Shortcode:"
+msgstr ""
+
+#: customizer.php:2231
+msgid "Instagram Widget Button Text:"
+msgstr ""
+
+#: customizer.php:2237
+msgid "Copyright Text Color"
+msgstr ""
+
+#: customizer.php:2249
+msgid "Show Footer"
+msgstr ""
+
+#: customizer.php:2255
+msgid "Show Footer Menu"
+msgstr ""
+
+#: customizer.php:2270
+msgid "15.1. Container Width"
+msgstr ""
+
+#: customizer.php:2281
+msgid "15.2. Widget Columns"
+msgstr ""
+
+#: customizer.php:2326
+msgid "Show Filter Bar on Archive Pages"
+msgstr ""
+
+#: customizer.php:2339 customizer.php:2352 customizer.php:2371
+#: customizer.php:2384 customizer.php:2397
+msgid "For indexed views like home, archives etc."
+msgstr ""
+
+#: customizer.php:2345 customizer.php:2351
+msgid "Show Comments Icon"
+msgstr ""
+
+#: customizer.php:2358
+msgid "Show Hit Counter"
+msgstr ""
+
+#: customizer.php:2377 customizer.php:2383
+msgid "Show Tags"
+msgstr ""
+
+#: customizer.php:2403
+msgid "Show Read More Button"
+msgstr ""
+
+#: customizer.php:2409
+msgid "Show Author"
+msgstr ""
+
+#: customizer.php:2415
+msgid "Show Author Box on Post Pages"
+msgstr ""
+
+#: customizer.php:2421
+msgid "Show Share Icons"
+msgstr ""
+
+#: customizer.php:2427
+msgid "Show Share Icons on Pages"
+msgstr ""
+
+#: customizer.php:2428 customizer.php:2435 customizer.php:2442
+#: customizer.php:2449
+msgid "Only used if \"Show Share Icons\" is checked."
+msgstr ""
+
+#: customizer.php:2434
+msgid "Show Facebook Share Icon"
+msgstr ""
+
+#: customizer.php:2441
+msgid "Show Twitter Share Icon"
+msgstr ""
+
+#: customizer.php:2448
+msgid "Show Google Share Icon"
+msgstr ""
+
+#: customizer.php:2455
+msgid "Show Bottom Lines"
+msgstr ""
+
+#: customizer.php:2461
+msgid "Show Widget Header Liners"
+msgstr ""
+
+#: customizer.php:2467
+msgid "Show 2px Border on Posts/Pages"
+msgstr ""
+
+#: customizer.php:2473
+msgid "16.1. Prev/Next Post Button Options"
+msgstr ""
+
+#: customizer.php:2484
+msgid "Show Border Around the Button"
+msgstr ""
+
+#: customizer.php:2499
+msgid "Facebook"
+msgstr ""
+
+#: customizer.php:2506
+msgid "Twitter"
+msgstr ""
+
+#: customizer.php:2513
+msgid "Instagram"
+msgstr ""
+
+#: customizer.php:2520
+msgid "Pinterest"
+msgstr ""
+
+#: customizer.php:2527
+msgid "Google+"
+msgstr ""
+
+#: customizer.php:2534
+msgid "Tumblr"
+msgstr ""
+
+#: customizer.php:2541
+msgid "Flickr"
+msgstr ""
+
+#: customizer.php:2548
+msgid "Digg"
+msgstr ""
+
+#: customizer.php:2555
+msgid "LinkedIn"
+msgstr ""
+
+#: customizer.php:2562
+msgid "Vimeo"
+msgstr ""
+
+#: customizer.php:2569
+msgid "YouTube"
+msgstr ""
+
+#: customizer.php:2576
+msgid "Behance"
+msgstr ""
+
+#: customizer.php:2583
+msgid "Dribbble"
+msgstr ""
+
+#: customizer.php:2590
+msgid "DeviantArt"
+msgstr ""
+
+#: customizer.php:2597
+msgid "Github"
+msgstr ""
+
+#: customizer.php:2604
+msgid "Bloglovin"
+msgstr ""
+
+#: customizer.php:2611
+msgid "Last.fm"
+msgstr ""
+
+#: customizer.php:2618
+msgid "SoundCloud"
+msgstr ""
+
+#: customizer.php:2625
+msgid "VK"
+msgstr ""
+
+#: customizer.php:2635
+msgid "Choose a Page"
+msgstr ""
+
+#: customizer.php:2641
+msgid "Coordinate N"
+msgstr ""
+
+#: customizer.php:2647
+msgid "Coordinate E"
+msgstr ""
+
+#: customizer.php:2664
+msgid "Map Height"
+msgstr ""
+
+#: customizer.php:2673
+msgid "Show Map"
+msgstr ""
+
+#: customizer.php:2679
+msgid "Enable Map API Key"
+msgstr ""
+
+#: customizer.php:2685
+msgid "API Key"
+msgstr ""
+
+#: customizer.php:2686
+msgid "Only used if \"Enable Map API Key\" is checked."
+msgstr ""
+
+#: customizer.php:2705
+msgid "19.1. Site Language"
+msgstr ""
+
+#: customizer.php:2706
+msgid "Original: \""
+msgstr ""
+
+#: customizer.php:2712
+msgid "19.2. Wording"
+msgstr ""
+
+#: customizer.php:2713
+msgid "Original: \"PAGE NOT FOUND\""
+msgstr ""
+
+#: customizer.php:2719
+msgid "Original: \"NOTHING FOUND\""
+msgstr ""
+
+#: customizer.php:2725
+msgid "Original: \"Search Results\""
+msgstr ""
+
+#: customizer.php:2731
+msgid "Original: \"PAGE\""
+msgstr ""
+
+#: customizer.php:2737
+msgid "Original: \"Tag\""
+msgstr ""
+
+#: customizer.php:2743
+msgid "Original: \"Category\""
+msgstr ""
+
+#: customizer.php:2749
+msgid "Original: \"Author\""
+msgstr ""
+
+#: customizer.php:2755
+msgid "Original: \"Archives\""
+msgstr ""
+
+#: customizer.php:2761
+msgid "Original: \"OLDER POSTS\""
+msgstr ""
+
+#: customizer.php:2767
+msgid "Original: \"NEWER POSTS\""
+msgstr ""
+
+#: customizer.php:2773
+msgid "Original: \"By\""
+msgstr ""
+
+#: customizer.php:2779
+msgid "Original: \"BACK TO TOP\""
+msgstr ""
+
+#: customizer.php:2785
+msgid "Original: \"Type keyword to search\""
+msgstr ""
+
+#: customizer.php:2791
+msgid "Original: \"READ MORE\""
+msgstr ""
+
+#: customizer.php:2797
+msgid "Original: \"SHARE\""
+msgstr ""
+
+#: customizer.php:2803
+msgid "Original: \"Views\""
+msgstr ""
+
+#: customizer.php:2809
+msgid "Original: \"STICKY\""
+msgstr ""
+
+#: customizer.php:2815
+msgid "Original: \"COMMENT\""
+msgstr ""
+
+#: customizer.php:2821
+msgid "Original: \"COMMENTS\""
+msgstr ""
+
+#: customizer.php:2827
+msgid "Original: \"NAME\""
+msgstr ""
+
+#: customizer.php:2833
+msgid "Original: \"E-MAIL\""
+msgstr ""
+
+#: customizer.php:2839
+msgid "Original: \"WEBSITE\""
+msgstr ""
+
+#: customizer.php:2845
+msgid "Original: \"YOU MUST BE LOGGED IN TO POST A COMMENT\""
+msgstr ""
+
+#: customizer.php:2851
+msgid "Original: \"LOGGED IN\""
+msgstr ""
+
+#: customizer.php:2857
+msgid "Original: \"LOG OUT\""
+msgstr ""
+
+#: customizer.php:2863
+msgid "Original: \"LEAVE A REPLY\""
+msgstr ""
+
+#: customizer.php:2869
+msgid "Original: \"CANCEL REPLY\""
+msgstr ""
+
+#: customizer.php:2875
+msgid "Original: \"Post Comment\""
+msgstr ""
+
+#: customizer.php:2881
+msgid "Original: \"at\""
+msgstr ""
+
+#: customizer.php:2887
+msgid "Original: \"REPLY\""
+msgstr ""
+
+#: customizer.php:2893
+msgid "Original: \"EDIT\""
+msgstr ""
+
+#: customizer.php:2899
+msgid "Original: \"COMMENT AWAITING APPROVAL\""
+msgstr ""
+
+#: customizer.php:2905
+msgid "Original: \"About\""
+msgstr ""
+
+#: customizer.php:2911
+msgid "Original: \"View All Posts by Author\""
+msgstr ""
+
+#: customizer.php:2917
+msgid "Original: \"Visit Author Website\""
+msgstr ""
+
+#: customizer.php:2926
+msgid "20.0. Responsive Options"
+msgstr ""
+
+#: customizer.php:2940
+msgid "20.1. Banner 1"
+msgstr ""
+
+#: customizer.php:2946 customizer.php:2983 customizer.php:3020
+#: customizer.php:3057 customizer.php:3094
+msgid "Choose a Position"
+msgstr ""
+
+#: customizer.php:2948
+msgid "Choose the placement for \"Banner 1\""
+msgstr ""
+
+#: customizer.php:2952 customizer.php:2989 customizer.php:3026
+#: customizer.php:3063 customizer.php:3100
+msgid "Responsive?"
+msgstr ""
+
+#: customizer.php:2963
+msgid "Show \"Banner 1\" on Archive Pages"
+msgstr ""
+
+#: customizer.php:2970
+msgid "Show \"Banner 1\" on Post Pages"
+msgstr ""
+
+#: customizer.php:2971 customizer.php:3008 customizer.php:3045
+#: customizer.php:3082 customizer.php:3119
+msgid ""
+"The checkboxes above are only used if \"Above Slider\" or \"Below Slider\" "
+"is selected."
+msgstr ""
+
+#: customizer.php:2977
+msgid "20.2. Banner 2"
+msgstr ""
+
+#: customizer.php:2985
+msgid "Choose the placement for \"Banner 2\""
+msgstr ""
+
+#: customizer.php:3000
+msgid "Show \"Banner 2\" on Archive Pages"
+msgstr ""
+
+#: customizer.php:3007
+msgid "Show \"Banner 2\" on Post Pages"
+msgstr ""
+
+#: customizer.php:3014
+msgid "20.3. Banner 3"
+msgstr ""
+
+#: customizer.php:3022
+msgid "Choose the placement for \"Banner 3\""
+msgstr ""
+
+#: customizer.php:3037
+msgid "Show \"Banner 3\" on Archive Pages"
+msgstr ""
+
+#: customizer.php:3044
+msgid "Show \"Banner 3\" on Post Pages"
+msgstr ""
+
+#: customizer.php:3051
+msgid "20.4. Banner 4"
+msgstr ""
+
+#: customizer.php:3059
+msgid "Choose the placement for \"Banner 4\""
+msgstr ""
+
+#: customizer.php:3074
+msgid "Show \"Banner 4\" on Archive Pages"
+msgstr ""
+
+#: customizer.php:3081
+msgid "Show \"Banner 4\" on Post Pages"
+msgstr ""
+
+#: customizer.php:3088
+msgid "20.5. Banner 5"
+msgstr ""
+
+#: customizer.php:3096
+msgid "Choose the placement for \"Banner 5\""
+msgstr ""
+
+#: customizer.php:3111
+msgid "Show \"Banner 5\" on Archive Pages"
+msgstr ""
+
+#: customizer.php:3118
+msgid "Show \"Banner 5\" on Post Pages"
+msgstr ""
+
+#: customizer.php:3125
+msgid "20.6. Header Banner"
+msgstr ""
+
+#: customizer.php:3131
+msgid "Show Header Banner"
+msgstr ""
+
+#: customizer.php:3132
+msgid "Note: 4. Header > 4.13. Logo Position must be \"Top\" or \"Bottom\"."
+msgstr ""
+
+#: functions.php:117
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:118
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:119
+msgid "Header Menu"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:349
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:355
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:361
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:367
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:378
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:383
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:388
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:393
+#: lib/class-tgm-plugin-activation.php:912
+#: lib/class-tgm-plugin-activation.php:2618
+#: lib/class-tgm-plugin-activation.php:3665
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:394
+#: lib/class-tgm-plugin-activation.php:3244
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:395
+#: lib/class-tgm-plugin-activation.php:3037
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:607
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:608
+msgid "Update Required"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:1019
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:1019
+#: lib/class-tgm-plugin-activation.php:1022
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:1022
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:1206
+#: lib/class-tgm-plugin-activation.php:3033
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2067
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2358
+msgid "Required"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2361
+msgid "Recommended"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2377
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2380
+msgid "External Source"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2383
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2400
+msgid "Not Installed"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2404
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2406
+msgid "Active"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2412
+msgid "Required Update not Available"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2415
+msgid "Requires Update"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2418
+msgid "Update recommended"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2427
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2473
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2477
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2481
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2485
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2567
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2575
+msgid "Installed version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2583
+msgid "Minimum required version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2595
+msgid "Available version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2618
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2632
+msgid "Plugin"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2633
+msgid "Source"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2634
+msgid "Type"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2638
+msgid "Version"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2639
+msgid "Status"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2688
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2693
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2699
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2769
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2802
+msgid "Install"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2808
+msgid "Update"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2811
+msgid "Activate"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2842
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2844
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2885
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2887
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2993
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3019
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3243
+msgid "Plugin activation failed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3583
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3586
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3588
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3592
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3594
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3594
+#: lib/class-tgm-plugin-activation.php:3602
+msgid "Show Details"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3594
+#: lib/class-tgm-plugin-activation.php:3602
+msgid "Hide Details"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3595
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3597
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3600
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3602
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3603
+msgid "All installations have been completed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3605
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: woocommerce/product-searchform.php:29
+msgctxt "placeholder"
+msgid "Search Products&hellip;"
+msgstr ""
+
+#: woocommerce/product-searchform.php:29
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:24
+#, php-format
+msgid "%s review for %s"
+msgid_plural "%s reviews for %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product-reviews.php:26
+msgid "Reviews"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:47
+msgid "There are no reviews yet."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:60
+msgid "Add a review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:60
+msgid "Be the first to review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:61
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:65
+msgid "Name"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:67
+msgid "Email"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:70
+msgid "Submit"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:76
+msgid "Your Rating"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:77
+msgid "Rate&hellip;"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:78
+msgid "Perfect"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:79
+msgid "Good"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:80
+msgid "Average"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:81
+msgid "Not that bad"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:82
+msgid "Very Poor"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:86
+msgid "Your Review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:95
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: woocommerce/single-product/meta.php:31
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:31
+msgid "N/A"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:37
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/meta.php:41
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/review.php:40
+msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: woocommerce/single-product/review.php:51
+msgid "verified owner"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Bourz"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.burnhambox.com/bourz"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Life, Entertainment & Fashion Blog Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Burnhambox"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.burnhambox.com"
+msgstr ""

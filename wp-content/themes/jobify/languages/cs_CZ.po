@@ -1,0 +1,2200 @@
+# Translation of Jobify in Czech
+# This file is distributed under the same license as the Jobify package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-05-25 16:26:31+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: GlotPress/2.3.1\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Jobify\n"
+
+#: job_manager/job-application.php:18 job_manager/job-application.php:22
+msgid "Apply for job"
+msgstr "Ucházet se o práci"
+
+#: inc/widgets/class-widget.php:224
+msgid "Clear"
+msgstr "Vymazat"
+
+#: inc/widgets/class-widget.php:224
+msgid "Choose an Image"
+msgstr "Vyberte obrázek"
+
+#: inc/widgets/class-widget.php:224
+msgid "Use Image"
+msgstr "Použít obrázek"
+
+#: inc/template/class-template-navigation.php:112
+msgid "Guest"
+msgstr "Host"
+
+#: inc/listing/template-tags.php:470
+msgid "Anywhere"
+msgstr "Kdekoli"
+
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:107
+msgid "%1$s for %2$s job"
+msgid_plural "%1$s for %2$s jobs"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-map.php:40
+msgid "%1$s - %2$s"
+msgstr "%1$s, %2$s"
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:54
+msgid "Slides per page:"
+msgstr "Slidery na stránku:"
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:46
+msgid "Randomize testimonials"
+msgstr "Náhodné reference"
+
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:45
+msgid "Automatically rotate company logos."
+msgstr "Automatické otáčení firemních log."
+
+#. Translators: %1$s: Job title. %2$s: Company name.
+#: content-single-job-featured.php:22
+#: inc/integrations/wp-job-manager/class-wp-job-manager-map.php:35
+msgid "%1$s at %2$s"
+msgstr "%1$s v %2$s"
+
+#: inc/customizer/helper-functions.php:80
+msgctxt "customizer section title"
+msgid "Inputs"
+msgstr "Vstupy"
+
+#: inc/customizer/helper-functions.php:79
+msgctxt "customizer section title"
+msgid "Buttons"
+msgstr "Tlačítka"
+
+#: inc/customizer/helper-functions.php:78
+msgctxt "customizer section title"
+msgid "Homepage Widget Descriptions"
+msgstr ""
+
+#: inc/customizer/helper-functions.php:77
+msgctxt "customizer section title"
+msgid "Homepage Widget Titles"
+msgstr ""
+
+#: inc/customizer/helper-functions.php:76
+msgctxt "customizer section title"
+msgid "Widget Titles"
+msgstr ""
+
+#: inc/customizer/helper-functions.php:75
+msgctxt "customizer section title"
+msgid "Blog Post Titles"
+msgstr "Titulek příspěvku blogu"
+
+#: inc/customizer/helper-functions.php:74
+msgctxt "customizer section title"
+msgid "Page Headers"
+msgstr "Záhlaví"
+
+#: inc/customizer/helper-functions.php:73
+msgctxt "customizer section title"
+msgid "Global"
+msgstr "Obecné"
+
+#: inc/customizer/definitions/sections/typography-font-pack.php:14
+msgctxt "customizer section title"
+msgid "Font Pack"
+msgstr "Písmo"
+
+#: inc/customizer/definitions/sections/nav-menu-settings.php:14
+msgctxt "customizer section title"
+msgid "Settings"
+msgstr "Nastavení"
+
+#: inc/customizer/definitions/sections/color-scheme.php:13
+msgctxt "customizer section title (colors)"
+msgid "Scheme"
+msgstr "Schéma"
+
+#: inc/customizer/definitions/panels/typography.php:14
+msgctxt "customizer panel title"
+msgid "Typography"
+msgstr "Typografie"
+
+#: inc/customizer/definitions/controls/typography-font-pack.php:21
+msgctxt "customizer control title"
+msgid "Font Pack"
+msgstr "Písmo"
+
+#: inc/customizer/definitions/controls/color-scheme.php:21
+msgctxt "customizer control title"
+msgid "Color Scheme"
+msgstr "Barevné schéma"
+
+#: vendor/astoundify/theme-customizer/app/customize/termmetasetting.php:174
+msgid "Expected array value for non-single \"%s\" meta."
+msgstr ""
+
+#: vendor/astoundify/theme-customizer/app/control/typography.php:134
+msgid "Only affects large-screen devices"
+msgstr "Ovlivňuje pouze zařízení s velkou obrazovkou"
+
+#: vendor/astoundify/theme-customizer/app/control/termmeta/color.php:66
+msgid "Remove"
+msgstr "Odstranit"
+
+#: inc/template/class-template-page-templates.php:152
+#: inc/template/class-template-page-templates.php:165
+#: inc/template/class-template-page-templates.php:178
+#: inc/template/class-template-page-templates.php:191
+#: inc/template/class-template-page-templates.php:204
+msgid "You are currently editing the page that has automatically generated content."
+msgstr "Právě upravujete stránku, která má automaticky generovaný obsah."
+
+#: inc/template/class-template-page-templates.php:126
+#: inc/template/class-template-page-templates.php:139
+msgid "Manage Widgets"
+msgstr "Spravovat widgety"
+
+#: inc/template/class-template-page-templates.php:126
+#: inc/template/class-template-page-templates.php:139
+msgid "You are currently editing the page that is managed by widgets."
+msgstr "Právě upravujete stránku, která je spravována widgety."
+
+#: inc/customizer/helper-functions.php:59
+msgid "Line Height"
+msgstr "Výška řádku"
+
+#: inc/customizer/helper-functions.php:55
+msgid "Bold"
+msgstr "Tučné"
+
+#: inc/customizer/helper-functions.php:54
+msgid "Normal"
+msgstr "Normální"
+
+#: inc/customizer/helper-functions.php:52
+msgid "Font Weight"
+msgstr "Tloušťka písma"
+
+#: inc/customizer/helper-functions.php:49
+msgid "Font Size"
+msgstr "Velikost písma"
+
+#: inc/customizer/helper-functions.php:46
+msgid "Search for a font..."
+msgstr "Vyhledat font..."
+
+#: inc/customizer/helper-functions.php:45
+msgid "Font Family"
+msgstr "Název fontu (font family)"
+
+#: inc/customizer/definitions/controls/nav-menu-primary-width.php:18
+msgid "Mobile Menu Trigger Width"
+msgstr ""
+
+#: inc/customizer/definitions/controls/header_textcolor.php:14
+msgid "Header Text"
+msgstr "Text záhlaví"
+
+#: inc/customizer/definitions/controls/color-navigation-text.php:21
+msgid "Navigation Text"
+msgstr "Text navigace"
+
+#: inc/customizer/definitions/control-groups/typography-font-pack.php:9
+msgid "Default"
+msgstr "Výchozí nastavení"
+
+#: inc/customizer/definitions/control-groups/color-scheme.php:32
+msgid "Dark Blue"
+msgstr "Tmavě modrá"
+
+#: vendor/astoundify/theme-customizer/examples/definitions/controls/site.php:20
+msgctxt "customizer control title"
+msgid "Site"
+msgstr "Stránka"
+
+#: index.php:13
+msgctxt "blog page title"
+msgid "Blog"
+msgstr "Blog"
+
+#: inc/template/class-template-comments.php:44
+msgctxt "on 1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template/class-template-comments.php:39
+msgctxt "comment author \"on\" date"
+msgid "on"
+msgstr "dne"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:165
+msgctxt "company description on submission form"
+msgid "Description"
+msgstr "Popis"
+
+#: inc/integrations/woocommerce/customizer/definitions/sections/accounts.php:13
+msgctxt "customizer section title"
+msgid "Accounts"
+msgstr "Účty"
+
+#: inc/integrations/wp-job-manager-resumes/customizer/definitions/sections/resumes.php:13
+msgctxt "customizer section title (colors)"
+msgid "Resumes"
+msgstr "Životopisy"
+
+#: inc/integrations/wp-job-manager/customizer/definitions/sections/jobs.php:13
+msgctxt "customizer section title (colors)"
+msgid "Jobs"
+msgstr "Pracovní místa"
+
+#: inc/customizer/definitions/sections/map-settings.php:13
+msgctxt "customizer section title (colors)"
+msgid "Map Settings"
+msgstr "Nastavení mapy"
+
+#: inc/customizer/definitions/sections/colors-header.php:13
+msgctxt "customizer section title (colors)"
+msgid "Header/Navigation"
+msgstr "Záhlaví a navigace"
+
+#: inc/customizer/definitions/sections/colors-global.php:13
+msgctxt "customizer section title (colors)"
+msgid "Global"
+msgstr "Obecné"
+
+#: inc/customizer/definitions/sections/colors-footer-widgets.php:13
+msgctxt "customizer section title (colors)"
+msgid "Footer Widgets"
+msgstr "Widgety v patičce"
+
+#: inc/customizer/definitions/sections/colors-cta.php:13
+#: inc/customizer/definitions/sections/footer-cta.php:13
+msgctxt "customizer section title (colors)"
+msgid "Call to Action"
+msgstr "Výzva k akci"
+
+#: inc/customizer/definitions/sections/colors-copyright.php:13
+#: inc/customizer/definitions/sections/footer-copyright.php:13
+msgctxt "customizer section title (colors)"
+msgid "Copyright"
+msgstr "Autorská práva"
+
+#: inc/integrations/wp-job-manager/customizer/definitions/panels/jobs-resumes.php:15
+msgctxt "customizer panel title"
+msgid "Jobs/Resumes"
+msgstr "Pracovní místa/Životopisy"
+
+#: inc/integrations/wp-job-manager/customizer/definitions/panels/jobs-resumes.php:12
+msgctxt "customizer panel title"
+msgid "Jobs"
+msgstr "Pracovní místa"
+
+#: inc/customizer/definitions/sections/title_tagline.php:14
+msgctxt "customizer panel title"
+msgid "Site Logo & Header"
+msgstr "Logo webu & záhlaví"
+
+#: inc/customizer/definitions/sections/static_front_page.php:15
+msgctxt "customizer panel title"
+msgid "Homepage Display"
+msgstr "Zobrazení výchozí domovské stránky"
+
+#: inc/customizer/definitions/panels/general.php:13
+msgctxt "customizer panel title"
+msgid "General"
+msgstr "Všeobecné"
+
+#: inc/customizer/definitions/panels/footer.php:13
+msgctxt "customizer panel title"
+msgid "Footer"
+msgstr "Patička"
+
+#: inc/customizer/definitions/panels/colors.php:13
+msgctxt "customizer panel title"
+msgid "Colors"
+msgstr "Barvy"
+
+#: comments.php:23
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: archive.php:19
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "R"
+
+#: archive.php:17
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Page: Testimonials"
+msgstr "Stránka: Reference"
+
+#. Template Name of the plugin/theme
+msgid "Page: Widgetized"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Layout: Single Column"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Jobs: Pricing Plans"
+msgstr "Pracovní místa: Zobrazení plánů a cen"
+
+#. Template Name of the plugin/theme
+msgid "Resumes: Pricing Plans"
+msgstr "Životopisy:Zobrazení plánů a cen"
+
+#. Template Name of the plugin/theme
+msgid "Layout: Sidebar"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Resumes: Map & Results"
+msgstr "Životopisy: Mapa & výsledky"
+
+#. Template Name of the plugin/theme
+msgid "Jobs: Map & Results"
+msgstr "Zaměstnání: Mapa & výsledky"
+
+#. Template Name of the plugin/theme
+msgid "Page: Home"
+msgstr "Stánka: Home"
+
+#. Author of the plugin/theme
+msgid "Astoundify"
+msgstr "Astoundify"
+
+#. Description of the plugin/theme
+msgid "Everything you need to build a professional job board."
+msgstr "Vše, co potřebujete k vytvoření profesionálního inzertního portálu."
+
+#. Author URI of the plugin/theme
+msgid "http://themeforest.net/item/jobify-wordpress-job-board-theme/5247604?ref=Astoundify"
+msgstr "http://themeforest.net/item/jobify-wordpress-job-board-theme/5247604?ref=Astoundify"
+
+#. Theme Name of the plugin/theme
+msgid "Jobify"
+msgstr "Jobify"
+
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:64
+msgid "Unable to read content files. Please add <code>define( \"FS_METHOD\", \"direct\" );</code> to your <code>wp-config.php</code> file."
+msgstr "Nelze číst soubory s obsahem. Prosím, přidejte <code>define( \"FS_METHOD\", \"direct\" );</code> na vašeho <code>wp-config.php</code> souboru."
+
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:57
+msgid "Reset Complete"
+msgstr "Obnovení dokončeno"
+
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:51
+msgid "Comments"
+msgstr "Komentáře"
+
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:51
+msgid "Comment"
+msgstr "Komentář"
+
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:48
+msgid "Contents"
+msgstr "Obsah"
+
+#: single-company.php:18
+msgid "%d Job Available"
+msgid_plural "%d Jobs Available"
+msgstr[0] "%d Pracovní místo k dispozici"
+msgstr[1] "%d Pracovní místa k dispozici"
+msgstr[2] "%d Pracovní místa k dispozici"
+
+#: single-company.php:16
+msgid "Jobs at %s"
+msgstr "Pracovní nabídky na %s"
+
+#: sidebar-single-resume-top.php:70
+msgid "Candidate Details"
+msgstr "Detaily o kandidátoví"
+
+#: sidebar-single-resume-top.php:55
+msgid "Candidate Resume"
+msgstr "Životopis kandidáta"
+
+#: sidebar-single-resume-top.php:49
+msgid "Candidate Skills"
+msgstr "Dovednosti kandidáta"
+
+#: sidebar-single-resume-top.php:44
+msgid "Share Resume"
+msgstr "Sdílet životopis"
+
+#: sidebar-single-job_listing.php:35 single-company.php:63
+msgid "Company Social"
+msgstr "Společnost na sociálních sítích"
+
+#: sidebar-single-job_listing-top.php:70
+msgid "Company Details"
+msgstr "Podrobnosti o zaměstnavateli"
+
+#: sidebar-single-job_listing-top.php:55
+msgid "Share This"
+msgstr "Sdílet"
+
+#: sidebar-single-job_listing-top.php:49
+msgid "Tags"
+msgstr "Tagy"
+
+#: sidebar-shop.php:21
+msgid "Recent Products"
+msgstr "Nové produkty"
+
+#: searchform-header.php:12 searchform.php:12
+#: woocommerce/product-searchform.php:26
+msgid "Keywords..."
+msgstr "Klíčová slova..."
+
+#: searchform-header.php:11 searchform.php:11
+#: woocommerce/product-searchform.php:25
+msgid "Search for"
+msgstr "Vyhledávání"
+
+#: resume-filters-flat.php:28
+msgid "Any Location"
+msgstr "Jakákoli poloha"
+
+#: job-filters-flat.php:54 resume-filters-flat.php:38
+msgid "Any category"
+msgstr "Jakákoli kategorie"
+
+#: job-filters-flat.php:50 resume-filters-flat.php:34
+#: sidebar-single-job_listing-top.php:44
+msgid "Category"
+msgstr "Kategorie"
+
+#: job-filters-flat.php:43 job-filters-flat.php:44 resume-filters-flat.php:27
+msgid "Location"
+msgstr "Poloha"
+
+#: job-filters-flat.php:38 job-filters-flat.php:39 resume-filters-flat.php:22
+msgid "Keywords"
+msgstr "Klíčová slova"
+
+#: inc/widgets/class-widgets.php:82
+msgid "Drag multiple \"Price Option\" widgets here. Then drag the \"Pricing Table\" widget to the \"Homepage Widget Area\"."
+msgstr "Sem přetáhněte vícečetné \"Volba ceny\" widgety. Pak přetáhněte widget \"Cenové tabulky\" do oblasti \"Widget Domovská stránka\"."
+
+#: inc/widgets/class-widgets.php:80
+msgid "Price Table"
+msgstr "Tabulka cen"
+
+#: inc/widgets/class-widgets.php:58
+msgid "Choose what should display in this footer widget column."
+msgstr ""
+
+#: inc/widgets/class-widgets.php:56
+msgid "Footer Widget Area Column %d"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:47
+msgid "Choose what should display on the custom static homepage."
+msgstr ""
+
+#: inc/widgets/class-widgets.php:45
+msgid "Homepage Widget Area"
+msgstr ""
+
+#: inc/widgets/class-widgets.php:37
+msgid "Choose what should display on blog pages."
+msgstr ""
+
+#: inc/widgets/class-widgetized-pages.php:34
+msgid "Widgets that appear on the \"%s\" page."
+msgstr ""
+
+#: inc/widgets/class-widgetized-pages.php:33
+msgid "Page: %s"
+msgstr "Stránka %s"
+
+#: inc/widgets/class-widget.php:119
+msgid "Only for use in the <strong>%s</strong> widget area."
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-video.php:36
+msgid "Video URL:"
+msgstr "URL videa :"
+
+#: inc/widgets/_widgets/class-widget-video.php:24
+msgid "How it Works"
+msgstr "Jak to funguje"
+
+#: inc/widgets/_widgets/class-widget-video.php:16
+msgid "Jobify - Page: Video"
+msgstr "Jobify - stránka: Video"
+
+#: inc/widgets/_widgets/class-widget-video.php:14
+msgid "Display a video via oEmbed with a title and description."
+msgstr "Zobrazte video prostřednictvím oEmbed s názvem a popisem."
+
+#: inc/widgets/_widgets/class-widget-stats.php:139
+msgid "Member"
+msgid_plural "Members"
+msgstr[0] "Člen"
+msgstr[1] "Členové"
+msgstr[2] "Členové"
+
+#: inc/widgets/_widgets/class-widget-stats.php:136
+msgid "Company"
+msgid_plural "Companies"
+msgstr[0] "Společnost"
+msgstr[1] "Společnosti"
+msgstr[2] "Společnosti"
+
+#: inc/widgets/_widgets/class-widget-stats.php:133
+msgid "Job Filled"
+msgid_plural "Jobs Filled"
+msgstr[0] "Pozice obsazena"
+msgstr[1] "Pozice obsazeny"
+msgstr[2] "Pozice obsazeny"
+
+#: inc/widgets/_widgets/class-widget-stats.php:130
+msgid "Resume Posted"
+msgid_plural "Resumes Posted"
+msgstr[0] "Vložený životopis"
+msgstr[1] "Vložené životopisy"
+msgstr[2] "Vložené životopisy"
+
+#: inc/widgets/_widgets/class-widget-stats.php:127
+msgid "Job Posted"
+msgid_plural "Jobs Posted"
+msgstr[0] "Pracovní místo vloženo"
+msgstr[1] "Pracovní místa vložena"
+msgstr[2] "Pracovní místa vložena"
+
+#: inc/widgets/_widgets/class-widget-stats.php:39
+msgid "Users"
+msgstr "Uživatelé"
+
+#: inc/widgets/_widgets/class-widget-stats.php:38
+msgid "Companies"
+msgstr "Společnosti"
+
+#: inc/widgets/_widgets/class-widget-stats.php:37
+msgid "Positions Filled"
+msgstr "Obsazené pozice"
+
+#: inc/widgets/_widgets/class-widget-stats.php:33
+msgid "Stats to Show:"
+msgstr "Statistiky k zobrazení:"
+
+#: inc/widgets/_widgets/class-widget-stats.php:21
+msgid "Site Stats"
+msgstr "Statistiky stránek"
+
+#: inc/widgets/_widgets/class-widget-stats.php:13
+msgid "Jobify - Page: Stats"
+msgstr "Jobify -Stránka: Statistiky"
+
+#: inc/widgets/_widgets/class-widget-stats.php:11
+msgid "Display useful statistics about your website."
+msgstr "Zobrazit užitečné statistiky o vašem webu."
+
+#: inc/widgets/_widgets/class-widget-slider-generic.php:25
+msgid "Slider Shortcode"
+msgstr "Slider | Kódová zkratka"
+
+#: inc/widgets/_widgets/class-widget-slider-generic.php:16
+msgid "Jobify - Page: Slider"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-slider-generic.php:14
+msgid "Display any slider that supports shortcodes."
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-price-table.php:32
+msgid "Drag \"Price Option\" widgets to the \"Price Table\" widget area to populate this widget."
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-price-table.php:11
+msgid "Output the price table (based on the \"Price Table\" widget area)"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-price-option.php:23
+msgid "Color:"
+msgstr "Barva (Color)"
+
+#: inc/widgets/_widgets/class-widget-price-option.php:17
+msgid "Basic Listing"
+msgstr "Základní"
+
+#: inc/widgets/_widgets/class-widget-price-option.php:13
+msgid "Jobify - Page: Price Option"
+msgstr "Jobify - Stránka: Volby ceny"
+
+#: inc/widgets/_widgets/class-widget-price-option.php:11
+msgid "Create a price option for the pricing table."
+msgstr "Vytvořte možnost ceny pro tabulku cen."
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:127
+msgid "Image:"
+msgstr "Obrázek:"
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:121
+msgid "Content:"
+msgstr "Obsah:"
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:100
+msgid "Center (cover only)"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:99
+msgid "Right"
+msgstr "Vpravo"
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:98
+msgid "Left"
+msgstr "Vlevo"
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:96
+msgid "Text Align:"
+msgstr "Zarovnání textu:"
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:86
+msgid "Height:"
+msgstr "Výška:"
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:76
+msgid "Overlay Transparency"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:68
+msgid "Transparent Overlay"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:66
+msgid "Right Gradient"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:65
+msgid "Left Gradient"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:64
+msgid "Full Overlay"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:63
+msgid "None"
+msgstr "Nic"
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:30
+msgid "Pull Out"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:29
+msgid "Cover"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:27
+msgid "Image Style:"
+msgstr "Styl obrázků:"
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:15
+msgid "Jobify - Page: Feature Callout"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-feature-callout.php:12
+msgid "Display a full-width \"feature\" callout"
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-callout.php:36
+msgid "Button URL:"
+msgstr "URL tlačítka:"
+
+#: inc/widgets/_widgets/class-widget-callout.php:31
+msgid "Button Label:"
+msgstr "Popisek tlačítka:"
+
+#: inc/widgets/_widgets/class-widget-callout.php:16
+msgid "Jobify - Page: Callout"
+msgstr "Jobify-Stránka: Výzva"
+
+#: inc/widgets/_widgets/class-widget-callout.php:14
+msgid "Display call-out area with a bit of text and a button."
+msgstr ""
+
+#: inc/widgets/_widgets/class-widget-blog-posts.php:36
+msgid "Number to show:"
+msgstr "Počet zobrazených:"
+
+#: inc/widgets/_widgets/class-widget-blog-posts.php:21
+msgid "Recent News Article"
+msgstr "Nejnovější zprávy"
+
+#: inc/widgets/_widgets/class-widget-blog-posts.php:13
+msgid "Jobify - Page: Blog Posts"
+msgstr "Jobify-Stránka: Příspěvky Blogu"
+
+#: inc/widgets/_widgets/class-widget-blog-posts.php:11
+msgid "Jobify - Display recent blog posts."
+msgstr "Jobify - Zobrazí poslední příspěvky blogu."
+
+#: inc/template/class-template-pagination.php:12
+msgid "Previous Page"
+msgstr "Předchozí stránka"
+
+#: inc/template/class-template-pagination.php:11
+msgid "Next Page"
+msgstr "Další stránka"
+
+#: inc/template/class-template-comments.php:57
+msgid "Your comment is awaiting moderation."
+msgstr "Váš komentář čeká na schválení."
+
+#: inc/template/class-template-comments.php:49
+msgid "Reply"
+msgstr "Odpovedet"
+
+#: inc/template/class-template-comments.php:25
+#: inc/template/class-template-comments.php:46
+msgid "Edit"
+msgstr "Upravit"
+
+#: inc/template/class-template-comments.php:25
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/template/class-template-assets.php:37
+msgid "The content could not be loaded."
+msgstr "Obsah nelze nahrát."
+
+#: inc/template/class-template-assets.php:36
+msgid "Loading..."
+msgstr "Načítání…"
+
+#: inc/setup/steps.php:41
+msgid "Get Involved"
+msgstr "Zapojit se"
+
+#: inc/setup/steps.php:36
+msgid "Customize Your Site"
+msgstr "Upravte svůj web"
+
+#: inc/setup/steps.php:31
+msgid "Setup Google Maps"
+msgstr "Instalace Google mapy"
+
+#: inc/setup/steps.php:25
+msgid "Choose a Look For Your Site"
+msgstr "Zvolte vzhled pro váš web"
+
+#: inc/setup/steps.php:19
+msgid "Install Plugins"
+msgstr "Nainstalovat pluginy"
+
+#: inc/setup/steps.php:14
+msgid "Enable Automatic Updates"
+msgstr "Povolit automatické aktualizace"
+
+#: inc/setup/steps/theme-updater.php:18
+#: vendor/astoundify/themeforest-updater/examples/example-astoundify-step-updates.php:18
+msgid "Save Token"
+msgstr "Token Uložit"
+
+#: inc/setup/steps/theme-updater.php:16
+#: vendor/astoundify/themeforest-updater/examples/example-astoundify-step-updates.php:16
+msgid "Personal Token:"
+msgstr "Osobní Token:"
+
+#: inc/setup/steps/theme-updater.php:12
+msgid "Once generated, add the token below:"
+msgstr "Po vygenerování, přidejte následující token:"
+
+#: inc/setup/steps/theme-updater.php:10
+msgid "Generate a Token"
+msgstr "Vygenerování tokenu"
+
+#: inc/setup/steps/theme-updater.php:8
+msgid "In order to receive automatic updates for your purchase please generate a personal token from ThemeForest."
+msgstr "Chcete-li dostávat automatické aktualizace pro váš nákup, prosím vygenerujte osobní token z ThemeForest."
+
+#: inc/setup/steps/support-us.php:10
+msgid "Move this guide under the \"Appearance\" menu item"
+msgstr "Přesunout tento průvodce pod položku menu \"Vzhled\""
+
+#: inc/setup/steps/support-us.php:5
+msgid "Translate Jobify"
+msgstr "Přeložte Jobify"
+
+#: inc/setup/steps/support-us.php:4
+msgid "Leave a Positive Rating"
+msgstr "Zanechte na pozitivní hodnocení"
+
+#: inc/setup/steps/support-us.php:1
+msgid "Help improve Jobify by submitting a rating and helping to translate the theme to as many languages as possible!"
+msgstr ""
+
+#: inc/setup/steps/import-content.php:98
+msgid "Reset Content"
+msgstr "Obnovit obsah"
+
+#: inc/setup/steps/import-content.php:96
+msgid "Import Content"
+msgstr "Importovat obsah"
+
+#: inc/setup/steps/import-content.php:84
+msgid "Want extra features on your site? Activate the following plugins for even more demo content; saving you setup time!"
+msgstr "Chcete na svých stránkách další funkce? Aktivujte následující pluginy pro ještě více demo obsahu; ušetříte čas nastavení!"
+
+#: inc/setup/steps/import-content.php:74
+msgid "Jobify requires the following plugins to be active in order to import content."
+msgstr "Jobify vyžaduje následující aktivní pluginy, aby se importoval obsah."
+
+#: inc/setup/steps/import-content.php:57
+msgid "Summary:"
+msgstr "Souhrn:"
+
+#: inc/setup/steps/import-content.php:55
+msgid "Please do not navigate away from this page. This process may take a few minutes depending on your server capabilities and internet connection."
+msgstr ""
+
+#: inc/setup/steps/import-content.php:49
+msgid "Coming Soon..."
+msgstr "PŘIPRAVUJEME..."
+
+#: inc/setup/steps/import-content.php:41
+msgid "Extended"
+msgstr "Rozšířená"
+
+#: inc/customizer/definitions/control-groups/color-scheme.php:9
+#: inc/setup/steps/import-content.php:32
+msgid "Classic"
+msgstr "Klasika"
+
+#: inc/setup/steps/import-content.php:16
+msgid "Demo content for this plugin will not be imported."
+msgstr "Demo obsah tohoto pluginu nebude importován."
+
+#: inc/setup/steps/google-maps.php:3
+msgid "Add Your Google Maps API Key"
+msgstr ""
+
+#: inc/setup/steps/google-maps.php:3
+msgid "Watch the Video"
+msgstr "Podívat se na video"
+
+#: inc/setup/steps/google-maps.php:1
+msgid "Read the full guide &rarr;"
+msgstr "Přečtěte si celou příručku &rarr;"
+
+#: inc/setup/steps/google-maps.php:1
+msgid "In order to use the advanced geolocation and mapping features of Jobify you need to create a Google Maps API key."
+msgstr ""
+
+#: inc/setup/steps/customize-theme.php:9
+msgid "Launch Customizer"
+msgstr ""
+
+#: inc/setup/steps/customize-theme.php:6
+msgid "Adjust job styles and layout"
+msgstr ""
+
+#: inc/setup/steps/customize-theme.php:5
+msgid "Adjust colors"
+msgstr "Upravit barvy"
+
+#: inc/setup/steps/customize-theme.php:4
+msgid "Update homepage content"
+msgstr "Aktualizovat obsah domovské stránky"
+
+#: inc/setup/steps/customize-theme.php:1
+msgid "Manage the appearance and behavior of various theme components with the live customizer."
+msgstr ""
+
+#: inc/setup/steps/child-theme.php:3
+msgid "Use a Child Theme"
+msgstr "Použít odvozenou šablonu"
+
+#: inc/setup/steps/child-theme.php:1
+msgid "Installing a child theme allows for an easy way to add extra customization to your website, as well as ensures any changes made are not ovewritten when your parent theme is updated. <strong>This is highly recommended.</strong>"
+msgstr ""
+
+#: inc/setup/class-setup.php:232
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:63
+msgid "You do not have permission to manage content."
+msgstr "Nemáte oprávnění ke správě obsahu."
+
+#: inc/setup/class-setup.php:231
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:62
+msgid "Iteration process failed."
+msgstr "Proces opakování se nezdařil."
+
+#: inc/setup/class-setup.php:230
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:61
+msgid "Invalid process type."
+msgstr "Neplatný typ procesu."
+
+#: inc/setup/class-setup.php:229
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:60
+msgid "Invalid process action."
+msgstr ""
+
+#: inc/setup/class-setup.php:226
+msgid "Reset Complete!"
+msgstr "Obnovení dokončeno!"
+
+#: inc/setup/class-setup.php:223
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:54
+msgid "Import Complete!"
+msgstr "Import dokončen !"
+
+#: inc/setup/class-setup.php:220
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:50
+msgid "Widgets"
+msgstr "Widgety"
+
+#: inc/setup/class-setup.php:220
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:50
+msgid "Widget"
+msgstr "Widget"
+
+#: inc/setup/class-setup.php:219
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:48
+msgid "Content"
+msgstr "Obsah"
+
+#: inc/setup/class-setup.php:218
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:49
+msgid "Navigation Menu Items"
+msgstr "Položky Menu navigace"
+
+#: inc/setup/class-setup.php:218
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:49
+msgid "Navigation Menu Item"
+msgstr "Položka nabídky navigace"
+
+#: inc/setup/class-setup.php:217
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:46
+msgid "Navigation Menus"
+msgstr "Navigační menu"
+
+#: inc/setup/class-setup.php:216
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:47
+msgid "Terms"
+msgstr "Podmínky"
+
+#: inc/setup/class-setup.php:216
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:47
+msgid "Term"
+msgstr "Podmínka"
+
+#: inc/setup/class-setup.php:215
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:45
+msgid "Theme Customizations"
+msgstr "Přizpůsobení šablon"
+
+#: inc/setup/class-setup.php:215
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:45
+msgid "Theme Customization"
+msgstr "Přizpůsobení šablony"
+
+#: inc/setup/class-setup.php:214
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:44
+msgid "Settings"
+msgstr "Nastavení"
+
+#: inc/setup/class-setup.php:214
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:44
+msgid "Setting"
+msgstr "Nastavení"
+
+#: inc/setup/class-setup.php:213
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:43
+msgid "Child Theme"
+msgstr "Odvozená šablona"
+
+#: inc/setup/class-setup.php:151
+#: vendor/astoundify/themeforest-updater/examples/example-astoundify-theme.php:46
+msgid "Disconnected"
+msgstr "Odpojeno"
+
+#: inc/setup/class-setup.php:150
+#: vendor/astoundify/themeforest-updater/examples/example-astoundify-theme.php:45
+msgid "Connected"
+msgstr "Připojeno"
+
+#: inc/setup/class-setup.php:149
+#: vendor/astoundify/themeforest-updater/examples/example-astoundify-theme.php:44
+msgid "API error."
+msgstr ""
+
+#: inc/setup/class-setup.php:148
+#: vendor/astoundify/themeforest-updater/examples/example-astoundify-theme.php:43
+msgid "An API token is required."
+msgstr "Je požadován token rozhraní API."
+
+#: inc/setup/class-setup.php:147
+#: vendor/astoundify/themeforest-updater/examples/example-astoundify-theme.php:42
+msgid "Cheating?"
+msgstr "Nepodvádíte?"
+
+#: inc/setup/class-setup.php:123
+msgid "Active"
+msgstr "Aktivní"
+
+#: inc/setup/class-setup.php:98
+msgid "Submit a Support Ticket"
+msgstr "Odeslat lístek technické podpory"
+
+#: inc/setup/class-setup.php:97
+msgid "Search Documentation"
+msgstr "Vyhledávání dokumentace"
+
+#: inc/setup/class-setup.php:92
+msgid "Creating a job listing website has never been easier with Jobify — the easiest to use job board theme available. Use the steps below to finish setting up your new website. If you have more questions please <a href=\"%s\">review the documentation</a>."
+msgstr "Vytvoření webové stránky s výpisem pracovních míst nikdy nebylo snadnější než s Jobify - nejjednodušší je použít dostupné téma nástěnky. Pomocí níže uvedených kroků dokončete nastavení nového webu. Máte-li další dotazy, přečtěte <a href=\"%s\">si dokumentaci</a> ."
+
+#: inc/setup/class-setup.php:78
+msgid "Not Complete"
+msgstr "Nelze dokončit"
+
+#: inc/setup/class-setup.php:77
+msgid "Completed"
+msgstr "Dokončeno"
+
+#: inc/setup/class-setup.php:76
+msgid "Welcome to %s"
+msgstr "Vítejte v %s"
+
+#: inc/setup/class-setup.php:75
+msgid "Setup Guide"
+msgstr "Stručný návod k obsluze"
+
+#: inc/setup/class-setup.php:74
+msgid "Getting Started"
+msgstr "Začínáme"
+
+#: inc/setup/class-setup.php:73
+msgid "Setup %s"
+msgstr "Instalace %s"
+
+#: inc/pages/class-page-settings.php:58
+msgid "Display page title"
+msgstr "Zobrazit název stránky"
+
+#: inc/pages/class-page-settings.php:40
+msgid "Page Title"
+msgstr "Titulek stránky"
+
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:112
+msgid "%1$s to post %2$d resume"
+msgid_plural "%1$s to post %2$s resumes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:109
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:114
+msgid "for %s day"
+msgid_plural "for %s days"
+msgstr[0] "na %s den"
+msgstr[1] "na %s dny"
+msgstr[2] "na %s dny"
+
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:36
+msgid "Title Background Color:"
+msgstr ""
+
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:32
+msgid "Resume Packages"
+msgstr "Balíčky s životopisy"
+
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:31
+msgid "Job Packages"
+msgstr "Balíčky s inzeráty práce"
+
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:27
+msgid "Package Type:"
+msgstr "Typ balíčku:"
+
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:13
+msgid "Outputs Job Packages from WooCommerce"
+msgstr ""
+
+#: inc/integrations/wp-job-manager-tags/widgets/class-widget-job-tags.php:13
+msgid "Jobify - Job: Tags"
+msgstr ""
+
+#: inc/integrations/wp-job-manager-tags/widgets/class-widget-job-tags.php:11
+msgid "Display the job's tags"
+msgstr ""
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-spotlight.php:24
+msgid "Resume Spotlight"
+msgstr ""
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-spotlight.php:16
+msgid "Jobify - Page: Resumes Spotlight"
+msgstr ""
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-spotlight.php:14
+msgid "Output a grid of spotlighted resumes."
+msgstr ""
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-recent.php:33
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-spotlight.php:33
+msgid "Number of resumes to show:"
+msgstr "Počet životopisů k zobrazení:"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-recent.php:16
+msgid "Jobify - Page: Recent Resumes"
+msgstr "Jobify -Stránka: Nové Životopisy"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-recent.php:14
+msgid "Output a list of recent resumes."
+msgstr "Výstupní seznam posledních životopisů."
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-map.php:16
+msgid "Jobify - Page: Resumes Map"
+msgstr "Jobify -Stránka: Mapa životopisů"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-map.php:14
+msgid "Display a map with pins indicating areas with active resume listings."
+msgstr "Zobrazení mapy se špendlíky označujícími oblasti s aktivními životopisy."
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-skills.php:13
+msgid "Jobify - Resume: Skills"
+msgstr "Jobify -Životopis: dovednosti"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-skills.php:11
+msgid "Display the resume's skills"
+msgstr "Zobrazit dovednosti v životopise"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-links.php:13
+msgid "Jobify - Resume: Links"
+msgstr "Jobify - Životopis: Odkazy"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-links.php:11
+msgid "Display the resume's links"
+msgstr "Zobrazení odkazů životopisu"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-file.php:49
+msgid "Resume.%s"
+msgstr "Životopis.%s"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-file.php:13
+msgid "Jobify - Resume: File"
+msgstr "Jobify - Životopis: Soubor"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-file.php:11
+msgid "Display the resume's file"
+msgstr "Zobrazit soubor životopisu"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-categories.php:19
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-file.php:16
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-links.php:16
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-skills.php:16
+msgid "Resume"
+msgstr "Životopis"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-categories.php:16
+msgid "Jobify - Resume: Categories"
+msgstr "Jobify - Životopis: Kategorie"
+
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-categories.php:14
+msgid "Display the resume's categories"
+msgstr "Zobrazí kategorie životopisů"
+
+#: inc/integrations/wp-job-manager-resumes/class-wp-job-manager-resumes-template.php:194
+msgid "Choose what should display on resume listings column #%s."
+msgstr ""
+
+#: inc/integrations/wp-job-manager-resumes/class-wp-job-manager-resumes-template.php:192
+msgid "Resume Widget Column %s"
+msgstr ""
+
+#: inc/integrations/wp-job-manager-resumes/class-wp-job-manager-resumes-template.php:181
+msgid "Choose what should display on single resume listings."
+msgstr "Vyberte si, co by se mělo zobrazovat ve výpisu životopisů."
+
+#: inc/integrations/wp-job-manager-resumes/class-wp-job-manager-resumes-template.php:179
+msgid "Resume Page Sidebar"
+msgstr ""
+
+#: inc/integrations/wp-job-manager-products/widgets/class-widget-products.php:15
+msgid "Jobify - Job: Products"
+msgstr "Jobify - Job: Produkty"
+
+#: inc/integrations/wp-job-manager-products/widgets/class-widget-products.php:13
+msgid "Output products linked to this listing."
+msgstr "Výstupní produkty spojené s tímto výpisem."
+
+#: inc/integrations/wp-job-manager-contact-listing/class-wp-job-manager-contact-listing.php:46
+msgid "Contact Candidate"
+msgstr "Kontaktovat kandidáta"
+
+#: inc/integrations/wp-job-manager-contact-listing/class-wp-job-manager-contact-listing.php:44
+msgid "Apply for Job"
+msgstr "Ucházet se o práci"
+
+#: inc/integrations/wp-job-manager-applications/class-wp-job-manager-applications.php:20
+msgid "Apply"
+msgstr "Ucházet se"
+
+#: inc/integrations/wp-job-manager-application-deadline/widgets/class-widget-job-deadline.php:53
+msgid "M j, Y"
+msgstr "M D, R"
+
+#: inc/integrations/wp-job-manager-application-deadline/widgets/class-widget-job-deadline.php:13
+msgid "Jobify - Job: Application Deadline"
+msgstr "Jobify-Práce: Uzávěrka aplikace"
+
+#: inc/integrations/wp-job-manager-application-deadline/widgets/class-widget-job-deadline.php:11
+msgid "Display the job application deadline"
+msgstr "Zobrazit konečný termín žádosti o zaměstnání"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:92
+#: inc/widgets/_widgets/class-widget-stats.php:40
+msgid "Resumes"
+msgstr "Životopisy"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:91
+#: inc/widgets/_widgets/class-widget-stats.php:36
+msgid "Jobs"
+msgstr "Pracovní místa"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:89
+msgid "Search:"
+msgstr "Hledat:"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:80
+msgid "Use transparent overlay"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:73
+#: inc/widgets/_widgets/class-widget-feature-callout.php:46
+msgid "Center Bottom"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:72
+#: inc/widgets/_widgets/class-widget-feature-callout.php:45
+msgid "Center Center"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:71
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:74
+#: inc/widgets/_widgets/class-widget-feature-callout.php:44
+#: inc/widgets/_widgets/class-widget-feature-callout.php:47
+msgid "Center Top"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:70
+#: inc/widgets/_widgets/class-widget-feature-callout.php:43
+msgid "Right Bottom"
+msgstr "Vpravo dole"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:69
+#: inc/widgets/_widgets/class-widget-feature-callout.php:42
+msgid "Right Center"
+msgstr "Vpravo na střed"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:68
+#: inc/widgets/_widgets/class-widget-feature-callout.php:41
+msgid "Right Top"
+msgstr "Vpravo nahoře"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:67
+#: inc/widgets/_widgets/class-widget-feature-callout.php:40
+msgid "Left Bottom"
+msgstr "Vlevo dole"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:66
+#: inc/widgets/_widgets/class-widget-feature-callout.php:39
+msgid "Left Center"
+msgstr "Vlevo na střed"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:65
+#: inc/widgets/_widgets/class-widget-feature-callout.php:38
+msgid "Left Top"
+msgstr "Vlevo nahoře"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:63
+#: inc/widgets/_widgets/class-widget-feature-callout.php:36
+msgid "Image Position:"
+msgstr "Pozice obrázku:"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:42
+#: inc/widgets/_widgets/class-widget-feature-callout.php:106
+msgid "Text Color:"
+msgstr "Barva textu:"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:37
+#: inc/widgets/_widgets/class-widget-feature-callout.php:81
+msgid "Add standard spacing above/below widget"
+msgstr ""
+
+#: inc/customizer/definitions/controls/nav-menu-primary-width.php:23
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:31
+#: inc/widgets/_widgets/class-widget-feature-callout.php:90
+msgid "Large"
+msgstr "Velký"
+
+#: inc/customizer/definitions/controls/nav-menu-primary-width.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:30
+#: inc/widgets/_widgets/class-widget-feature-callout.php:89
+msgid "Medium"
+msgstr "Střední"
+
+#: inc/customizer/definitions/controls/nav-menu-primary-width.php:21
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:29
+#: inc/widgets/_widgets/class-widget-feature-callout.php:88
+msgid "Small"
+msgstr "Malý"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:27
+msgid "Hero Height"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:15
+msgid "Jobify - Page: Search Hero"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:12
+msgid "Display a \"hero\" search area."
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-spotlight.php:16
+msgid "Jobify - Page: Jobs Spotlight"
+msgstr "Jobify-strana: Zvýrazněné pracovní nabídky"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-spotlight.php:14
+msgid "Output a grid of spotlighted jobs."
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-search.php:21
+msgid "Search Jobs"
+msgstr "Hledat pracovní místa"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-search.php:13
+msgid "Jobify - Page: Jobs Search"
+msgstr "Jobify -Stránka: hledání práce"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-search.php:11
+msgid "Output search options to search jobs."
+msgstr "Výstupní možnosti vyhledávání pro hledání zaměstnání."
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:48
+msgid "Spotlight Title:"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:47
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:73
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-spotlight.php:24
+msgid "Job Spotlight"
+msgstr "Zvýraznění pracovního místa"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:43
+msgid "Display the \"Job Spotlight\" section"
+msgstr "Zobrazit oddíl \"Zvýrazněná pracovní místa\""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:38
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-spotlight.php:33
+msgid "Number of jobs to show:"
+msgstr "Počet pracovních míst k zobrazení:"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:30
+msgid "Show Filters"
+msgstr "Zobrazit filtry"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:24
+msgid "Recent Jobs"
+msgstr "Nová pracovní místa"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:16
+msgid "Jobify - Page: Recent Jobs"
+msgstr "Jobify -Stránka: Nové nabídky práce"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:14
+msgid "Output a list of recent jobs."
+msgstr "Výstupní seznam posledních pracovních míst."
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-map.php:29
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-map.php:29
+msgid "Enable standard widget spacing"
+msgstr "Povolit standardní mezery widgetů"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-map.php:24
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-map.php:24
+msgid "Show search filters"
+msgstr "Zobrazit vyhledávací filtry"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-map.php:16
+msgid "Jobify - Page: Jobs Map"
+msgstr "Jobify-Stránka: Mapa práce"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-map.php:14
+msgid "Display a map with pins indicating areas with active job listings."
+msgstr "Zobrazení mapy s piny označujícími oblasti s aktivními výpisy prací."
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-type.php:13
+msgid "Jobify - Job: Type"
+msgstr "Jobify-Práce: typ"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-share.php:13
+msgid "Jobify - Job/Resume: Share"
+msgstr "Jobify- práce/životopis: Sdílet"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-share.php:11
+msgid "Display job/resume sharing options"
+msgstr "Zobrazit možnosti sdílení pro práci/životopis"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-more-jobs.php:50
+msgid "More Jobs"
+msgstr "Více pracovních míst"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-more-jobs.php:49
+msgid "More jobs by %s"
+msgstr "Více pracovních míst od %s"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-more-jobs.php:13
+msgid "Jobify - Job: Company Listings"
+msgstr "Jobify-Práce: Výpisy firem"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-more-jobs.php:11
+msgid "Display a link to more jobs from the company"
+msgstr "Zobrazit odkaz na více pracovních míst dané společnosti"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-location.php:13
+msgid "Jobify - Job: Location"
+msgstr "Jobify- práce: Poloha"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-location.php:11
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-type.php:11
+msgid "Display the job type"
+msgstr "Zobrazit typ práce"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:63
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:57
+msgid "Google+"
+msgstr "Google+"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:51
+msgid "Facebook"
+msgstr "Facebook"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:45
+msgid "Twitter"
+msgstr "Twitter"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:39
+msgid "Website"
+msgstr "Webová stránka"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:13
+msgid "Jobify - Job: Company Social"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:11
+msgid "Display the job's company social profiles"
+msgstr "Zobrazení sociálních profilů společnosti"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-logo.php:13
+msgid "Jobify - Job/Resume: Logo"
+msgstr "Jobify- pracovní místo/životopis: Logo"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-logo.php:11
+msgid "Display the company logo or resume picture"
+msgstr "Zobrazit logo společnosti nebo obrázek životopisu"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-categories.php:16
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:16
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-location.php:16
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-type.php:16
+#: inc/integrations/wp-job-manager-application-deadline/widgets/class-widget-job-deadline.php:16
+#: inc/integrations/wp-job-manager-products/widgets/class-widget-products.php:18
+#: inc/integrations/wp-job-manager-tags/widgets/class-widget-job-tags.php:16
+msgid "Job"
+msgstr "Nabídka práce"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-categories.php:13
+msgid "Jobify - Job: Categories"
+msgstr "Jobify- pracovní místo: Kategorie"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-categories.php:11
+msgid "Display the job's categories"
+msgstr "Zobrazit kategorie práce"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-apply.php:75
+msgid "Video Resume"
+msgstr "Životopisné video"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-apply.php:53
+msgid "Watch Video"
+msgstr "Sledovat video"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-apply.php:16
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-logo.php:16
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-more-jobs.php:16
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-share.php:16
+msgid "Job or Resume"
+msgstr "Pracovní místo nebo životopis"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-apply.php:13
+msgid "Jobify - Job/Resume: Actions"
+msgstr "Jobify-Pracovní místo/Životopis: akce"
+
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-apply.php:11
+msgid "Display the job/resume action buttons"
+msgstr "Zobrazení akčních tlačítek práce/životopis"
+
+#: inc/integrations/wp-job-manager/customizer/definitions/controls/job-display-sidebar.php:21
+#: inc/integrations/wp-job-manager-resumes/customizer/definitions/controls/resume-display-sidebar.php:21
+#: inc/widgets/class-widgets.php:35
+msgid "Sidebar"
+msgstr "Boční panel"
+
+#: inc/integrations/wp-job-manager/customizer/definitions/controls/job-display-sidebar.php:20
+#: inc/integrations/wp-job-manager-resumes/customizer/definitions/controls/resume-display-sidebar.php:20
+msgid "Top"
+msgstr "Nahoře"
+
+#: inc/integrations/wp-job-manager/customizer/definitions/controls/job-display-sidebar.php:17
+#: inc/integrations/wp-job-manager-resumes/customizer/definitions/controls/resume-display-sidebar.php:17
+msgid "Widget Area Location"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/customizer/definitions/controls/job-display-sidebar-columns.php:17
+#: inc/integrations/wp-job-manager-resumes/customizer/definitions/controls/resume-display-sidebar-columns.php:17
+msgid "Widget Columns"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/customizer/definitions/controls/job-display-address-format.php:18
+#: inc/integrations/wp-job-manager-resumes/customizer/definitions/controls/resume-display-address-format.php:18
+msgid "Choose between {address_1}, {address_2}, {postcode}, {city}, {state}, {state_code}, {country}. Leave empty to use location as entered."
+msgstr "Vyberte mezi {adresa_1}, {adresa_2}, {směrovací číslo}, {město}, {kraj}, {kód kraje}, {země}.Nechte prázdné, aby se použilo místo, které bylo zadáno."
+
+#: inc/integrations/wp-job-manager/customizer/definitions/controls/job-display-address-format.php:17
+#: inc/integrations/wp-job-manager-resumes/customizer/definitions/controls/resume-display-address-format.php:17
+msgid "Address Format"
+msgstr "Formát adresy"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:283
+#: searchform-header.php:13 searchform.php:13
+#: woocommerce/product-searchform.php:27
+msgid "Search"
+msgstr "Najít"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:247
+msgid "Company LinkedIn"
+msgstr "LinkedIn"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:242
+msgid "Company Google+"
+msgstr "Google+"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:237
+msgid "Company Facebook"
+msgstr "Facebook"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:231
+msgid "Company Description"
+msgstr "Popis společnosti"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:189
+msgid "LinkedIn username"
+msgstr "Uživatelské jméno LinkedIn"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:181
+msgid "Google+ username"
+msgstr "Uživatelské jméno na Google+"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:176
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:184
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:192
+msgid "yourcompany"
+msgstr "vasespolecnost"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager.php:173
+msgid "Facebook username"
+msgstr "Uživatelské jméno na Facebooku"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-template.php:137
+msgid "Choose what should display on single job listings column #%s."
+msgstr "Vybert si, co by se mělo zobrazovat ve sloupcích výpisu pracovních míst#%s."
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-template.php:135
+msgid "Job Widget Column %s"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-template.php:124
+msgid "Choose what should display on single job listings."
+msgstr "Vybert si, co by se mělo zobrazovat ve výpisu pracovních míst."
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-template.php:122
+msgid "Job Page Sidebar"
+msgstr "Sidebar stránky pracovních míst"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-submission.php:25
+#: inc/integrations/wp-job-manager/class-wp-job-manager-submission.php:45
+msgid "Used for the Job Spotlight display"
+msgstr "Používá se pro zobrazení zvýraznění pracovního místa"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-submission.php:24
+#: inc/integrations/wp-job-manager/class-wp-job-manager-submission.php:44
+msgid "Featured Image"
+msgstr "Profilový obrázek"
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-map.php:134
+msgid "within a %d mile radius"
+msgstr ""
+
+#: inc/integrations/wp-job-manager/class-wp-job-manager-map.php:88
+msgid "%d Found"
+msgstr "Nalezeno %d"
+
+#: inc/integrations/woocommerce/customizer/definitions/controls/registration-roles.php:22
+msgid "If no roles are selected, the default in \"Job Listings > Settings\" will be used and no role field will be shown on the registration form."
+msgstr "Pokud nejsou vybrány žádné role, bude použito výchozí nastavení \"> výpisy projektů\" a v registračním formuláři nebude zobrazeno žádné pole role."
+
+#: inc/integrations/woocommerce/customizer/definitions/controls/registration-roles.php:20
+msgid "Available Registration Roles"
+msgstr "Nastavení registrace"
+
+#: inc/integrations/woocommerce/customizer/definitions/controls/registration-default.php:20
+msgid "The role which is selected in the dropdown by default."
+msgstr "Role vybraná v dropdown ve výchozím nastavení."
+
+#: inc/integrations/woocommerce/customizer/definitions/controls/registration-default.php:17
+msgid "Default Role Selection"
+msgstr "Výchozí výběr Role"
+
+#: inc/integrations/woocommerce/class-woocommerce-template.php:53
+msgid "Shop Sidebar"
+msgstr "Postranní panel obchodu"
+
+#: inc/integrations/woocommerce/class-woocommerce-registration.php:110
+msgid "Register As"
+msgstr "Zaregistrovat se  jako"
+
+#: inc/integrations/woocommerce/class-woocommerce-layout.php:59
+msgid "Shop"
+msgstr "Eshop"
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:68
+msgid "Assign <a href=\"%1$s\">Testimonials</a> to the <a href=\"%2$s\">Individual</a> category."
+msgstr ""
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:64
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:58
+msgid "Background Image:"
+msgstr "Obrázek pozadí :"
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:59
+#: inc/widgets/_widgets/class-widget-feature-callout.php:111
+msgid "Background Color:"
+msgstr "Barva pozadí:"
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:41
+msgid "Number of testimonials:"
+msgstr "Počet Ohlasů:"
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:26
+msgid "Kind Words From Happy Campers"
+msgstr "Milá slova od šťastných uchazečů"
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:18
+msgid "Jobify - Page: Testimonials"
+msgstr "Jobify - Stránka: Reference"
+
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:16
+msgid "Display a slider of all the people you have helped."
+msgstr "Zobrazte posuvník všech lidí, kterým jste pomohli."
+
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:50
+msgid "Assign <a href=\"%1$s\">Testimonials</a> to the <a href=\"%2$s\">Company</a> category."
+msgstr ""
+
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:41
+msgid "Number of companies to show."
+msgstr "Počet společností k zobrazení."
+
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:26
+msgid "Companies We&#39;ve Helped"
+msgstr "Společnosti kterým jsme pomohli"
+
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:18
+msgid "Jobify - Page: Companies Helped"
+msgstr "Jobify - strana: Společnosti kterým jsme pomohli"
+
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:16
+msgid "Display a slider of company logos you have helped find jobs."
+msgstr "Zobrazte posuvník firemních log, která Vám pomohly najít pracovní místa."
+
+#: inc/integrations/soliloquy/widgets/class-widget-slider-hero.php:16
+msgid "Jobify - Page: Solioquy Hero Slider"
+msgstr ""
+
+#: inc/integrations/soliloquy/widgets/class-widget-slider-hero.php:14
+msgid "Display a \"Hero\" Soliloquy slider."
+msgstr ""
+
+#: inc/integrations/soliloquy/widgets/class-widget-slider-content.php:32
+msgid "Background Image URL:"
+msgstr "URL obrázku pozadí:"
+
+#: inc/integrations/soliloquy/widgets/class-widget-slider-content.php:26
+#: inc/integrations/soliloquy/widgets/class-widget-slider-hero.php:24
+msgid "Slider:"
+msgstr "Slider:"
+
+#: inc/integrations/soliloquy/widgets/class-widget-slider-content.php:18
+msgid "Jobify - Page: Solioquy Content Slider"
+msgstr ""
+
+#: inc/integrations/soliloquy/widgets/class-widget-slider-content.php:16
+msgid "Display a Soliloquy slider with captions."
+msgstr ""
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:79
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:122
+msgid "Get Started"
+msgstr "Začít"
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:75
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:107
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:112
+msgid "unlimited"
+msgstr "neomezeno"
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:73
+msgid "free"
+msgstr "zdarma"
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:30
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:33
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:52
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:44
+#: inc/widgets/_widgets/class-widget-blog-posts.php:28
+#: inc/widgets/_widgets/class-widget-callout.php:26
+#: inc/widgets/_widgets/class-widget-price-option.php:29
+#: inc/widgets/_widgets/class-widget-price-table.php:28
+#: inc/widgets/_widgets/class-widget-stats.php:29
+#: inc/widgets/_widgets/class-widget-video.php:31
+msgid "Description:"
+msgstr "Popis:"
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:24
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:27
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-apply.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-categories.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-logo.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-company-social.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-location.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-more-jobs.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-share.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-job-type.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:25
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-search.php:22
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-spotlight.php:25
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:47
+#: inc/integrations/wp-job-manager-application-deadline/widgets/class-widget-job-deadline.php:22
+#: inc/integrations/wp-job-manager-products/widgets/class-widget-products.php:24
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-categories.php:25
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-file.php:22
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-links.php:22
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resume-skills.php:22
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-recent.php:25
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-spotlight.php:25
+#: inc/integrations/wp-job-manager-tags/widgets/class-widget-job-tags.php:22
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:24
+#: inc/widgets/_widgets/class-widget-blog-posts.php:22
+#: inc/widgets/_widgets/class-widget-feature-callout.php:116
+#: inc/widgets/_widgets/class-widget-price-option.php:18
+#: inc/widgets/_widgets/class-widget-price-table.php:22
+#: inc/widgets/_widgets/class-widget-stats.php:22
+#: inc/widgets/_widgets/class-widget-video.php:25
+msgid "Title:"
+msgstr "Nadpis:"
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:23
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:23
+#: inc/widgets/_widgets/class-widget-price-table.php:21
+msgid "Plans and Pricing"
+msgstr "Zobrazení plánů a cen"
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:18
+#: inc/integrations/soliloquy/widgets/class-widget-slider-content.php:21
+#: inc/integrations/soliloquy/widgets/class-widget-slider-hero.php:19
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:21
+#: inc/integrations/testimonials/widgets/class-widget-testimonials.php:21
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-map.php:19
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-recent.php:19
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-search.php:16
+#: inc/integrations/wp-job-manager/widgets/class-widget-jobs-spotlight.php:19
+#: inc/integrations/wp-job-manager/widgets/class-widget-search-hero.php:21
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-map.php:19
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-recent.php:19
+#: inc/integrations/wp-job-manager-resumes/widgets/class-widget-resumes-spotlight.php:19
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:18
+#: inc/widgets/_widgets/class-widget-blog-posts.php:16
+#: inc/widgets/_widgets/class-widget-callout.php:19
+#: inc/widgets/_widgets/class-widget-feature-callout.php:21
+#: inc/widgets/_widgets/class-widget-price-table.php:16
+#: inc/widgets/_widgets/class-widget-slider-generic.php:19
+#: inc/widgets/_widgets/class-widget-stats.php:16
+#: inc/widgets/_widgets/class-widget-video.php:19
+msgid "Homepage/Widgetized"
+msgstr "Úvodní stránka/Widgetized"
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:15
+#: inc/integrations/wp-job-manager-wc-paid-listings/widgets/class-widget-price-table.php:15
+#: inc/widgets/_widgets/class-widget-price-table.php:13
+msgid "Jobify - Page: Price Table"
+msgstr "Jobify - Stránka: Tabulka cen"
+
+#: inc/integrations/restrict-content-pro/widgets/class-widget-price-table-rcp.php:13
+msgid "Outputs subscription options for Restrict Content Pro"
+msgstr ""
+
+#: inc/integrations/restrict-content-pro/class-restrict-content-pro.php:119
+msgid "Please upgrade your subscription level to view this content"
+msgstr "Pro zobrazení tohoto obsahu musíte mít aktivní předplatné"
+
+#: inc/integrations/restrict-content-pro/class-restrict-content-pro.php:64
+msgid "Subscription Level Visibility:"
+msgstr "Úroveň předplatného:"
+
+#: inc/customizer/definitions/controls/map-settings.php:136
+msgid "Zoom with Scrollwheel"
+msgstr ""
+
+#: inc/customizer/definitions/controls/map-settings.php:123
+msgid "Must be equal to or larger than Default Zoom and less than Maximum Zoom In"
+msgstr "Musí být rovna nebo větší než výchozí zvětšení a menší než maximální přiblížení"
+
+#: inc/customizer/definitions/controls/map-settings.php:122
+msgid "Maximum Zoom Out"
+msgstr "Maximální přiblížení"
+
+#: inc/customizer/definitions/controls/map-settings.php:109
+msgid "Must be larger than Default Zoom and Maximum Zoom Out"
+msgstr "Musí být větší než výchozí zvětšení a maximální zmenšení"
+
+#: inc/customizer/definitions/controls/map-settings.php:108
+msgid "Maximum Zoom In"
+msgstr "Maximální přiblížení"
+
+#: inc/customizer/definitions/controls/map-settings.php:95
+msgid "<strong>1</strong>: World, <strong>5</strong>: Landmass/continent, <strong>10</strong>: City, <strong>15</strong>: Streets, <strong>20</strong>: Buildings"
+msgstr "<strong>1</strong>: Svět, <strong>5</strong>: Pevnina/Kontinent, <strong>10</strong>: Město, <strong>15</strong>: Ulice, <strong>20</strong>: Budovy"
+
+#: inc/customizer/definitions/controls/map-settings.php:94
+msgid "Default Zoom"
+msgstr "Výchozí měřítko (%)"
+
+#: inc/customizer/definitions/controls/map-settings.php:84
+msgid "How close the markers are before the clusters appear."
+msgstr ""
+
+#: inc/customizer/definitions/controls/map-settings.php:82
+msgid "Cluster Grid Size (px)"
+msgstr ""
+
+#: inc/customizer/definitions/controls/map-settings.php:70
+msgid "Cluster Markers in Proximity"
+msgstr ""
+
+#: inc/customizer/definitions/controls/map-settings.php:59
+msgid "The default coordinates view if autofit is disabled. Ex <code>42.0616453, -88.2670675</code>"
+msgstr ""
+
+#: inc/customizer/definitions/controls/map-settings.php:58
+msgid "Default Location View"
+msgstr "Výchozí pohled na polohu"
+
+#: inc/customizer/definitions/controls/map-settings.php:46
+msgid "Ensure all active pins are shown in the initial map view."
+msgstr "Zkontrolujte, zda jsou v úvodním zobrazení mapy zobrazeny všechny aktivní piny."
+
+#: inc/customizer/definitions/controls/map-settings.php:45
+msgid "Autofit Pins"
+msgstr ""
+
+#: inc/customizer/definitions/controls/map-settings.php:34
+msgid "Click"
+msgstr "Klikněte"
+
+#: inc/customizer/definitions/controls/map-settings.php:33
+msgid "Hover"
+msgstr "Hover"
+
+#: inc/customizer/definitions/controls/map-settings.php:29
+msgid "Marker Popup Trigger"
+msgstr "Spuštění kontextového menu značky"
+
+#: inc/customizer/definitions/controls/map-settings.php:18
+msgid "create a Google Maps API key"
+msgstr "vytvořit API klíč pro Google Mapy"
+
+#: inc/customizer/definitions/controls/map-settings.php:18
+msgid "Learn how to %s"
+msgstr "Naučte se jak  %s"
+
+#: inc/customizer/definitions/controls/map-settings.php:17
+msgid "Google Maps API Key"
+msgstr "API klíč pro Google Mapy"
+
+#: inc/customizer/definitions/controls/fixed-header.php:17
+msgid "Fixed Header"
+msgstr "Fixovaná hlavička"
+
+#: inc/customizer/definitions/controls/cta-display.php:17
+msgid "Display this section"
+msgstr "Zobrazit tuto sekci"
+
+#: inc/customizer/definitions/controls/color-primary.php:21
+msgid "Primary"
+msgstr "Hlavní"
+
+#: inc/customizer/definitions/controls/color-footer-widgets-title.php:21
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:27
+msgid "Title"
+msgstr "Nadpis"
+
+#: inc/customizer/definitions/controls/color-copyright-text.php:21
+#: inc/customizer/definitions/controls/color-cta-text.php:21
+#: inc/customizer/definitions/controls/color-footer-widgets-text.php:21
+#: inc/customizer/definitions/controls/copyright.php:17
+msgid "Text"
+msgstr "Text"
+
+#: inc/customizer/definitions/controls/color-copyright-link.php:21
+#: inc/customizer/definitions/controls/color-footer-widgets-link.php:21
+#: inc/customizer/definitions/controls/color-link.php:21
+msgid "Link"
+msgstr "Odkaz"
+
+#: inc/customizer/definitions/controls/color-copyright-background.php:21
+#: inc/customizer/definitions/controls/color-cta-background.php:21
+#: inc/customizer/definitions/controls/color-footer-widgets-background.php:21
+#: inc/customizer/definitions/controls/color-header-background.php:21
+msgid "Background"
+msgstr "Pozadí"
+
+#: inc/customizer/definitions/controls/color-body-text.php:21
+msgid "Body Text"
+msgstr "Text těla stránky"
+
+#: inc/customizer/definitions/controls/color-accent.php:21
+msgid "Accent"
+msgstr "Akcent"
+
+#: inc/customizer/definitions/controls/background_color.php:15
+msgid "Page Background"
+msgstr "Pozadí stránky"
+
+#: inc/class-deprecated.php:33
+msgid "Please install <a href=\"%s\">WooCommerce</a> to use a custom registration form. Enable the registration form in \"WooCommerce &rarr; Settings &rarr; Accounts\""
+msgstr ""
+
+#: inc/class-deprecated.php:21
+msgid "Please install <a href=\"%s\">WooCommerce</a> to use a custom login form."
+msgstr ""
+
+#: inc/activation/class-activation.php:158
+msgid "Add an API key &rarr;"
+msgstr "Vložit API klíč &rarr;"
+
+#: inc/activation/class-activation.php:157
+msgid "<strong>You have not entered a Google Maps API key!</strong> You will not have access to certain features of Jobify. %s"
+msgstr "<strong>Nezadali jste Google Maps API klíč! </strong> Nebudete mít přístup k určitým funkcím Jobify. %s"
+
+#: header.php:63
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:45 inc/template/class-template-assets.php:35
+msgid "Close"
+msgstr "Zavřít"
+
+#: functions.php:180
+msgid "Footer Social"
+msgstr "Odkazy na sociální sítě v zápatí"
+
+#: functions.php:179 inc/setup/class-setup.php:217
+#: vendor/astoundify/content-importer/app/contentimporter-functions.php:46
+msgid "Navigation Menu"
+msgstr "Navigační menu"
+
+#: form-fields/file-field.php:62
+msgid "Maximum file size: %s."
+msgstr "Maximální velikost souboru: %s."
+
+#: form-fields/file-field.php:53
+msgid "Choose File"
+msgstr "Vybrat soubor"
+
+#: form-fields/file-field.php:51 inc/widgets/class-widget.php:224
+msgid "Choose Image"
+msgstr "Vybrat obrázek"
+
+#: form-fields/file-field.php:47
+msgid "%d files selected"
+msgstr "%d souborů vybráno"
+
+#: footer.php:61
+msgid "Back to Top"
+msgstr "Zpět na začátek"
+
+#: content-single.php:50
+msgid "Pages:"
+msgstr "Stránky:"
+
+#: content-single.php:47
+msgid "Tags:"
+msgstr "Štítky (tagy)"
+
+#: content-single.php:18 content.php:17
+msgid "Written by <a class=\"author-link entry-author__link\" href=\"%1$s\" rel=\"author\">%2$s</a>"
+msgstr ""
+
+#: content-single-resume.php:91
+msgid "Experience"
+msgstr "PRACOVNÍ ZKUŠENOSTI"
+
+#: content-single-resume.php:70
+msgid "Education"
+msgstr "Vzdělání"
+
+#: content-single-resume.php:62
+msgid "Skills"
+msgstr "Dovednosti"
+
+#: content-single-resume.php:52
+#: inc/customizer/definitions/controls/cta-text.php:17
+#: inc/integrations/testimonials/widgets/class-widget-companies.php:33
+msgid "Description"
+msgstr "Popis"
+
+#: content-single-job_listing.php:48 single-company.php:28
+msgid "About %s"
+msgstr "O %s"
+
+#: content-single-job_listing.php:38
+msgid "Overview"
+msgstr "Přehled"
+
+#: content-single-job_listing.php:31
+msgid "This job listing has expired"
+msgstr "Tento inzerát již není platný"
+
+#: content-single-job_listing-meta.php:29
+msgid "Applications have closed"
+msgstr "Zaměstnavatel již nepříjímá nabídky na tuto pozici"
+
+#: content-single-job_listing-meta.php:27
+msgid "This position has been filled"
+msgstr "Tato pozice byla obsazena"
+
+#. Translators: %s human time.
+#: inc/listing/template-tags.php:129
+msgid "Posted %s ago"
+msgstr "Publikováno před %s"
+
+#: content-single-job-related.php:52
+msgid "Related Jobs"
+msgstr "Další místa"
+
+#: content-resume.php:30 content-single-resume.php:34
+msgid "Updated %s ago"
+msgstr "Naposledy aktualizováno %s"
+
+#: content-none.php:24
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Zdá se, že nemůžeme najít, co hledáte. Možná pomůže vyhledávání."
+
+#: content-none.php:19
+msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
+msgstr "Bohužel nebylo nic nalezeno. Zkuste prosím zadat jiná klíčová slova."
+
+#: content-none.php:15
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Chcete zveřejnit svůj první příspěvek? <a href=\"%1$s\">Začněte zde</a>."
+
+#: content-grid.php:39 content.php:39
+msgid "Continue Reading"
+msgstr "Číst dál"
+
+#: content-grid.php:29 content-single.php:26 content.php:25
+msgid "% Comments"
+msgstr "% Komentáře"
+
+#: content-grid.php:29 content-single.php:26 content.php:25
+msgid "1 Comment"
+msgstr "1 komentář"
+
+#: content-grid.php:29 content-single.php:26 content.php:25
+msgid "0 Comments"
+msgstr "0 komentářů"
+
+#: comments.php:51
+msgid "Comments are closed."
+msgstr "Komentáře nejsou povoleny."
+
+#: comments.php:46
+msgid "Newer Comments &rarr;"
+msgstr "Novější komentáře &rarr;"
+
+#: comments.php:45
+msgid "&larr; Older Comments"
+msgstr "& larr; Starší komentáře"
+
+#: comments.php:44
+msgid "Comment navigation"
+msgstr "Komentáře - navigace"
+
+#: archive.php:27
+msgid "Blog Archives"
+msgstr "Archiv blogu"
+
+#: archive.php:22
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: archive.php:19
+msgid "Yearly Archives: %s"
+msgstr "Roční archívy: %s"
+
+#: archive.php:17
+msgid "Monthly Archives: %s"
+msgstr "Měsíční archívy: %s"
+
+#: archive.php:15
+msgid "Daily Archives: %s"
+msgstr "Denní archiv: %s"
+
+#: archive-testimonial.php:13
+msgid "Testimonials"
+msgstr "Reference"
+
+#: archive-resume.php:13 resume-filters-flat.php:23
+msgid "All Resumes"
+msgstr "Všechny životopisy"
+
+#: archive-job_listing.php:13
+msgid "All Jobs"
+msgstr "Přehled míst"
+
+#: 404.php:13
+msgid "Page Not Found"
+msgstr "Stránka nenalezena"
