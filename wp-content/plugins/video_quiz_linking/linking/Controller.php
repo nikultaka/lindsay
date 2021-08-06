@@ -53,8 +53,6 @@ function display_video_linking()
     $query = "SELECT ql.id,ql.video_name,ql.amount,aq.title,ql.status from " . $table_quiz_linking . " as ql left join " . $table_name . " as aq on aq.id = ql.quiz_id";
     $tableData = $wpdb->get_results($query);
 
-
-
     $args = array(
         'post_type' => 'attachment',
         'numberposts' => -1,
@@ -104,7 +102,6 @@ function videoDashboard(){
         wp_redirect(site_url());
         exit;
     } 
-
     ob_start();
     wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
     wp_enqueue_style('dashboard', plugins_url('../assets/css/dashboard.css', __FILE__), false, '1.0.0', 'all');
@@ -134,7 +131,6 @@ function videoDashboard(){
     WHERE $usersTable.ID = $loginUserID";
     
     $userquizSqlData = $wpdb->get_results($userquizSql);
-
 
     $query = "SELECT * from " . $table_name;
     $quizesData = $wpdb->get_results($query);
@@ -176,6 +172,43 @@ function videoDashboard(){
     print $s;
 }
 add_shortcode('dashboard', 'videoDashboard');
+
+function pricing(){
+    if (!is_user_logged_in()) {
+        wp_redirect(site_url());
+        exit;
+    } 
+    ob_start();
+    wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
+    wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
+    wp_enqueue_style('googleapis', 'https://fonts.googleapis.com/css?family=Montserrat:400,700,200');
+    wp_enqueue_script('validate-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js', array('jquery'));
+    wp_enqueue_script('sweetalert-script', '//cdn.jsdelivr.net/npm/sweetalert2@10', array('jquery'));
+    wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
+        
+    include(dirname(__FILE__) . "/html/pricing.php");
+    $s = ob_get_contents();
+    ob_end_clean();
+    print $s;
+}
+add_shortcode('pricing', 'pricing');
+
+function thankyou(){
+    if (!is_user_logged_in()) {
+        wp_redirect(site_url());
+        exit;
+    } 
+    ob_start();
+    wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
+    
+    wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
+        
+    include(dirname(__FILE__) . "/html/thankyou.php");
+    $s = ob_get_contents();
+    ob_end_clean();
+    print $s;
+}
+add_shortcode('thankyou', 'thankyou');
 
 class VideoLinkingController
 {
