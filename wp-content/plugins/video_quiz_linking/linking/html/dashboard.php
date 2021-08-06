@@ -8,7 +8,7 @@
     padding-top: 0px !important;
   }
   .article-wrapper-outer {
-    background:#FCFCFC !important;
+    background:#FCFCFF !important;
   }
   .navtabs {
     border-style: solid;
@@ -20,12 +20,13 @@
   .card_style {
     border-style: solid;
     color: black;
-    border-color: lightgray;
     border-width: 1px;
-    background: #BCC6CC;
+    background: #e5f4fe;
     margin-bottom: 4px;
+    border-color: gray;
+    border-radius: 7px;
   }
-  .nav>li>a:active{
+  .nav>li>.active{
     background:brown !important;
     color: white !important;
   }
@@ -33,23 +34,24 @@
     background:brown !important;
     color: white !important;
   }
+  
 </style>
 
 <!--========================================================================================================= -->
-<div class="container-fluid" style="margin: 20px;">
+<div class="container-fluid" style="margin: 20px;min-height: 700px;">
   <!-- Nav tabs -->
   <ul class="nav nav-pills nav-stacked col-md-3">
-    <li><a href="#tab_a" data-toggle="pill" class="active navtabs"><i class="fas fa-camera-retro"></i> See video</a></li>
+    <li><a href="#tab_a" data-toggle="pill" class="navtabs active"><i class="fas fa-camera-retro"></i> See video</a></li>
     <li><a href="#tab_b" data-toggle="pill" class="navtabs"><i class="fab fa-paypal"></i> Paypal Email</a></li>
     <li><a href="#tab_c" data-toggle="pill" class="navtabs"><i class="far fa-credit-card"></i> Payment Status</a></li>
   </ul>
   <div class="tab-content col-md-9">
     <div class="tab-pane active" id="tab_a">
-      <h3>Watch More Earn More</h3>
-      <div class="card card_style" >
+      <h3 style="margin-top: 0px; margin-left: 10px;">Watch More Earn More</h3>
+      <div class="card card_style" style="min-height: 130px;">
             <div class="row no-gutters">
                 <div class="col-sm-5">
-                    <img class="card-img" src="/images/defaultimg.png" alt="Suresh Dasari Card">
+                    <img class="card-img" src="<?php echo plugins_url('/video_quiz_linking/assets/images/user.png')?>" alt="" style="width:50%">
                 </div>
                 <div class="col-sm-7">
                     <div class="card-body">
@@ -62,7 +64,7 @@
         </div>
       <?php if (!empty($frontendQuizData)) { ?>
         <div id="videoID_<?php echo $frontendQuizData->id; ?>">
-          <video id="linkVid_<?php echo $frontendQuizData->id; ?>" data_id="<?php echo $frontendQuizData->id; ?>" class="linkVid" width="320" height="550" controls style="<?php echo $style; ?>">
+          <video id="linkVid_<?php echo $frontendQuizData->id; ?>" data_id="<?php echo $frontendQuizData->id; ?>" class="linkVid" width="320" height="500" controls style="<?php echo $style; ?>">
             <source src="<?php echo $frontendQuizData->link; ?>">
             Your browser does not support the video tag.
           </video>
@@ -131,4 +133,5 @@
 
 <script>
   var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+  
 </script>
