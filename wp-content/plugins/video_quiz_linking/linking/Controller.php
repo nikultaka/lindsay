@@ -17,7 +17,7 @@ function custom_quiz_linking_menu()
     add_menu_page('Video Linking', 'Video Linking', 'manage_options', 'video-linking', 'display_video_linking', 'dashicons-chart-area', 56);
     add_submenu_page(
         'video-linking', // parent slug
-        'Video Linking', // page title
+        'Video Linking', // page title 
         'Video Linking', // menu title
         'manage_options', // capability
         'video-linking', // slug 
@@ -32,6 +32,38 @@ function custom_quiz_linking_menu()
         'paypal-payout', // slug
         'payout' // callback 
     );
+
+    add_submenu_page(
+        'video-linking', // parent slug 
+        'Subscription List', // page title
+        'Subscription List', // menu title
+        'manage_options', // capability
+        'user-subscription', // slug
+        'subscription' // callback 
+    );
+}
+
+function subscription() {
+    ob_start();
+    wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
+    wp_enqueue_script('datatable-script', 'https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js', array('jquery'));
+    wp_enqueue_script('bootstrap-script', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array('jquery'));
+    wp_enqueue_script('sweetalert-script', '//cdn.jsdelivr.net/npm/sweetalert2@10', array('jquery'));
+    wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . "user_membership";
+    $table_user = $wpdb->prefix . "users";    
+
+    $query = "SELECT  ".$table_user.".display_name,".$table_name.".subscription_id 
+    from  ".$table_name." 
+    left join ".$table_user." on ".$table_user.".ID = ".$table_name.".user_id ";
+    $membershipData = $wpdb->get_results($query);
+
+    include(dirname(__FILE__) . "/html/subscription.php");
+    $s = ob_get_contents();
+    ob_end_clean();
+    print $s;    
 }
 
 function display_video_linking()

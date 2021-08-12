@@ -17,7 +17,7 @@ define('WCP_QUIZ_LINKING_PLUGIN_URL', WP_PLUGIN_URL . '/Website-Custome-Plugin')
 @define("WP_MEMORY_LIMIT","512M");       
 
 include_once(dirname(__FILE__) . "/linking/Controller.php");
-register_activation_hook(__FILE__, 'quizLinkingCreateTable');
+register_activation_hook(__FILE__, 'quizLinkingCreateTable');    
 
 function quizLinkingCreateTable() {
     global $wpdb;
@@ -25,6 +25,7 @@ function quizLinkingCreateTable() {
     $charset_collate = $wpdb->get_charset_collate();
     $db_table_name = $wpdb->prefix . 'video_quiz_linking';
     $db_user_quiz = $wpdb->prefix . 'user_quiz';
+    $db_user_membership = $wpdb->prefix . 'user_membership';
 
     $sql = "CREATE TABLE `$db_table_name` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -55,6 +56,20 @@ function quizLinkingCreateTable() {
     ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
     
     if ($wpdb->get_var("SHOW TABLES LIKE '$db_user_quiz'") != $db_table_name) {
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    }
+
+    $sql = "CREATE TABLE `$db_user_membership` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `user_id` int(11) NOT NULL,   
+        `subscription_id` varchar(255) NOT NULL,   
+        `created_at` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+        `updated_at` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (`id`)
+    ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
+    
+    if ($wpdb->get_var("SHOW TABLES LIKE '$db_user_membership'") != $db_table_name) {
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
     }    

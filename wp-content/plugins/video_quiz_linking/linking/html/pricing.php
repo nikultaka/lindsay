@@ -63,6 +63,9 @@
             opacity: 1;
         }
     }
+    .wpeppsub_paypalbuttonimage {
+        background-color: white !important;
+    }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -91,8 +94,10 @@
               <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status
                 Reports</li>
             </ul>
-            <div class="d-grid">
-              <a href="#" class="btn btn-primary text-uppercase">Button</a>
+            <div class="d-grid" style="background-color:white !important;">
+              <!-- <a href="#" class="btn btn-primary text-uppercase"> -->
+                  <?php echo do_shortcode('[wpeppsub id=15831]'); ?>  
+              <!-- </a> -->
             </div>
           </div>
         </div>
