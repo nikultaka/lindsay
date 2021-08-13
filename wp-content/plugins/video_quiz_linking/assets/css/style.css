@@ -97,3 +97,12 @@ table.dataTable tbody td {
 .ays_thank_you_fs {
     min-height: 0px !important;
 }
+
+.ays_quiz_results {
+    display: none !important;   
+}
+
+#ays-quiz-container-4 {
+    min-height: 123px !important;
+    width: 100% !important;
+}

@@ -20,7 +20,7 @@ function custom_quiz_linking_menu()
         'Video Linking', // page title 
         'Video Linking', // menu title
         'manage_options', // capability
-        'video-linking', // slug 
+        'video-linking', // slug  
         'display_video_linking' // callback
     );
 
@@ -118,10 +118,10 @@ function payout()
 
     $query = "SELECT ql.id,ql.video_name,ql.amount,aq.title,tuq.status,u.user_nicename,tuq.is_paid
     from " . $table_users . " as u
-    inner join " . $table_user_quiz . " as tuq on tuq.user_id = u.ID
+    inner join " . $table_user_quiz . " as tuq on tuq.user_id = u.ID and tuq.status='1'
     inner join " . $table_quiz_linking . " as ql on ql.id = tuq.video_id
     inner join " . $table_name . " as aq on aq.id = ql.quiz_id";
-    $tableData = $wpdb->get_results($query);
+    $tableData = $wpdb->get_results($query);        
 
     include(dirname(__FILE__) . "/html/payout.php");
     $s = ob_get_contents();
@@ -167,7 +167,8 @@ function videoDashboard(){
     $query = "SELECT * from " . $table_name;
     $quizesData = $wpdb->get_results($query);
     $query = "SELECT ql.* from " . $table_quiz_linking . " as ql 
-    left join " . $table_name . " as aq on aq.id = ql.quiz_id order by id ASC";
+    left join " . $table_name . " as aq on aq.id = ql.quiz_id 
+    order by id ASC";
     $tableData = $wpdb->get_results($query);
 
     $query = "SELECT * from " . $table_user_quiz . " where user_id = " . get_current_user_id();
@@ -187,12 +188,13 @@ function videoDashboard(){
             $videoID = $value->id;
             if (!in_array($videoID, $completedVideo)) {
                 $postData = get_post($value->video_url);
+                //echo '<pre>'; print_r($postData); exit;
                 $videoURL = $postData->guid;
                 $value->link = $videoURL;
                 $frontendQuizData = $value;
                 $_SESSION['latestVideoID'] = $value->id;
                 break;
-            }
+            }    
         }
     }
 
@@ -330,7 +332,7 @@ class VideoLinkingController
             require $plugin_dir . 'merchant-sdk-php/vendor/autoload.php';
             require $plugin_dir . 'merchant-sdk-php/samples/Configuration.php';
         }
-        $massPayRequest = new MassPayRequestType();
+        $massPayRequest = new MassPayRequestType();   
         $massPayRequest->MassPayItem = array();
         $table_user_quiz = $wpdb->prefix.'user_quiz';
         $table_users = $wpdb->prefix.'users';
@@ -372,7 +374,8 @@ class VideoLinkingController
         session_start();
         $table_user_quiz = $wpdb->prefix.'user_quiz';
         $loginUserID =  get_current_user_id();
-        $wpdb->insert($table_user_quiz,array('user_id'=>$loginUserID,'video_id'=>$_SESSION['latestVideoID'],'is_paid'=>0,'status'=>1,'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")));
+        $status = $_POST['id'];
+        $wpdb->insert($table_user_quiz,array('user_id'=>$loginUserID,'video_id'=>$_SESSION['latestVideoID'],'is_paid'=>0,'status'=>$status,'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")));  
         echo json_encode(array('status' => 1,'data'=>array()));
         exit();
     }

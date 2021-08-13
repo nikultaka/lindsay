@@ -647,9 +647,10 @@
             form.find('p.ays_score').removeClass('ays_score_display_none');
 
             if(response.score == '100%') {
-                videoCompleted();
+                videoCompleted(1);
                 form.find('p.ays_score').html(form.find('p.ays_score').text()+'<span class="ays_score_percent animated"> ' + response.score + '</span>');    
             } else {
+                videoCompleted(0);
                 form.find('p.ays_score').html(form.find('p.ays_score').text()+'<span class="ays_score_percent animated"> ' + response.score + '</span>');
             }           
             

@@ -14,7 +14,7 @@ jQuery(document).ready(function () {
         }
     });
     video.addEventListener('seeking', function() {
-        //return false;
+        return false;
         var delta = video.currentTime - supposedCurrentTime;
         if (Math.abs(delta) > 0.01) {
             console.log("Seeking is disabled");
@@ -290,13 +290,14 @@ jQuery('#paypalEmail_btn').on('click', function() {
 });
 
 
-function videoCompleted() {
+function videoCompleted(id) {
     jQuery.ajax({
         url: ajaxurl,
         type: 'POST',
         data: {
-            action: "VideoLinkingController::video_completed"
-        },               
+            action: "VideoLinkingController::video_completed",
+            id : id
+        },                   
         dataType: 'json',
         success: function (response) {
             jQuery("#loader").removeClass('loader');

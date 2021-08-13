@@ -35,6 +35,7 @@
       <tr>
         <th>User</th>
         <th>Video</th>
+        <th>Amount</th>
         <th>Status</th>
       </tr>
     </thead>
@@ -49,6 +50,7 @@
         <tr>
           <td><?php echo $value->user_nicename; ?></td>
           <td><?php echo $value->video_name; ?></td>
+          <td><?php echo $value->amount; ?></td>
           <td><?php echo $status; ?></td>      
         </tr>  
       <?php } } else { ?>  
@@ -60,6 +62,7 @@
       <tr>
         <th>User</th>
         <th>Video</th>
+        <th>Amount</th>
         <th>Status</th>
       </tr>
     </tfoot>
