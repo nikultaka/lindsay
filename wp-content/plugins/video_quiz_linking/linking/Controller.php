@@ -13,7 +13,7 @@ use PayPal\Auth\PPTokenAuthorization;
 add_action('admin_menu', 'custom_quiz_linking_menu');
 
 function custom_quiz_linking_menu()
-{
+{ 
     add_menu_page('Video Linking', 'Video Linking', 'manage_options', 'video-linking', 'display_video_linking', 'dashicons-chart-area', 56);
     add_submenu_page(
         'video-linking', // parent slug
@@ -232,9 +232,40 @@ function thankyou(){
         wp_redirect(site_url());
         exit;
     } 
+    global $wpdb;
+    if(isset($_REQUEST) && !empty($_REQUEST)) {
+        $data = $_REQUEST;
+        $txID = $data['tx'];  
+        $sig = $data['sig'];
+        //echo '<pre>'; print_r($data); exit;
+
+
+        $request = curl_init();
+        curl_setopt_array($request, array
+        (
+          CURLOPT_URL => 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+          CURLOPT_POST => TRUE,
+          CURLOPT_POSTFIELDS => http_build_query(array
+            (
+              'cmd' => '_notify-synch',
+              'tx' => $txID,
+              'at' => $sig,
+            )),
+          CURLOPT_RETURNTRANSFER => TRUE,
+          CURLOPT_HEADER => FALSE
+        ));
+        $response = curl_exec($request);
+        $status   = curl_getinfo($request, CURLINFO_HTTP_CODE);
+        curl_close($request);
+
+        echo '<pre>'; print_r(json_decode($response)); exit;  
+        
+        $table_user_membership = $wpdb->prefix . "user_membership";
+        $data = array('video_name' => $videoName, 'video_url' => $videoID, 'quiz_id' => $quizName, 'amount' => $amount, 'status' => $status);
+        $wpdb->insert($table_user_membership,$data);
+    }     
     ob_start();
     wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
-    
     wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
         
     include(dirname(__FILE__) . "/html/thankyou.php");

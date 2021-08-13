@@ -1,74 +1,85 @@
 <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
 <style>
-    section.pricing {
-        background: #007bff;
-        background: linear-gradient(to right, #0062E6, #33AEFF);
+section.pricing {
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.pricing .card {
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+    margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+.pricing .card-price {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.pricing .card-price .period {
+    font-size: 0.8rem;
+}
+
+.pricing ul li {
+    margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+    opacity: 0.7;
+}
+
+.pricing .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+    .pricing .card:hover {
+        margin-top: -.25rem;
+        margin-bottom: .25rem;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
     }
 
-    .pricing .card {
-        border: none;
-        border-radius: 1rem;
-        transition: all 0.2s;
-        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    .pricing .card:hover .btn {
+        opacity: 1;
     }
-
-    .pricing hr {
-        margin: 1.5rem 0;
-    }
-
-    .pricing .card-title {
-        margin: 0.5rem 0;
-        font-size: 0.9rem;
-        letter-spacing: .1rem;
-        font-weight: bold;
-    }
-
-    .pricing .card-price {
-        font-size: 3rem;
-        margin: 0;
-    }
-
-    .pricing .card-price .period {
-        font-size: 0.8rem;
-    }
-
-    .pricing ul li {
-        margin-bottom: 1rem;
-    }
-
-    .pricing .text-muted {
-        opacity: 0.7;
-    }
-
-    .pricing .btn {
-        font-size: 80%;
-        border-radius: 5rem;
-        letter-spacing: .1rem;
-        font-weight: bold;
-        padding: 1rem;
-        opacity: 0.7;
-        transition: all 0.2s;
-    }
-
-    /* Hover Effects on Card */
-
-    @media (min-width: 992px) {
-        .pricing .card:hover {
-            margin-top: -.25rem;
-            margin-bottom: .25rem;
-            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .pricing .card:hover .btn {
-            opacity: 1;
-        }
-    }
-    .wpeppsub_paypalbuttonimage {
-        background-color: white !important;
-    }
+}
+.wpeppsub_paypalbuttonimage {
+    background-color: white !important;
+}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="Z55DR29XRHV6E">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+<input type="hidden" name="notify_url" value="<?php echo site_url(); ?>/?page_id=15838">       
+</form>    
+      
+
 
 <section class="pricing py-5">
   <div class="container">
@@ -86,26 +97,26 @@
               <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
               <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
               <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Unlimited
-                Private Projects</li>
+              Private Projects</li>
               <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Dedicated
-                Phone Support</li>
+              Phone Support</li>
               <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free Subdomain
               </li>
               <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status
-                Reports</li>
-            </ul>
-            <div class="d-grid" style="background-color:white !important;">
+              Reports</li>
+          </ul>
+          <div class="d-grid" style="background-color:white !important;">
               <!-- <a href="#" class="btn btn-primary text-uppercase"> -->
                   <?php echo do_shortcode('[wpeppsub id=15831]'); ?>  
-              <!-- </a> -->
-            </div>
+                  <!-- </a> -->
+              </div>
           </div>
-        </div>
       </div>
-      <!-- Plus Tier -->
-      
-      <!-- Pro Tier -->
-    
-    </div>
   </div>
+  <!-- Plus Tier -->
+
+  <!-- Pro Tier -->
+
+</div>
+</div>
 </section>
