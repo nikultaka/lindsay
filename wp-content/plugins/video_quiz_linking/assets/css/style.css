@@ -102,7 +102,7 @@ table.dataTable tbody td {
     display: none !important;   
 }
 
-#ays-quiz-container-4 {
+.ays-quiz-container {
     min-height: 123px !important;
     width: 100% !important;
 }

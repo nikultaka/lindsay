@@ -33,14 +33,14 @@ function custom_quiz_linking_menu()
         'payout' // callback 
     );
 
-    add_submenu_page(
+    /*add_submenu_page(
         'video-linking', // parent slug 
         'Subscription List', // page title
         'Subscription List', // menu title
         'manage_options', // capability
         'user-subscription', // slug
         'subscription' // callback 
-    );
+    );*/
 }
 
 function subscription() {
@@ -385,23 +385,31 @@ class VideoLinkingController
         $table_user_quiz = $wpdb->prefix.'user_quiz';
         $table_users = $wpdb->prefix.'users';
         $table_users_meta = $wpdb->prefix.'usermeta';
+        $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
 
-        $sql = "select wuq.user_id,tum.meta_value from  ".$table_user_quiz." as wuq 
+        $sql = "select wuq.user_id,tum.meta_value,tql.amount 
+        from  ".$table_user_quiz." as wuq 
         inner join ".$table_users." as tu on tu.ID = wuq.user_id
+        inner join ".$table_quiz_linking." as tql on tql.id = wuq.video_id
         inner join ".$table_users_meta." as tum on tum.meta_key = 'userpaypalEmail' and tum.user_id = tu.ID
+        where wuq.is_paid = '0' and wuq.status = '1'    
         ";   
         $usersData = $wpdb->get_results($sql);
 
+        //echo '<pre>'; print_r($usersData); exit;
+
         $userID = array();
         $email = array();
+        $amount = array();
         if(!empty($usersData)) {
             foreach($usersData as $key => $value) {
                 $email[] = $value->meta_value;
                 $userID[] = $value->user_id; 
+                $amount[] = $value->amount;   
             }
             for ($i = 0; $i < count($email); $i++) {
                 $masspayItem = new MassPayRequestItemType();
-                $masspayItem->Amount = new BasicAmountType('USD', 2);
+                $masspayItem->Amount = new BasicAmountType('USD', $amount[$i]);
                 $masspayItem->ReceiverEmail = $email[$i];
                 $massPayRequest->MassPayItem[] = $masspayItem;
             }
