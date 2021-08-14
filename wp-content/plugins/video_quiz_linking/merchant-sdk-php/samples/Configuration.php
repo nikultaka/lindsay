@@ -30,11 +30,11 @@ class Configuration
 	{
 		$config = array(
 				// Signature Credential
-				"acct1.UserName" => "sb-47ml47s7034863_api1.business.example.com", //jb-us-seller_api1.paypal.com
-				"acct1.Password" => "BAT7Y32ZE9V2A2L9", //WX4WTU3S8MY44S7F
-				"acct1.Signature" => "AL5m86sF7KicMI3WPO55.7sX73mIA5i5PZRFhzfqzp.LqC3TId8OX4Ix", //AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy
+				"acct1.UserName" => PAYPAL_BUSINESS_ID, //jb-us-seller_api1.paypal.com
+				"acct1.Password" => PAYPAL_BUSINESS_PASSWORD, //WX4WTU3S8MY44S7F
+				"acct1.Signature" => PAYPAL_BUSINESS_SIGNATURE, //AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy
 				// Subject is optional and is required only in case of third party authorization
-				// "acct1.Subject" => "",
+				// "acct1.Subject" => "",  
 				
 				// Sample Certificate Credential
 				// "acct1.UserName" => "certuser_biz_api1.paypal.com",

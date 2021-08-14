@@ -17,8 +17,9 @@
             return actions.subscription.create({
               'plan_id': 'P-95M8831264923200MMELIHPA'
           });
-        },
+        },  
         onApprove: function(data, actions) {
+            console.log(data);  
             alert('You have successfully created subscription ' + data.subscriptionID);
         }
 

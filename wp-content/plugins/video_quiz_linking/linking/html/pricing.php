@@ -69,17 +69,10 @@ section.pricing {
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://www.paypal.com/sdk/js?client-id=AcS1rDqcqURwDJzNP0vnl_qMxqm5rixVvlf8PRdc_X4JCEgRIoy_FX25Si5ySQOlI_x_3OnIrcWsQ0Kz&vault=true&intent=subscription"></script> 
 
 
-<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="Z55DR29XRHV6E">
-<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-<input type="hidden" name="notify_url" value="<?php echo site_url(); ?>/?page_id=15838">       
-</form>    
-      
-
+<div id="loader" style="z-index:9999999999;"></div>
 
 <section class="pricing py-5">
   <div class="container">
@@ -88,27 +81,19 @@ section.pricing {
       <div class="col-lg-4" style="margin: auto;">
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center">Free</h5>
-            <h6 class="card-price text-center">$0<span class="period">/month</span></h6>
+            <h5 class="card-title text-muted text-uppercase text-center">Subscription</h5>
+            <h6 class="card-price text-center">$20<span class="period">/month</span></h6>
             <hr>
             <ul class="fa-ul">
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>5GB Storage</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-              <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Unlimited
-              Private Projects</li>
-              <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Dedicated
-              Phone Support</li>
-              <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free Subdomain
-              </li>
-              <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status
-              Reports</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Watch Video & Earn</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Payment Reports</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>Statistics</li>
           </ul>
           <div class="d-grid" style="background-color:white !important;">
               <!-- <a href="#" class="btn btn-primary text-uppercase"> -->
-                  <?php echo do_shortcode('[wpeppsub id=15831]'); ?>  
+                  <?php //echo do_shortcode('[wpeppsub id=15831]'); ?>  
                   <!-- </a> -->
+                  <div id="paypal-button-container"></div>
               </div>
           </div>
       </div>
@@ -120,3 +105,19 @@ section.pricing {
 </div>
 </div>
 </section>
+
+<script>
+    var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    paypal.Buttons({
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          'plan_id': 'P-95M8831264923200MMELIHPA'
+      });
+    },  
+    onApprove: function(data, actions) {
+        console.log(data);  
+        //alert('You have successfully created subscription ' + data.subscriptionID);
+        savePaypalID(data.subscriptionID);
+    }
+}).render('#paypal-button-container');
+</script>  

@@ -19,6 +19,12 @@ define('WCP_QUIZ_LINKING_PLUGIN_URL', WP_PLUGIN_URL . '/Website-Custome-Plugin')
 include_once(dirname(__FILE__) . "/linking/Controller.php");
 register_activation_hook(__FILE__, 'quizLinkingCreateTable');    
 
+define('PAYPAL_CLIENT_ID','AcS1rDqcqURwDJzNP0vnl_qMxqm5rixVvlf8PRdc_X4JCEgRIoy_FX25Si5ySQOlI_x_3OnIrcWsQ0Kz');
+define('PAYPAL_SECRET_ID','EKry33VGmrIC4gPUbcK1ZF3ZVDDt8_dhcpJL-Ad0FUN9kU6J9XanJpLL7zxQ3s_MrflkcbBNcLXiWdH_');
+define('PAYPAL_BUSINESS_ID','sb-47ml47s7034863_api1.business.example.com');
+define('PAYPAL_BUSINESS_PASSWORD','BAT7Y32ZE9V2A2L9');
+define('PAYPAL_BUSINESS_SIGNATURE','AL5m86sF7KicMI3WPO55.7sX73mIA5i5PZRFhzfqzp.LqC3TId8OX4Ix');
+
 function quizLinkingCreateTable() {
     global $wpdb;
     global $db_table_name;

@@ -322,3 +322,38 @@ function videoCompleted(id) {
         }
     });
 }
+
+
+function savePaypalID(subscriptonID) {
+    jQuery("#loader").addClass('loader');
+    jQuery.ajax({
+        url: ajaxurl,
+        type: 'POST',
+        data: {
+            action: "VideoLinkingController::save_paypal_id",
+            id : subscriptonID
+        },                   
+        dataType: 'json',
+        success: function (response) {
+            jQuery("#loader").removeClass('loader');
+            if (response.status == '1') {
+                Swal.fire({       
+                    icon: 'success',
+                    title: 'You have subscribed successfully',
+                    showConfirmButton: true
+                }).then(function () {
+                    document.location.href='?page_id=15814'
+                });             
+            } else {  
+                Swal.fire(
+                    'Error!',
+                    data.msg,
+                    'error'
+                    )
+            }
+        },
+        error: function (responce) {
+            jQuery("#loader").removeClass('loader');
+        }
+    });
+}

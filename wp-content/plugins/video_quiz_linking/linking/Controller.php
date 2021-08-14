@@ -131,9 +131,18 @@ function payout()
 
 function videoDashboard(){
     if (!is_user_logged_in()) {
-        wp_redirect(site_url());
+        wp_redirect(site_url('?page_id=15607'));
         exit;
     } 
+
+    global $wpdb;
+    $loginUserID =  get_current_user_id();
+    $usermetaTable = $wpdb->prefix . "usermeta";
+    $userMetadata = $wpdb->get_results("SELECT * FROM $usermetaTable WHERE user_id = $loginUserID AND meta_key = 'userpaypalEmail' ");
+    if(empty($userMetadata)) {
+        wp_redirect(site_url('?page_id=15836'));
+    }  
+
     ob_start();
     wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
     wp_enqueue_style('dashboard', plugins_url('../assets/css/dashboard.css', __FILE__), false, '1.0.0', 'all');
@@ -209,9 +218,17 @@ add_shortcode('dashboard', 'videoDashboard');
 
 function pricing(){
     if (!is_user_logged_in()) {
-        wp_redirect(site_url());
+        wp_redirect(site_url('?page_id=15607'));
         exit;
+    }      
+    global $wpdb;
+    $loginUserID =  get_current_user_id();
+    $usermetaTable = $wpdb->prefix . "usermeta";
+    $userMetadata = $wpdb->get_results("SELECT * FROM $usermetaTable WHERE user_id = $loginUserID AND meta_key = 'userpaypalEmail' ");
+    if(!empty($userMetadata)) {
+        wp_redirect(site_url('?page_id=15814'));
     } 
+
     ob_start();
     wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
     wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
@@ -219,7 +236,7 @@ function pricing(){
     wp_enqueue_script('validate-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js', array('jquery'));
     wp_enqueue_script('sweetalert-script', '//cdn.jsdelivr.net/npm/sweetalert2@10', array('jquery'));
     wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
-        
+
     include(dirname(__FILE__) . "/html/pricing.php");
     $s = ob_get_contents();
     ob_end_clean();
@@ -242,18 +259,18 @@ function thankyou(){
 
         $request = curl_init();
         curl_setopt_array($request, array
-        (
-          CURLOPT_URL => 'https://www.sandbox.paypal.com/cgi-bin/webscr',
-          CURLOPT_POST => TRUE,
-          CURLOPT_POSTFIELDS => http_build_query(array
             (
-              'cmd' => '_notify-synch',
-              'tx' => $txID,
-              'at' => $sig,
-            )),
-          CURLOPT_RETURNTRANSFER => TRUE,
-          CURLOPT_HEADER => FALSE
-        ));
+              CURLOPT_URL => 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+              CURLOPT_POST => TRUE,
+              CURLOPT_POSTFIELDS => http_build_query(array
+                (
+                  'cmd' => '_notify-synch',
+                  'tx' => $txID,
+                  'at' => $sig,
+              )),
+              CURLOPT_RETURNTRANSFER => TRUE,
+              CURLOPT_HEADER => FALSE
+          ));
         $response = curl_exec($request);
         $status   = curl_getinfo($request, CURLINFO_HTTP_CODE);
         curl_close($request);
@@ -267,7 +284,7 @@ function thankyou(){
     ob_start();
     wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
     wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
-        
+
     include(dirname(__FILE__) . "/html/thankyou.php");
     $s = ob_get_contents();
     ob_end_clean();
@@ -410,6 +427,59 @@ class VideoLinkingController
         echo json_encode(array('status' => 1,'data'=>array()));
         exit();
     }
+
+    public static function get_subscription_detail($subscriptionID,$accessToken) {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/subscriptions/'.$subscriptionID,
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => 'GET',
+          CURLOPT_HTTPHEADER => array(
+            'Authorization: Basic '.$accessToken,
+            'Content-Type: application/json'
+        ),
+      ));
+        $response = curl_exec($curl);
+        curl_close($curl);
+        $data = json_decode($response);
+        return $data;
+    }
+
+    public function save_paypal_id() {
+        global $wpdb;    
+        if(isset($_POST['id']) && $_POST['id']!='') {
+            $subscriptionID = $_POST['id'];    
+            $accessToken = base64_encode(PAYPAL_CLIENT_ID.':'.PAYPAL_SECRET_ID);
+            $subscriptionData = self::get_subscription_detail($subscriptionID,$accessToken);
+
+            if(!empty($subscriptionData)) {
+                $paypalEmail = $subscriptionData->subscriber->email_address;
+                $loginUserID =  get_current_user_id();
+                $usermetaTable = $wpdb->prefix . "usermeta";
+                $userMetadata = $wpdb->get_results("SELECT * FROM $usermetaTable WHERE user_id = $loginUserID AND meta_key = 'userpaypalEmail' ");
+
+                if ($paypalEmail != '' && $paypalEmail != null) {
+                    if (empty($userMetadata)) {
+                        add_user_meta($loginUserID, 'userpaypalEmail', $paypalEmail);
+                    } else {
+                        update_user_meta($loginUserID, 'userpaypalEmail', $paypalEmail);
+                    }
+                }  
+                echo json_encode(array('status'=>1));    
+            } else {
+                echo json_encode(array('status'=>0,'msg'=>'Something went wrong'));
+            }
+        } else {
+            echo json_encode(array('status'=>0,'msg'=>'Something went wrong'));
+        }
+        exit();
+    }
 }
 
 $videoLinkingController = new VideoLinkingController();
@@ -420,6 +490,7 @@ add_action('wp_ajax_VideoLinkingController::insert_paypalEmail', array($videoLin
 
 add_action('wp_ajax_VideoLinkingController::mass_payment', array($videoLinkingController, 'mass_payment'));
 add_action('wp_ajax_VideoLinkingController::video_completed', array($videoLinkingController, 'video_completed'));
+add_action('wp_ajax_VideoLinkingController::save_paypal_id', array($videoLinkingController, 'save_paypal_id'));
 
 
 function disable_plugin_updates( $value ) {
