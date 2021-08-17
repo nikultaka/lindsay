@@ -129,7 +129,7 @@ function payout()
     print $s;
 }
 
-function videoDashboard(){
+function videoDashboard() {
     if (!is_user_logged_in()) {
         wp_redirect(site_url('?page_id=15607'));
         exit;
@@ -165,13 +165,32 @@ function videoDashboard(){
     $usersTable = $wpdb->prefix . "users";
     $loginUserID =  get_current_user_id();
 
-    $userquizSql =    "SELECT  " . $table_quiz_linking . ".video_name, " . $table_user_quiz . ".user_id, " . $usersTable . ".user_nicename,
+    $userquizSql =    "SELECT  " . $table_quiz_linking . ".amount," . $table_quiz_linking . ".video_name, " . $table_user_quiz . ".user_id, " . $usersTable . ".user_nicename,
     ". $table_user_quiz . ".video_id, " . $table_user_quiz . ".is_paid, " . $table_user_quiz . ".status, " . $table_user_quiz . ".created_at FROM " . $table_user_quiz . " 
     left JOIN " . $usersTable . " ON " . $usersTable . ".ID = " . $table_user_quiz . ".user_id 
     LEFT JOIN " . $table_quiz_linking . " ON " . $table_quiz_linking . ".id = " . $table_user_quiz . ".video_id
     WHERE $usersTable.ID = $loginUserID";
     
     $userquizSqlData = $wpdb->get_results($userquizSql);
+
+    $received = array();
+    $pending = array();
+    if(!empty($userquizSqlData)) {
+        foreach($userquizSqlData as $ukey => $uvalue) {
+            $isPaid = $uvalue->is_paid;
+            $status = $uvalue->status;
+            $amount = $uvalue->amount;
+            if($isPaid == '0') {
+                $pending[] = $amount;    
+            } else if($isPaid == '1') {
+                $received[] = $amount;
+            }
+        }    
+    }
+    
+    $pending = array_sum($pending);
+    $received = array_sum($received);
+    $balance = $pending + $received;
 
     $query = "SELECT * from " . $table_name;
     $quizesData = $wpdb->get_results($query);
@@ -188,6 +207,10 @@ function videoDashboard(){
         foreach ($userQuizData as $key => $value) {
             $completedVideo[] = $value->video_id;
         }
+    }
+
+    if(count($completedVideo) == count($tableData)) {
+        $completedVideo = array();
     }
 
     $frontendQuizData = array();
@@ -208,6 +231,10 @@ function videoDashboard(){
     }
 
     $paypalEmail = get_user_meta($loginUserID,'userpaypalEmail',true);
+
+    $currentUserData = wp_get_current_user();
+    $nicename = $currentUserData->data->display_name;
+    $createdDate = $currentUserData->data->user_registered;    
 
     include(dirname(__FILE__) . "/html/dashboard.php");
     $s = ob_get_contents();

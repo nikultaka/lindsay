@@ -1,4 +1,7 @@
 jQuery(document).ready(function () {
+
+    jQuery("#menu-item-14899").after('<li id="menu-item-15851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15851"><a href="?page_id=15814">DASHBOARD</a></li>');
+
     jQuery('#example').DataTable({
         dom: "Bfrtip",
     });
@@ -291,6 +294,7 @@ jQuery('#paypalEmail_btn').on('click', function() {
 
 
 function videoCompleted(id) {
+    jQuery("#loader").addClass('loader');
     jQuery.ajax({
         url: ajaxurl,
         type: 'POST',
