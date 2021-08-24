@@ -139,6 +139,99 @@
     text-align: left;
     color: blue;
   }
+  .dash_board_profile_row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dash_board_profile_image{
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+  }
+  .dash_board_profile_image img{
+    width: 100%;
+    height: auto;
+  }
+  .dash_board_profile_content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+  }
+  .dash_board_profile_content span{
+    font-size: 18px;
+    color: #777;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex: 1;
+    margin: 5px 0px;
+  }
+  .dash_board_profile_content .nickname{
+    font-size: 22px;
+    color: #000;
+
+  }
+  .dash_board_profile_calender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+
+  }
+  .calender_box{
+    width: 90px;
+    height: 100px;
+    flex-direction: column;
+    display: flex;
+  }
+  .calender_title{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 3px 0px;
+    font-size: 16px;
+    color: white;
+    background-color: gray;
+  }
+  .calender_body{
+    background-color: lightgray;
+    padding: 3px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .calender_body span{
+    display: flex;
+    width: 100%;
+    padding: 2px;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .calender_body h1{
+    display: flex;
+    margin: 0px;
+    width: 100%;
+    margin-top: 3px;
+    
+    justify-content: center;
+    align-items: center; 
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+  }
 </style>
 
 <div id="loader" style="z-index:9999999999;"></div>
@@ -163,21 +256,33 @@
     <div class="tab-pane active" id="tab_f">
       <h3 style="margin-top: 0px; margin-left: 10px;">Watch More Earn More</h3>
         <div class="card card_style" style="min-height: 130px;">
-            <div class="row no-gutters">
-                <div class="col-sm-3">
-                    <img class="card-img" src="<?php echo plugins_url('/video_quiz_linking/assets/images/user.png')?>" alt="" style="width:50%">
-                </div>    
-                <div class="col-sm-7">
-                    <div class=""><?php echo $nicename; ?></div>
-                    <div class="">Members Since : <?php echo date("F, d Y",strtotime($createdDate)); ?></div>
-                    <div class="">Membership : Standard</div>
+        
+            <div class="dash_board_profile_row">
+              <div class="dash_board_profile_image">
+                <img class="card-img" src="<?php echo plugins_url('/video_quiz_linking/assets/images/user.png')?>" alt="" style="width:50%">
+              </div>
+              <div class="dash_board_profile_content">
+                <span class="nickname"><?php echo $nicename; ?></span>
+                <span class="">Members Since : <?php echo date("F, d Y",strtotime($createdDate)); ?></span>
+                <span class="">Membership : Standard</span>
+              </div>
+              <div class="dash_board_profile_calender">
+                <div class="calender_box">
+                  <div class="calender_title">
+                      <?php echo date ('F'); ?>
+                  </div>
+                  <div class="calender_body">
+                    <span><?php echo date ('l'); ?></span>
+                    <h1><?php echo date ('d'); ?></h1>
+                  </div>
                 </div>
+              </div>
             </div>
         </div>
 
         <div class="user_dashboard_details_container">
           <div class="dashborad_detials_header">
-            <button><a href="<?php echo site_url('?page_id=15859'); ?>">User Details</a></button>
+            <button><a href="<?php echo site_url('?page_id=15846'); ?>">User Details</a></button>
           </div>    
           <div class="dashborad_detials_content">
             <div class="dashboard_details_table">
@@ -212,7 +317,7 @@
                   </div>
                   <div class="dashboard_details_table_row">
                     <span class="dashboard_details_table_tab_first">Earned</span>
-                    <span class="dashboard_details_table_tab_second">$<?php echo $received; ?></span>
+                    <span class="dashboard_details_table_tab_second">$<?php echo $balance; ?></span>
                   </div>
                 </div>
             </div>
@@ -224,19 +329,26 @@
       <?php if (!empty($frontendQuizData)) { ?>
       <h3 style="margin-top: 0px; margin-left: 10px;">Watch More Earn More</h3>
         <div class="card card_style" style="min-height: 130px;">
-            <div class="row no-gutters">
-                <div class="col-sm-5">
-                    <img class="card-img" src="<?php echo plugins_url('/video_quiz_linking/assets/images/user.png')?>" alt="" style="width:50%">
+            <div class="dash_board_profile_row">
+              <div class="dash_board_profile_image">
+                <img class="card-img" src="<?php echo plugins_url('/video_quiz_linking/assets/images/user.png')?>" alt="" style="width:50%">
+              </div>
+              <div class="dash_board_profile_content">
+                <span class="nickname"><?php echo $nicename; ?></span>
+                <span class="">Members Since : <?php echo date("F, d Y",strtotime($createdDate)); ?></span>
+                <span class="">Membership : Standard</span>
+              </div>
+              <div class="dash_board_profile_calender">
+                <div class="calender_box">
+                  <div class="calender_title">
+                      <?php echo date ('F'); ?>
+                  </div>
+                  <div class="calender_body">
+                    <span><?php echo date ('l'); ?></span>
+                    <h1><?php echo date ('d'); ?></h1>
+                  </div>
                 </div>
-                <?php if(!empty($postData)) { ?>
-                <div class="col-sm-7">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $postData->post_title; ?></h5>
-                        <p class="card-text"><?php echo $postData->post_content; ?></p>
-                        <!-- <a href="#" class="btn btn-primary float-right">View Profile</a> -->
-                    </div>
-                </div>
-              <?php } ?>
+              </div>
             </div>
         </div>
 
@@ -273,8 +385,8 @@
       <table id="videoPaymentDataTable" class="table table-striped table-bordered" style="width:100% ; font-size:15px; color:black;">
         <thead>
           <tr>
-            <th>User</th>
-            <th>Video Title</th>
+            <!-- <th>User</th> -->
+            <th>Title</th>
             <th>Paid Status</th>
             <th>Status</th>
             <th>Date</th>
@@ -291,10 +403,10 @@
               if ($value->is_paid == '1') {
                 $is_paid = 'Yes';
               }
-              $newDate = date("F j, Y", strtotime($value->created_at));
+              $newDate = date("d, F Y", strtotime($value->created_at));
           ?>
               <tr>
-                <td><?php echo $value->user_nicename; ?></td>
+                <!-- <td><?php echo $value->user_nicename; ?></td> -->
                 <td><?php echo ucfirst($value->video_name); ?></td>
                 <td><?php echo $is_paid; ?></td>
                 <td><?php  echo $status; ?></td>

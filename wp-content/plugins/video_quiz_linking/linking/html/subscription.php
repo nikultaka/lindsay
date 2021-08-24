@@ -20,35 +20,43 @@
   <div id="loader" style="z-index:9999999999;"></div>
 
 
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Settings</h1>
+      <form id="formdata">
+        <div class="form-group">
+          <label">Client ID</label>
+          <input type="text" class="form-control" name="client_id" id="client_id" value="<?php echo $client_id; ?>">
+          <input type="hidden" name="action" value="VideoLinkingController::save_settings">
+        </div>
+        <div class="form-group">
+          <label">Secret ID</label>
+          <input type="text" class="form-control" name="secret_id" id="secret_id" value="<?php echo $secret_id; ?>">
+        </div>
+        <div class="form-group">
+          <label">Business ID</label>
+          <input type="text" class="form-control" name="business_id" id="business_id" value="<?php echo $business_id; ?>">
+        </div>
+        <div class="form-group">
+          <label">Business Password</label>
+          <input type="text" class="form-control" name="business_password" id="business_password" value="<?php echo $business_password; ?>">
+        </div>
+        <div class="form-group">
+          <label">Business Signature</label>
+          <input type="text" class="form-control" name="business_signature" id="business_signature" value="<?php echo $business_signature; ?>">
+        </div>
+        <div class="form-group">
+          <label">Amount</label>
+          <input type="text" class="form-control" name="amount" id="amount" value="<?php echo $amount; ?>">  
+        </div>
+        <button type="button" class="btn btn-primary" onclick="saveSettings();">Submit</button>
+      </form>
+    </div>
+  </div>
 
 
-  <table id="example" class="display" style="width:100%">
-    <thead>
-      <tr>
-        <th>Username</th>
-        <th>Subscription ID</th>
-      </tr>
-    </thead>
-    <tbody>
-     <?php if(!empty($membershipData)) { 
-      foreach($membershipData as $key => $value) {
-        ?>
-        <tr>
-          <td><?php echo $value->display_name; ?></td>
-          <td><?php echo $value->subscription_id; ?></td>
-        </tr>  
-      <?php } } else { ?>  
 
 
-      <?php } ?>  
-    </tbody>
-    <tfoot>
-      <tr>
-        <th>Username</th>
-        <th>Subscription ID</th>
-      </tr>
-    </tfoot>
-  </table>   
 
   <script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";

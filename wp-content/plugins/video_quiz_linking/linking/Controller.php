@@ -11,7 +11,7 @@ use PayPal\Auth\PPSignatureCredential;
 use PayPal\Auth\PPTokenAuthorization;
 
 add_action('admin_menu', 'custom_quiz_linking_menu');
-
+  
 function custom_quiz_linking_menu()
 { 
     add_menu_page('Video Linking', 'Video Linking', 'manage_options', 'video-linking', 'display_video_linking', 'dashicons-chart-area', 56);
@@ -33,14 +33,14 @@ function custom_quiz_linking_menu()
         'payout' // callback 
     );
 
-    /*add_submenu_page(
+    add_submenu_page(
         'video-linking', // parent slug 
-        'Subscription List', // page title
-        'Subscription List', // menu title
+        'Settings', // page title
+        'Settings', // menu title
         'manage_options', // capability
-        'user-subscription', // slug
+        'user-settings', // slug
         'subscription' // callback 
-    );*/
+    );
 }
 
 function subscription() {
@@ -52,13 +52,25 @@ function subscription() {
     wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
 
     global $wpdb;
-    $table_name = $wpdb->prefix . "user_membership";
-    $table_user = $wpdb->prefix . "users";    
+    $db_settings = $wpdb->prefix . 'membership_settings';
 
-    $query = "SELECT  ".$table_user.".display_name,".$table_name.".subscription_id 
-    from  ".$table_name." 
-    left join ".$table_user." on ".$table_user.".ID = ".$table_name.".user_id ";
-    $membershipData = $wpdb->get_results($query);
+    $query = "SELECT  * from ".$db_settings." ";
+    $settingsData = $wpdb->get_results($query);
+
+    $client_id = '';
+    $secret_id = '';
+    $business_id = '';
+    $business_password = '';
+    $business_signature = '';
+    $amount = '';
+    if(!empty($settingsData)) {
+        $client_id = $settingsData[0]->client_id;
+        $secret_id = $settingsData[0]->secret_id;
+        $business_id = $settingsData[0]->business_id;
+        $business_password = $settingsData[0]->business_password;
+        $business_signature = $settingsData[0]->business_signature;
+        $amount = $settingsData[0]->amount;
+    }
 
     include(dirname(__FILE__) . "/html/subscription.php");
     $s = ob_get_contents();
@@ -116,7 +128,7 @@ function payout()
     $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
     $table_user_quiz = $wpdb->prefix . "user_quiz";
 
-    $query = "SELECT ql.id,ql.video_name,ql.amount,aq.title,tuq.status,u.user_nicename,tuq.is_paid
+    $query = "SELECT ql.id,ql.video_name,ql.amount,aq.title,tuq.status,u.display_name,tuq.is_paid
     from " . $table_users . " as u
     inner join " . $table_user_quiz . " as tuq on tuq.user_id = u.ID and tuq.status='1'
     inner join " . $table_quiz_linking . " as ql on ql.id = tuq.video_id
@@ -180,9 +192,9 @@ function videoDashboard() {
             $isPaid = $uvalue->is_paid;
             $status = $uvalue->status;
             $amount = $uvalue->amount;
-            if($isPaid == '0') {
+            if($isPaid == '0' && $status == '1') {
                 $pending[] = $amount;    
-            } else if($isPaid == '1') {
+            } else if($isPaid == '1'  && $status == '1') {
                 $received[] = $amount;
             }
         }    
@@ -191,13 +203,6 @@ function videoDashboard() {
     $pending = array_sum($pending);
     $received = array_sum($received);
     $balance = $pending + $received;
-
-    $query = "SELECT * from " . $table_name;
-    $quizesData = $wpdb->get_results($query);
-    $query = "SELECT ql.* from " . $table_quiz_linking . " as ql 
-    left join " . $table_name . " as aq on aq.id = ql.quiz_id 
-    order by id ASC";
-    $tableData = $wpdb->get_results($query);
 
     $query = "SELECT * from " . $table_user_quiz . " where user_id = " . get_current_user_id();
     $userQuizData = $wpdb->get_results($query);
@@ -209,26 +214,46 @@ function videoDashboard() {
         }
     }
 
-    if(count($completedVideo) == count($tableData)) {
-        $completedVideo = array();
-    }
+    $lastSeenVideoID = array_values(array_slice($completedVideo, -1))[0];
+
+    $query = "SELECT * from " . $table_name;
+    $quizesData = $wpdb->get_results($query);
+    $query = "SELECT ql.* from " . $table_quiz_linking . " as ql 
+    left join " . $table_name . " as aq on aq.id = ql.quiz_id 
+    order by id asc";
+    $tableData = $wpdb->get_results($query);
+
+    //echo '<pre>'; print_r($tableData); exit;
 
     $frontendQuizData = array();
     session_start();
+    $isPick = 0;    
     if (!empty($tableData)) {
         foreach ($tableData as $key => $value) {
             $videoID = $value->id;
-            if (!in_array($videoID, $completedVideo)) {
+            
+            if ( $videoID == $lastSeenVideoID ) {
+                $isPick = 1;
+                continue;
+            }
+            if($isPick == 1) {
                 $postData = get_post($value->video_url);
-                //echo '<pre>'; print_r($postData); exit;
                 $videoURL = $postData->guid;
                 $value->link = $videoURL;
                 $frontendQuizData = $value;
-                $_SESSION['latestVideoID'] = $value->id;
-                break;
-            }    
+                $_SESSION['latestVideoID'] = $value->id;  
+            }
+            break;    
         }
+        if($isPick == 0) {
+            $postData = get_post($tableData[0]->video_url);
+            $videoURL = $postData->guid;
+            $tableData[0]->link = $videoURL;
+            $frontendQuizData = $tableData[0];
+            $_SESSION['latestVideoID'] = $tableData[0]->id;
+        }    
     }
+
 
     $paypalEmail = get_user_meta($loginUserID,'userpaypalEmail',true);
 
@@ -515,6 +540,26 @@ class VideoLinkingController
         }
         exit();
     }
+
+    public function save_settings() {
+        global $wpdb;
+        $client_id = $_POST['client_id'];
+        $secret_id = $_POST['secret_id'];
+        $business_id = $_POST['business_id'];
+        $business_password = $_POST['business_password'];
+        $business_signature = $_POST['business_signature'];
+        $amount = $_POST['amount'];    
+        $db_settings = $wpdb->prefix . 'membership_settings';
+        $data =  array('client_id'=>$client_id,'secret_id'=>$secret_id,'business_id'=>$business_id,'business_password'=>$business_password,'business_signature'=>$business_signature,'amount'=>$amount);
+        $settingsData = $wpdb->get_results("select * from ".$db_settings);
+        if(!empty($settingsData)) {
+            $wpdb->update($db_settings,$data,array('id'=>1));    
+        } else {
+            $wpdb->insert($db_settings,$data);    
+        }
+        echo json_encode(array('status'=>1));
+        die;
+    }
 }
 
 $videoLinkingController = new VideoLinkingController();
@@ -526,6 +571,7 @@ add_action('wp_ajax_VideoLinkingController::insert_paypalEmail', array($videoLin
 add_action('wp_ajax_VideoLinkingController::mass_payment', array($videoLinkingController, 'mass_payment'));
 add_action('wp_ajax_VideoLinkingController::video_completed', array($videoLinkingController, 'video_completed'));
 add_action('wp_ajax_VideoLinkingController::save_paypal_id', array($videoLinkingController, 'save_paypal_id'));
+add_action('wp_ajax_VideoLinkingController::save_settings', array($videoLinkingController, 'save_settings'));
 
 
 function disable_plugin_updates( $value ) {

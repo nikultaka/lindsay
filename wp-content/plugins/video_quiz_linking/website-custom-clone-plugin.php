@@ -17,21 +17,40 @@ define('WCP_QUIZ_LINKING_PLUGIN_URL', WP_PLUGIN_URL . '/Website-Custome-Plugin')
 @define("WP_MEMORY_LIMIT","512M");       
 
 include_once(dirname(__FILE__) . "/linking/Controller.php");
-register_activation_hook(__FILE__, 'quizLinkingCreateTable');    
+register_activation_hook(__FILE__, 'quizLinkingCreateTable');  
 
-define('PAYPAL_CLIENT_ID','AcS1rDqcqURwDJzNP0vnl_qMxqm5rixVvlf8PRdc_X4JCEgRIoy_FX25Si5ySQOlI_x_3OnIrcWsQ0Kz');
-define('PAYPAL_SECRET_ID','EKry33VGmrIC4gPUbcK1ZF3ZVDDt8_dhcpJL-Ad0FUN9kU6J9XanJpLL7zxQ3s_MrflkcbBNcLXiWdH_');
-define('PAYPAL_BUSINESS_ID','sb-47ml47s7034863_api1.business.example.com');
-define('PAYPAL_BUSINESS_PASSWORD','BAT7Y32ZE9V2A2L9');
-define('PAYPAL_BUSINESS_SIGNATURE','AL5m86sF7KicMI3WPO55.7sX73mIA5i5PZRFhzfqzp.LqC3TId8OX4Ix');
+global $wpdb;  
+$db_settings = $wpdb->prefix . 'membership_settings';
+$query = "SELECT  * from ".$db_settings." ";
+$settingsData = $wpdb->get_results($query);
+
+$client_id = '';
+$secret_id = '';
+$business_id = '';
+$business_password = '';
+$business_signature = '';
+if(!empty($settingsData)) {
+    $client_id = $settingsData[0]->client_id;
+    $secret_id = $settingsData[0]->secret_id;
+    $business_id = $settingsData[0]->business_id;
+    $business_password = $settingsData[0]->business_password;
+    $business_signature = $settingsData[0]->business_signature;
+}
+
+define('PAYPAL_CLIENT_ID',$client_id);
+define('PAYPAL_SECRET_ID',$secret_id);
+define('PAYPAL_BUSINESS_ID',$business_id);
+define('PAYPAL_BUSINESS_PASSWORD',$business_password);
+define('PAYPAL_BUSINESS_SIGNATURE',$business_signature);
 
 function quizLinkingCreateTable() {
-    global $wpdb;
+    
     global $db_table_name;
     $charset_collate = $wpdb->get_charset_collate();
     $db_table_name = $wpdb->prefix . 'video_quiz_linking';
     $db_user_quiz = $wpdb->prefix . 'user_quiz';
     $db_user_membership = $wpdb->prefix . 'user_membership';
+    $db_settings = $wpdb->prefix . 'membership_settings';
 
     $sql = "CREATE TABLE `$db_table_name` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -76,6 +95,22 @@ function quizLinkingCreateTable() {
     ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
     
     if ($wpdb->get_var("SHOW TABLES LIKE '$db_user_membership'") != $db_table_name) {
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    }
+
+    $sql = "CREATE TABLE `$db_settings` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `client_id` varchar(255) NOT NULL,
+        `secret_id` varchar(255) NOT NULL,
+        `business_id` varchar(255) NOT NULL,
+        `business_password` varchar(255) NOT NULL,
+        `business_signature` varchar(255) NOT NULL,
+        `amount` varchar(255) NOT NULL,
+        PRIMARY KEY (`id`)
+    ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
+    
+    if ($wpdb->get_var("SHOW TABLES LIKE '$db_settings'") != $db_settings) {
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
     }    

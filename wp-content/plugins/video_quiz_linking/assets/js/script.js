@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
-
-    jQuery("#menu-item-14899").after('<li id="menu-item-15851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15851"><a href="?page_id=15814">DASHBOARD</a></li>');
+        
+    //jQuery("#menu-item-14899").after('<li id="menu-item-15851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15851"><a href="?page_id=15814">DASHBOARD</a></li>');
 
     jQuery('#example').DataTable({
         dom: "Bfrtip",
@@ -45,6 +45,88 @@ function addVideo() {
     jQuery('#quizName  option[value=""]').prop("selected", true);
     jQuery('#status  option[value=""]').prop("selected", true);
     jQuery("#videoModal").modal('show');
+}
+
+function saveSettings() {
+    var client_id = jQuery("#client_id").val();
+    var secret_id = jQuery('#secret_id').val();
+    var business_id = jQuery('#business_id').val();
+    var business_password = jQuery('#business_password').val();
+    var business_signature = jQuery("#business_signature").val();
+    var amount = jQuery("#amount").val();
+    var countError = 0;   
+
+    if(client_id == '') {
+        jQuery("#client_id").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#client_id").removeClass('has-error');
+    }
+
+    if(secret_id == '') {
+        jQuery("#secret_id").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#secret_id").removeClass('has-error');
+    }
+
+    if(business_id == '') {
+        jQuery("#business_id").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#business_id").removeClass('has-error');
+    }
+
+    if(business_password == '') {
+        jQuery("#business_password").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#business_password").removeClass('has-error');
+    }
+
+
+    if(business_signature == '') {
+        jQuery("#business_signature").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#business_signature").removeClass('has-error');
+    }
+
+    if(amount == '') {
+        jQuery("#amount").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#amount").removeClass('has-error');
+    }
+
+    if(countError == 0) {
+        jQuery("#loader").addClass('loader');
+        jQuery.ajax({
+            url: ajaxurl,
+            type: 'POST',
+            data: jQuery("#formdata").serialize(),  
+            dataType: 'json',    
+            success: function (responce) {
+                jQuery("#loader").removeClass('loader');
+                if (responce.status == '1') {
+                    Swal.fire(
+                        'Add!',
+                        'Settings updated successfully',
+                        'success',
+                        );
+                } else {
+                    Swal.fire(
+                        'Error!',
+                        responce.msg,
+                        'error'
+                        )
+                }
+            },
+            error: function (responce) {        
+                jQuery("#loader").removeClass('loader');
+            }
+        });       
+    }    
 }
 
 function saveVideo() {
