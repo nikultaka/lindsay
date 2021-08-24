@@ -111,8 +111,8 @@ section.pricing {
     paypal.Buttons({
       createSubscription: function(data, actions) {
         return actions.subscription.create({
-          'plan_id': 'P-95M8831264923200MMELIHPA'
-      });
+          'plan_id': '<?php echo $planID; ?>'
+      });            
     },  
     onApprove: function(data, actions) {
         console.log(data);  

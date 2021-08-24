@@ -11,7 +11,7 @@ use PayPal\Auth\PPSignatureCredential;
 use PayPal\Auth\PPTokenAuthorization;
 
 add_action('admin_menu', 'custom_quiz_linking_menu');
-  
+
 function custom_quiz_linking_menu()
 { 
     add_menu_page('Video Linking', 'Video Linking', 'manage_options', 'video-linking', 'display_video_linking', 'dashicons-chart-area', 56);
@@ -289,6 +289,14 @@ function pricing(){
     wp_enqueue_script('sweetalert-script', '//cdn.jsdelivr.net/npm/sweetalert2@10', array('jquery'));
     wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
 
+    $db_settings = $wpdb->prefix . 'membership_settings';
+    $settingsData = $wpdb->get_results("select * from ".$db_settings);
+
+    $planID = '';
+    if(!empty($settingsData)) {
+        $planID = $settingsData[0]->plan_id;    
+    }        
+
     include(dirname(__FILE__) . "/html/pricing.php");
     $s = ob_get_contents();
     ob_end_clean();
@@ -541,6 +549,29 @@ class VideoLinkingController
         exit();
     }
 
+    public static function curlCall($url,$method,$postdata,$contentType,$accessToken) {
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/'.$url,
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => $method,
+          CURLOPT_POSTFIELDS => $postdata,
+          CURLOPT_HTTPHEADER => array(
+            'Authorization: '.$accessToken,
+            'Content-Type: '.$contentType
+        ),
+      ));  
+        $response = curl_exec($curl);
+        curl_close($curl);
+        $response = json_decode($response);
+        return $response;     
+    }
+
     public function save_settings() {
         global $wpdb;
         $client_id = $_POST['client_id'];
@@ -552,14 +583,63 @@ class VideoLinkingController
         $db_settings = $wpdb->prefix . 'membership_settings';
         $data =  array('client_id'=>$client_id,'secret_id'=>$secret_id,'business_id'=>$business_id,'business_password'=>$business_password,'business_signature'=>$business_signature,'amount'=>$amount);
         $settingsData = $wpdb->get_results("select * from ".$db_settings);
+
         if(!empty($settingsData)) {
             $wpdb->update($db_settings,$data,array('id'=>1));    
         } else {
             $wpdb->insert($db_settings,$data);    
         }
-        echo json_encode(array('status'=>1));
-        die;
-    }
+        if($settingsData[0]->amount != $amount) {
+                $accessToken = base64_encode(PAYPAL_CLIENT_ID.':'.PAYPAL_SECRET_ID);
+                $response = self::curlCall('oauth2/token','POST','grant_type=client_credentials','application/x-www-form-urlencoded','Basic '.$accessToken);
+                if(!empty($response) && isset($response->access_token)) {
+                    $postString = '{
+                      "name": "Video Streaming Service",
+                      "description": "Video streaming service",
+                      "type": "SERVICE",
+                      "category": "SOFTWARE",
+                      "image_url": "https://example.com/streaming.jpg",
+                      "home_url": "https://example.com/home"
+                  }';
+                  $accessToken = $response->access_token;
+                  $response = self::curlCall('catalogs/products','POST',$postString,'application/json','Bearer '.$accessToken);
+                  if(!empty($response) && isset($response->id)) {
+                    $postString = '{
+                      "product_id": "'.$response->id.'",
+                      "name": "Basic Plan",
+                      "description": "Basic plan",
+                      "billing_cycles": [
+                        {
+                          "frequency": {
+                            "interval_unit": "MONTH",
+                            "interval_count": 1
+                          },
+                          "tenure_type": "REGULAR",
+                          "sequence": 1,
+                          "pricing_scheme": {
+                            "fixed_price": {
+                              "value": "'.$amount.'",
+                              "currency_code": "USD"
+                            }
+                          }
+                        }
+                      ],
+                      "payment_preferences": {
+                        "auto_bill_outstanding": true,
+                        "setup_fee_failure_action": "CONTINUE",
+                        "payment_failure_threshold": 3
+                      }
+                    }';
+                    $response = self::curlCall('billing/plans','POST',$postString,'application/json','Bearer '.$accessToken);
+                    if(!empty($response) && isset($response->id)) {
+                        $wpdb->update($db_settings,array('plan_id'=>$response->id),array('id'=>1));        
+                    }
+                }   
+            }
+        }
+    echo json_encode(array('status'=>1));
+    die;
+}
 }
 
 $videoLinkingController = new VideoLinkingController();

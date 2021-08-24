@@ -106,14 +106,15 @@ function quizLinkingCreateTable() {
         `business_id` varchar(255) NOT NULL,
         `business_password` varchar(255) NOT NULL,
         `business_signature` varchar(255) NOT NULL,
-        `amount` varchar(255) NOT NULL,
+        `amount` decimal(5,2) NOT NULL,
+        `plan_id` varchar(255) NOT NULL,
         PRIMARY KEY (`id`)
     ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
     
     if ($wpdb->get_var("SHOW TABLES LIKE '$db_settings'") != $db_settings) {
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
-    }    
+    }      
 
 
 }
