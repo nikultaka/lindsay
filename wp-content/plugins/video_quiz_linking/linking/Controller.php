@@ -293,8 +293,10 @@ function pricing(){
     $settingsData = $wpdb->get_results("select * from ".$db_settings);
 
     $planID = '';
+    $price = 0;
     if(!empty($settingsData)) {
         $planID = $settingsData[0]->plan_id;    
+        $price = $settingsData[0]->amount;    
     }        
 
     include(dirname(__FILE__) . "/html/pricing.php");
