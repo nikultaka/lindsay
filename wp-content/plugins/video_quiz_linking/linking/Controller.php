@@ -1,7 +1,7 @@
 <?php
 //error_reporting(E_ALL & ~E_NOTICE);
 //ini_set('display_errors', '1');
-
+       
 use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\PayPalAPI\MassPayReq;
 use PayPal\PayPalAPI\MassPayRequestItemType;
@@ -35,12 +35,44 @@ function custom_quiz_linking_menu()
 
     add_submenu_page(
         'video-linking', // parent slug 
+        'Witdrawal Request', // page title
+        'Witdrawal Request', // menu title
+        'manage_options', // capability
+        'witdrawal-request', // slug
+        'witdrawalrequest' // callback 
+    );
+
+    add_submenu_page(
+        'video-linking', // parent slug 
         'Settings', // page title
         'Settings', // menu title
         'manage_options', // capability
         'user-settings', // slug
         'subscription' // callback 
     );
+}
+
+function witdrawalrequest() {
+    ob_start();
+    wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
+    wp_enqueue_script('datatable-script', 'https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js', array('jquery'));
+    wp_enqueue_script('bootstrap-script', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array('jquery'));
+    wp_enqueue_script('sweetalert-script', '//cdn.jsdelivr.net/npm/sweetalert2@10', array('jquery'));
+    wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
+
+    global $wpdb;
+    $db_withdraw = $wpdb->prefix . 'withdraw';
+    $db_users = $wpdb->prefix . 'users';
+
+    $query = "SELECT w.*,u.display_name from ".$db_withdraw." as w 
+    inner join " .$db_users. " as u on u.ID = w.user_id";
+
+    $tableData = $wpdb->get_results($query);                  
+
+    include(dirname(__FILE__) . "/html/withdraw.php");
+    $s = ob_get_contents();     
+    ob_end_clean();
+    print $s;
 }
 
 function subscription() {
@@ -168,13 +200,18 @@ function videoDashboard() {
     wp_enqueue_script('validate-script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js', array('jquery'));
     wp_enqueue_script('bootstrap-script', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array('jquery'));
     wp_enqueue_script('sweetalert-script', '//cdn.jsdelivr.net/npm/sweetalert2@10', array('jquery'));
-    wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
+    wp_enqueue_script('dashboard-script', plugins_url('../assets/js/script.js', __FILE__));
+    wp_localize_script('dashboard-script', 'ajax_var', array(
+         'url' => admin_url('admin-ajax.php'),
+         'nonce' => wp_create_nonce('ajax-nonce')
+    ));
 
     global $wpdb;
     $table_name = $wpdb->prefix . "aysquiz_quizes";
     $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
     $table_user_quiz = $wpdb->prefix . 'user_quiz';
     $usersTable = $wpdb->prefix . "users";
+    $db_withdraw = $wpdb->prefix . 'withdraw';
     $loginUserID =  get_current_user_id();
 
     $userquizSql =    "SELECT  " . $table_quiz_linking . ".amount," . $table_quiz_linking . ".video_name, " . $table_user_quiz . ".user_id, " . $usersTable . ".user_nicename,
@@ -185,25 +222,35 @@ function videoDashboard() {
     
     $userquizSqlData = $wpdb->get_results($userquizSql);
 
-    $received = array();
-    $pending = array();
+    $withdrawalRequest = $wpdb->get_results("select * from ".$db_withdraw." where user_id = ".$loginUserID);
+
+    //echo '<pre>'; print_r($withdrawalRequest); exit;
+
+    $withDrawalPending = array();
+    $withDrawalAccepted = array();
+    if(!empty($withdrawalRequest)) {
+        foreach($withdrawalRequest as $key => $value) {
+            if($value->is_paid == '0') {
+                $withDrawalPending[] = $value->amount;
+            } else if($value->is_paid == '1') {
+                $withDrawalAccepted[] = $value->amount;
+            }
+        }
+    }
+
+    $totalAmount = array();
     if(!empty($userquizSqlData)) {
         foreach($userquizSqlData as $ukey => $uvalue) {
             $isPaid = $uvalue->is_paid;
             $status = $uvalue->status;
             $amount = $uvalue->amount;
-            if($isPaid == '0' && $status == '1') {
-                $pending[] = $amount;    
-            } else if($isPaid == '1'  && $status == '1') {
-                $received[] = $amount;
+            if($status == '1') {
+                $totalAmount[] = $amount;
             }
         }    
     }
     
-    $pending = array_sum($pending);
-    $received = array_sum($received);
-    $balance = $pending + $received;
-
+    $balance = array_sum($totalAmount) - (array_sum($withDrawalPending) + array_sum($withDrawalAccepted));
     $query = "SELECT * from " . $table_user_quiz . " where user_id = " . get_current_user_id();
     $userQuizData = $wpdb->get_results($query);
 
@@ -238,7 +285,8 @@ function videoDashboard() {
             }
             if($isPick == 1) {
                 $postData = get_post($value->video_url);
-                $videoURL = $postData->guid;
+                $postMeta = get_post_meta($postData->ID);
+                $videoURL = site_url('wp-content/uploads/'.$postMeta['_wp_attached_file'][0]);
                 $value->link = $videoURL;
                 $frontendQuizData = $value;
                 $_SESSION['latestVideoID'] = $value->id;  
@@ -247,13 +295,13 @@ function videoDashboard() {
         }
         if($isPick == 0) {
             $postData = get_post($tableData[0]->video_url);
-            $videoURL = $postData->guid;
+            $postMeta = get_post_meta($postData->ID);
+            $videoURL = site_url('wp-content/uploads/'.$postMeta['_wp_attached_file'][0]);
             $tableData[0]->link = $videoURL;
             $frontendQuizData = $tableData[0];
             $_SESSION['latestVideoID'] = $tableData[0]->id;
-        }    
+        }   
     }
-
 
     $paypalEmail = get_user_meta($loginUserID,'userpaypalEmail',true);
 
@@ -436,7 +484,7 @@ class VideoLinkingController
     public function mass_payment()
     {
         global $wpdb;
-        //$videoID = $_POST['id'];
+        $massPaymentID = $_POST['id'];
         $plugin_dir = ABSPATH . 'wp-content/plugins/video_quiz_linking/';
         if (file_exists($plugin_dir . 'merchant-sdk-php/vendor/autoload.php')) {
             require $plugin_dir . 'merchant-sdk-php/vendor/autoload.php';
@@ -444,50 +492,39 @@ class VideoLinkingController
         }
         $massPayRequest = new MassPayRequestType();   
         $massPayRequest->MassPayItem = array();
-        $table_user_quiz = $wpdb->prefix.'user_quiz';
-        $table_users = $wpdb->prefix.'users';
-        $table_users_meta = $wpdb->prefix.'usermeta';
-        $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
+        $db_withdraw = $wpdb->prefix . 'withdraw';
 
-        $sql = "select wuq.user_id,tum.meta_value,tql.amount 
-        from  ".$table_user_quiz." as wuq 
-        inner join ".$table_users." as tu on tu.ID = wuq.user_id
-        inner join ".$table_quiz_linking." as tql on tql.id = wuq.video_id
-        inner join ".$table_users_meta." as tum on tum.meta_key = 'userpaypalEmail' and tum.user_id = tu.ID
-        where wuq.is_paid = '0' and wuq.status = '1'    
-        ";   
-        $usersData = $wpdb->get_results($sql);
+        $sql = "select * from ".$db_withdraw." where id =".$massPaymentID;   
+        $withDrawData = $wpdb->get_results($sql);
 
-        //echo '<pre>'; print_r($usersData); exit;
 
-        $userID = array();
-        $email = array();
-        $amount = array();
-        if(!empty($usersData)) {
-            foreach($usersData as $key => $value) {
-                $email[] = $value->meta_value;
-                $userID[] = $value->user_id; 
-                $amount[] = $value->amount;   
-            }
-            for ($i = 0; $i < count($email); $i++) {
-                $masspayItem = new MassPayRequestItemType();
-                $masspayItem->Amount = new BasicAmountType('USD', $amount[$i]);
-                $masspayItem->ReceiverEmail = $email[$i];
-                $massPayRequest->MassPayItem[] = $masspayItem;
-            }
+
+        if(!empty($withDrawData)) {
+            $userMeta = get_user_meta($withDrawData[0]->user_id);
+            $amount = $withDrawData[0]->amount;
+            $email = $userMeta['userpaypalEmail'][0];    
+            $masspayItem = new MassPayRequestItemType();
+            $masspayItem->Amount = new BasicAmountType('USD',$amount);
+            $masspayItem->ReceiverEmail = $email;
+            $massPayRequest->MassPayItem[] = $masspayItem;
+
             $massPayReq = new MassPayReq();
             $massPayReq->MassPayRequest = $massPayRequest;
             $paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
             $massPayResponse = $paypalService->MassPay($massPayReq);
-            $userID = implode(",",$userID);
-            $wpdb->query("update ".$table_user_quiz." set is_paid = 1,status=0 where user_id in (".$userID.") ");        
-        }       
-
-        echo json_encode(array('status' => 1, 'data' => $massPayResponse));   
-        exit();   
+            $wpdb->query("update ".$db_withdraw." set is_paid = 1 where id=".$massPaymentID);
+            echo json_encode(array('status' => 1, 'data' => $massPayResponse));       
+        } else {
+            echo json_encode(array('status' => 0, 'msg' => "something went wrong"));   
+        }
+        exit();     
+          
     }
 
     public function video_completed() {
+        if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+            die ( 'Busted!');
+        }
         global $wpdb;
         session_start();
         $table_user_quiz = $wpdb->prefix.'user_quiz';
@@ -639,9 +676,57 @@ class VideoLinkingController
                 }   
             }
         }
-    echo json_encode(array('status'=>1));
-    die;
-}
+        echo json_encode(array('status'=>1));
+        die;
+    }
+
+    public function withdraw() {
+        if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+            die ( 'Busted!');
+        }
+        global $wpdb;
+        $amountRequested = $_POST['amount'];
+        $table_name = $wpdb->prefix . "aysquiz_quizes";
+        $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
+        $table_user_quiz = $wpdb->prefix . 'user_quiz';
+        $usersTable = $wpdb->prefix . "users";
+        $db_withdraw = $wpdb->prefix . 'withdraw';
+        $loginUserID =  get_current_user_id();
+
+        $userquizSql =    "SELECT  " . $table_quiz_linking . ".amount," . $table_quiz_linking . ".video_name, " . $table_user_quiz . ".user_id, " . $usersTable . ".user_nicename,
+        ". $table_user_quiz . ".video_id, " . $table_user_quiz . ".is_paid, " . $table_user_quiz . ".status, " . $table_user_quiz . ".created_at FROM " . $table_user_quiz . " 
+        left JOIN " . $usersTable . " ON " . $usersTable . ".ID = " . $table_user_quiz . ".user_id 
+        LEFT JOIN " . $table_quiz_linking . " ON " . $table_quiz_linking . ".id = " . $table_user_quiz . ".video_id
+        WHERE $usersTable.ID = $loginUserID";
+        $userquizSqlData = $wpdb->get_results($userquizSql);
+
+        $withdrawalData = $wpdb->get_results("select sum(amount) as amount from ".$db_withdraw." where user_id = ".$loginUserID." group by user_id ");    
+
+
+        $paid = 0;
+        if(!empty($withdrawalData)) {
+            $paid = $withdrawalData[0]->amount;
+        }
+        $totalAmount = array();
+        if(!empty($userquizSqlData)) {
+            foreach($userquizSqlData as $key => $value) {
+                $isPaid = $value->is_paid;
+                $status = $value->status;   
+                $amount = $value->amount;
+                if($status == '1') {
+                    $totalAmount[] = $amount;    
+                }
+            }    
+        }
+        $pending = array_sum($totalAmount) - $paid;    
+        if($amountRequested > $pending) {
+            echo json_encode(array('status'=>0,'msg'=>"Amount is higher than your balance"));
+        } else {
+            $wpdb->insert($db_withdraw,array('user_id'=>$loginUserID,'amount'=>$amountRequested,'is_paid'=>0));    
+            echo json_encode(array('status'=>1));
+        }
+        die;
+    }
 }
 
 $videoLinkingController = new VideoLinkingController();
@@ -654,6 +739,7 @@ add_action('wp_ajax_VideoLinkingController::mass_payment', array($videoLinkingCo
 add_action('wp_ajax_VideoLinkingController::video_completed', array($videoLinkingController, 'video_completed'));
 add_action('wp_ajax_VideoLinkingController::save_paypal_id', array($videoLinkingController, 'save_paypal_id'));
 add_action('wp_ajax_VideoLinkingController::save_settings', array($videoLinkingController, 'save_settings'));
+add_action('wp_ajax_VideoLinkingController::withdraw', array($videoLinkingController, 'withdraw'));     
 
 
 function disable_plugin_updates( $value ) {

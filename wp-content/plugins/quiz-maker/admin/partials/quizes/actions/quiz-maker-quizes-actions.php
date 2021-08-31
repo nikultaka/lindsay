@@ -5587,9 +5587,9 @@ dated
                         <span style="font-size: 13px; font-style: italic;">
                             <?php echo __('For select questions click on question row and then click "Select questions" button', $this->plugin_name); ?>
                         </span>
-                        <p style="font-size: 16px; padding-right:20px; margin:0; text-align:right;">
+                        <!-- <p style="font-size: 16px; padding-right:20px; margin:0; text-align:right;">
                             <a class="" href="admin.php?page=<?php echo $this->plugin_name; ?>-questions&action=add" target="_blank"><?php echo __('Create question', $this->plugin_name); ?></a>
-                        </p>
+                        </p> -->
                         <table class="ays-add-questions-table hover order-column" id="ays-question-table-add" data-page-length='5'>
                             <thead>
                             <tr>

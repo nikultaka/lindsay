@@ -44,13 +44,13 @@ define('PAYPAL_BUSINESS_PASSWORD',$business_password);
 define('PAYPAL_BUSINESS_SIGNATURE',$business_signature);
 
 function quizLinkingCreateTable() {
-    
+    global $wpdb;  
     global $db_table_name;
-    $charset_collate = $wpdb->get_charset_collate();
     $db_table_name = $wpdb->prefix . 'video_quiz_linking';
     $db_user_quiz = $wpdb->prefix . 'user_quiz';
     $db_user_membership = $wpdb->prefix . 'user_membership';
     $db_settings = $wpdb->prefix . 'membership_settings';
+    $db_withdraw = $wpdb->prefix . 'withdraw';
 
     $sql = "CREATE TABLE `$db_table_name` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -112,6 +112,22 @@ function quizLinkingCreateTable() {
     ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
     
     if ($wpdb->get_var("SHOW TABLES LIKE '$db_settings'") != $db_settings) {
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    }
+
+
+    $sql = "CREATE TABLE `$db_withdraw` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `user_id` int(11) NOT NULL,
+        `amount` decimal(5,2) NOT NULL,
+        `is_paid` tinyint(11) NOT NULL,
+        `created_at` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+        `updated_at` datetime NULL DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (`id`)
+    ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
+    
+    if ($wpdb->get_var("SHOW TABLES LIKE '$db_withdraw'") != $db_withdraw) {
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
     }      

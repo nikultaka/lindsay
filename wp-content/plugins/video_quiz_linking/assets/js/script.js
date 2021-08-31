@@ -2,7 +2,7 @@ jQuery(document).ready(function () {
         
     //jQuery("#menu-item-14899").after('<li id="menu-item-15851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15851"><a href="?page_id=15814">DASHBOARD</a></li>');
 
-    jQuery('#example').DataTable({
+    jQuery('#example').DataTable({ 
         dom: "Bfrtip",
     });
     jQuery('#videoPaymentDataTable').DataTable();
@@ -283,10 +283,10 @@ function deleteVideo(id) {
 }
 
 
-function doMassPayment() {
+function doMassPayment(id) {
     Swal.fire({
         title: 'Are you sure?',
-        text: "You want to do mass payment ?",
+        text: "You want to do payment ?",
         icon: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -299,7 +299,8 @@ function doMassPayment() {
                 url: ajaxurl,
                 type: 'POST',
                 data: {
-                    action: "VideoLinkingController::mass_payment"
+                    action: "VideoLinkingController::mass_payment",
+                    id : id
                 },               
                 dataType: 'json',
                 success: function (response) {
@@ -382,7 +383,8 @@ function videoCompleted(id) {
         type: 'POST',
         data: {
             action: "VideoLinkingController::video_completed",
-            id : id
+            id : id,
+            nonce: ajax_var.nonce     
         },                   
         dataType: 'json',
         success: function (response) {
@@ -434,6 +436,52 @@ function savePaypalID(subscriptonID) {
                 Swal.fire(
                     'Error!',
                     data.msg,
+                    'error'
+                    )
+            }
+        },
+        error: function (responce) {
+            jQuery("#loader").removeClass('loader');
+        }
+    });
+}
+
+function withdraw() {
+    jQuery("#widthdrawMoney").modal('show');
+}
+
+function submitAmount() {
+    jQuery("#loader").addClass('loader');
+    var amount = jQuery("#amountWidthDraw").val();
+    if(amount == '' || isNaN(amount)) {
+        jQuery("#amountWidthDraw").addClass('has-error');
+        countError++;
+    } else {     
+        jQuery("#amountWidthDraw").removeClass('has-error');
+    }
+    jQuery.ajax({
+        url: ajaxurl,
+        type: 'POST',
+        data: {
+            action: "VideoLinkingController::withdraw",
+            amount : amount,
+            nonce: ajax_var.nonce
+        },                             
+        dataType: 'json',
+        success: function (response) {
+            jQuery("#loader").removeClass('loader');
+            if (response.status == '1') {
+                Swal.fire({       
+                    icon: 'success',
+                    title: 'You requested Withdrwal amount successfully, Within 2-3 days amount will be credited to your paypal account',
+                    showConfirmButton: true
+                }).then(function () {
+                    document.location.reload();
+                });             
+            } else {  
+                Swal.fire(
+                    'Error!',
+                    response.msg,
                     'error'
                     )
             }
