@@ -10,7 +10,7 @@ class Configuration
 				// values: 'sandbox' for testing
 				//		   'live' for production
                 //         'tls' for testing if your server supports TLSv1.2
-				"mode" => "sandbox",
+				"mode" => "live",    
                 // TLSv1.2 Check: Comment the above line, and switch the mode to tls as shown below
                 // "mode" => "tls"
 

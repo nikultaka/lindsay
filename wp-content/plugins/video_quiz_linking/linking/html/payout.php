@@ -23,11 +23,11 @@
     <div class="col-md-12">&nbsp;</div>
   </div>   
       
-  <div class="row">   
+  <!-- <div class="row">   
     <div class="col-md-12">
       <button type="button" class="btn btn-primary pull-left" onclick="doMassPayment();">Mass Payment</button>    
     </div>       
-  </div>
+  </div> -->
 
 
   <table id="example" class="display" style="width:100%">
@@ -36,7 +36,7 @@
         <th>User</th>
         <th>Video</th>
         <th>Amount</th>
-        <th>Status</th>
+        <!-- <th>Status</th> -->
       </tr>
     </thead>
     <tbody>
@@ -51,7 +51,7 @@
           <td><?php echo $value->display_name; ?></td>
           <td><?php echo $value->video_name; ?></td>
           <td><?php echo $value->amount; ?></td>
-          <td><?php echo $status; ?></td>      
+          <!-- <td><?php echo $status; ?></td>       -->
         </tr>  
       <?php } } else { ?>  
 
@@ -63,7 +63,7 @@
         <th>User</th>
         <th>Video</th>
         <th>Amount</th>
-        <th>Status</th>
+        <!-- <th>Status</th> -->
       </tr>
     </tfoot>
   </table>   

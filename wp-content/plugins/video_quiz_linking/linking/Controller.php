@@ -9,9 +9,9 @@ use PayPal\PayPalAPI\MassPayRequestType;
 use PayPal\Service\PayPalAPIInterfaceServiceService;
 use PayPal\Auth\PPSignatureCredential;    
 use PayPal\Auth\PPTokenAuthorization;
-
+   
 add_action('admin_menu', 'custom_quiz_linking_menu');
-
+    
 function custom_quiz_linking_menu()
 { 
     add_menu_page('Video Linking', 'Video Linking', 'manage_options', 'video-linking', 'display_video_linking', 'dashicons-chart-area', 56);
@@ -26,8 +26,8 @@ function custom_quiz_linking_menu()
 
     add_submenu_page(
         'video-linking', // parent slug 
-        'Paypal Payout', // page title
-        'Paypal Payout', // menu title
+        'Earning Video Status', // page title
+        'Earning Video Status', // menu title 
         'manage_options', // capability
         'paypal-payout', // slug
         'payout' // callback 
@@ -175,7 +175,7 @@ function payout()
 
 function videoDashboard() {
     if (!is_user_logged_in()) {
-        wp_redirect(site_url('?page_id=15607'));
+        wp_redirect(site_url('login-3'));
         exit;
     } 
 
@@ -184,7 +184,7 @@ function videoDashboard() {
     $usermetaTable = $wpdb->prefix . "usermeta";
     $userMetadata = $wpdb->get_results("SELECT * FROM $usermetaTable WHERE user_id = $loginUserID AND meta_key = 'userpaypalEmail' ");
     if(empty($userMetadata)) {
-        wp_redirect(site_url('?page_id=15836'));
+        wp_redirect(site_url('pricing'));
     }  
 
     ob_start();
@@ -251,6 +251,7 @@ function videoDashboard() {
     }
     
     $balance = array_sum($totalAmount) - (array_sum($withDrawalPending) + array_sum($withDrawalAccepted));
+    $balance = number_format((float)$balance, 2, '.', '');
     $query = "SELECT * from " . $table_user_quiz . " where user_id = " . get_current_user_id();
     $userQuizData = $wpdb->get_results($query);
 
@@ -281,17 +282,19 @@ function videoDashboard() {
             
             if ( $videoID == $lastSeenVideoID ) {
                 $isPick = 1;
-                continue;
-            }
-            if($isPick == 1) {
-                $postData = get_post($value->video_url);
-                $postMeta = get_post_meta($postData->ID);
-                $videoURL = site_url('wp-content/uploads/'.$postMeta['_wp_attached_file'][0]);
-                $value->link = $videoURL;
-                $frontendQuizData = $value;
-                $_SESSION['latestVideoID'] = $value->id;  
-            }
-            break;    
+                if(isset($tableData[$key+1])) {
+                    $value = $tableData[$key+1];
+                    $postData = get_post($value->video_url);
+                    $postMeta = get_post_meta($postData->ID);
+                    $videoURL = site_url('wp-content/uploads/'.$postMeta['_wp_attached_file'][0]);
+                    $value->link = $videoURL;
+                    $frontendQuizData = $value;
+                    $_SESSION['latestVideoID'] = $value->id;    
+                } else {
+                    $isPick = 0;
+                }
+                break;   
+            }   
         }
         if($isPick == 0) {
             $postData = get_post($tableData[0]->video_url);
@@ -318,7 +321,7 @@ add_shortcode('dashboard', 'videoDashboard');
 
 function pricing(){
     if (!is_user_logged_in()) {
-        wp_redirect(site_url('?page_id=15607'));
+        wp_redirect(site_url('login-3'));
         exit;
     }      
     global $wpdb;
@@ -326,7 +329,7 @@ function pricing(){
     $usermetaTable = $wpdb->prefix . "usermeta";
     $userMetadata = $wpdb->get_results("SELECT * FROM $usermetaTable WHERE user_id = $loginUserID AND meta_key = 'userpaypalEmail' ");
     if(!empty($userMetadata)) {
-        wp_redirect(site_url('?page_id=15814'));
+        wp_redirect(site_url('dashboard'));
     } 
 
     ob_start();
@@ -370,7 +373,7 @@ function thankyou(){
         $request = curl_init();
         curl_setopt_array($request, array
             (
-              CURLOPT_URL => 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+              CURLOPT_URL => 'https://www.paypal.com/cgi-bin/webscr',
               CURLOPT_POST => TRUE,
               CURLOPT_POSTFIELDS => http_build_query(array
                 (
@@ -480,11 +483,28 @@ class VideoLinkingController
     }
 
 
+    /*public function mass_payment() {
+        global $wpdb;
+        $videoID = $_POST['id'];
+        $plugin_dir = ABSPATH . 'wp-content/plugins/video_quiz_linking/';
+        if (file_exists($plugin_dir . 'merchant-sdk-php/vendor/autoload.php')) {
+            require $plugin_dir . 'merchant-sdk-php/vendor/autoload.php';
+        }
+        $massPayRequest = new MassPayRequestType();   
+        $massPayRequest->MassPayItem = array();
+        $table_user_quiz = $wpdb->prefix.'user_quiz';
+        $table_users = $wpdb->prefix.'users';
+        $table_users_meta = $wpdb->prefix.'usermeta';
+        $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
+        $db_withdraw = $wpdb->prefix . 'withdraw';
+
+        $sql = "select * from ".$db_withdraw." where id =".$massPaymentID;   
+        $withDrawData = $wpdb->get_results($sql);
+    }*/
 
     public function mass_payment()
     {
         global $wpdb;
-        $massPaymentID = $_POST['id'];
         $plugin_dir = ABSPATH . 'wp-content/plugins/video_quiz_linking/';
         if (file_exists($plugin_dir . 'merchant-sdk-php/vendor/autoload.php')) {
             require $plugin_dir . 'merchant-sdk-php/vendor/autoload.php';
@@ -494,26 +514,26 @@ class VideoLinkingController
         $massPayRequest->MassPayItem = array();
         $db_withdraw = $wpdb->prefix . 'withdraw';
 
-        $sql = "select * from ".$db_withdraw." where id =".$massPaymentID;   
+        $sql = "select * from ".$db_withdraw." where is_paid = '0' ";   
         $withDrawData = $wpdb->get_results($sql);
 
-
-
         if(!empty($withDrawData)) {
-            $userMeta = get_user_meta($withDrawData[0]->user_id);
-            $amount = $withDrawData[0]->amount;
-            $email = $userMeta['userpaypalEmail'][0];    
-            $masspayItem = new MassPayRequestItemType();
-            $masspayItem->Amount = new BasicAmountType('USD',$amount);
-            $masspayItem->ReceiverEmail = $email;
-            $massPayRequest->MassPayItem[] = $masspayItem;
+            foreach($withDrawData as $key => $value) {
+                $userMeta = get_user_meta($value->user_id);
+                $amount = $value->amount;
+                $email = $userMeta['userpaypalEmail'][0];    
+                $masspayItem = new MassPayRequestItemType();
+                $masspayItem->Amount = new BasicAmountType('USD',$amount);
+                $masspayItem->ReceiverEmail = $email;
+                $massPayRequest->MassPayItem[] = $masspayItem;
 
-            $massPayReq = new MassPayReq();
-            $massPayReq->MassPayRequest = $massPayRequest;
-            $paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
-            $massPayResponse = $paypalService->MassPay($massPayReq);
-            $wpdb->query("update ".$db_withdraw." set is_paid = 1 where id=".$massPaymentID);
-            echo json_encode(array('status' => 1, 'data' => $massPayResponse));       
+                $massPayReq = new MassPayReq();
+                $massPayReq->MassPayRequest = $massPayRequest;
+                $paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+                $massPayResponse = $paypalService->MassPay($massPayReq);
+                $wpdb->query("update ".$db_withdraw." set is_paid = 1 where id=".$value->id);
+            }       
+            echo json_encode(array('status' => 1, 'data' => $massPayResponse));     
         } else {
             echo json_encode(array('status' => 0, 'msg' => "something went wrong"));   
         }
@@ -539,7 +559,7 @@ class VideoLinkingController
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/billing/subscriptions/'.$subscriptionID,
+          CURLOPT_URL => 'https://api-m.paypal.com/v1/billing/subscriptions/'.$subscriptionID,
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => '',
           CURLOPT_MAXREDIRS => 10,
@@ -591,7 +611,7 @@ class VideoLinkingController
     public static function curlCall($url,$method,$postdata,$contentType,$accessToken) {
         $curl = curl_init();
         curl_setopt_array($curl, array(
-          CURLOPT_URL => 'https://api-m.sandbox.paypal.com/v1/'.$url,
+          CURLOPT_URL => 'https://api-m.paypal.com/v1/'.$url,
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => '',
           CURLOPT_MAXREDIRS => 10,
@@ -599,7 +619,7 @@ class VideoLinkingController
           CURLOPT_FOLLOWLOCATION => true,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => $method,
-          CURLOPT_POSTFIELDS => $postdata,
+          CURLOPT_POSTFIELDS => $postdata,  
           CURLOPT_HTTPHEADER => array(
             'Authorization: '.$accessToken,
             'Content-Type: '.$contentType
@@ -611,7 +631,7 @@ class VideoLinkingController
         return $response;     
     }
 
-    public function save_settings() {
+    public function save_settings() {   
         global $wpdb;
         $client_id = $_POST['client_id'];
         $secret_id = $_POST['secret_id'];
@@ -631,11 +651,13 @@ class VideoLinkingController
         if($settingsData[0]->amount != $amount) {
                 $accessToken = base64_encode(PAYPAL_CLIENT_ID.':'.PAYPAL_SECRET_ID);
                 $response = self::curlCall('oauth2/token','POST','grant_type=client_credentials','application/x-www-form-urlencoded','Basic '.$accessToken);
+
+                //echo '<pre>'; print_r($response); exit;
                 if(!empty($response) && isset($response->access_token)) {
                     $postString = '{
                       "name": "Video Streaming Service",
                       "description": "Video streaming service",
-                      "type": "SERVICE",
+                      "type": "DIGITAL",        
                       "category": "SOFTWARE",
                       "image_url": "https://example.com/streaming.jpg",
                       "home_url": "https://example.com/home"
@@ -685,7 +707,6 @@ class VideoLinkingController
             die ( 'Busted!');
         }
         global $wpdb;
-        $amountRequested = $_POST['amount'];
         $table_name = $wpdb->prefix . "aysquiz_quizes";
         $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
         $table_user_quiz = $wpdb->prefix . 'user_quiz';
@@ -719,14 +740,10 @@ class VideoLinkingController
             }    
         }
         $pending = array_sum($totalAmount) - $paid;    
-        if($amountRequested > $pending) {
-            echo json_encode(array('status'=>0,'msg'=>"Amount is higher than your balance"));
-        } else {
-            $wpdb->insert($db_withdraw,array('user_id'=>$loginUserID,'amount'=>$amountRequested,'is_paid'=>0));    
-            echo json_encode(array('status'=>1));
-        }
+        $wpdb->insert($db_withdraw,array('user_id'=>$loginUserID,'amount'=>$pending,'is_paid'=>0));    
+        echo json_encode(array('status'=>1));
         die;
-    }
+    }    
 }
 
 $videoLinkingController = new VideoLinkingController();
@@ -751,3 +768,8 @@ function disable_plugin_updates( $value ) {
   return $value;
 }
 add_filter( 'site_transient_update_plugins', 'disable_plugin_updates' );
+
+function admin_default_page() {
+    return site_url('pricing');  //'/pricing';
+}    
+add_filter('login_redirect', 'admin_default_page');

@@ -29,6 +29,12 @@
     </div>         
   </div>
 
+  <div class="row">   
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary pull-left" onclick="doMassPayment();">Mass Payment</button>    
+    </div>       
+  </div>
+
 
   <table id="example" class="display" style="width:100%">
     <thead>
@@ -37,27 +43,31 @@
         <th>Amount</th>
         <th>Status</th>
         <th>Created At</th>
-        <th>Action</th>
+        <!-- <th>Action</th> -->
       </tr>
     </thead>
     <tbody>
-     <?php if(!empty($tableData)) { 
+     <?php 
+     $totalAmount = 0;
+     if(!empty($tableData)) { 
       foreach($tableData as $key => $value) { 
         $status = 'Paid';
         if($value->is_paid == '0') {
           $status = 'Processing';
+          $totalAmount+=$value->amount;    
         }     
+        
         ?>
         <tr>
           <td><?php echo $value->display_name; ?></td>
           <td><?php echo $value->amount; ?></td>
           <td><?php echo $status; ?></td>      
           <td><?php echo date("d F Y",strtotime($value->created_at)); ?></td>      
-          <td>
+          <!-- <td>
             <?php if($status == 'Processing') { ?>
             <button type="button" class="btn btn-primary" onclick="doMassPayment(<?php echo $value->id; ?>);">Send Payment</button>
             <?php } ?>
-          </td>           
+          </td>            -->
         </tr>  
       <?php } } else { ?>  
 
@@ -70,11 +80,12 @@
         <th>Amount</th>
         <th>Status</th>
         <th>Created At</th>
-        <th>Action</th>
+        <!-- <th>Action</th> -->
       </tr>          
     </tfoot>
   </table>   
 
   <script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    var totalAmount = "<?php echo $totalAmount; ?>";
   </script>

@@ -2,7 +2,7 @@
 form .error {
   color: #ff0000;
 }       
-
+   
 .article-content-outer-sidebar {
   margin: 0px 0px 0px 0px !important;
   padding-top: 0px !important;
@@ -245,7 +245,7 @@ form .error {
   <!-- Nav tabs -->
   <ul class="nav nav-pills nav-stacked col-md-3">
     <li><a href="#tab_f" data-toggle="pill" class="navtabs active"><i class="fas fa-camera-retro"></i> Global</a></li>    
-    <li><a href="#tab_a" data-toggle="pill" class="navtabs"><i class="fas fa-camera-retro"></i> See video</a></li>
+    <li><a href="#tab_a" id="tab_video" data-toggle="pill" class="navtabs"><i class="fas fa-camera-retro"></i> See video</a></li>
     <li><a href="#tab_b" data-toggle="pill" class="navtabs"><i class="fab fa-paypal"></i> Paypal Email</a></li>
     <li><a href="#tab_c" data-toggle="pill" class="navtabs"><i class="far fa-credit-card"></i> Video Status</a></li>
     <li><a href="#tab_d" data-toggle="pill" class="navtabs"><i class="fas fa-camera-retro"></i> Video Ads</a></li>
@@ -304,11 +304,22 @@ form .error {
               </div>   
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Payments Received</span>
-                <span class="dashboard_details_table_tab_second">$<?php echo array_sum($withDrawalAccepted); ?></span>
+                <span class="dashboard_details_table_tab_second">$
+                  <?php 
+                    $withDrawalAccepted = array_sum($withDrawalAccepted); 
+                    $withDrawalAccepted = number_format((float)$withDrawalAccepted, 2, '.', '');
+                    echo $withDrawalAccepted;
+                  ?>  
+                  </span>
               </div>
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Pending Withdrawls</span>
-                <span class="dashboard_details_table_tab_second">$<?php echo array_sum($withDrawalPending); ?></span>
+                <span class="dashboard_details_table_tab_second">$
+                <?php 
+                  $withdrawalPending = array_sum($withDrawalPending); 
+                  $withdrawalPending = number_format((float)$withdrawalPending, 2, '.', '');
+                  echo $withdrawalPending;   
+                ?></span>
               </div>
             </div>
           </div>
@@ -325,7 +336,12 @@ form .error {
               </div>
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Earned</span>
-                <span class="dashboard_details_table_tab_second">$<?php echo array_sum($totalAmount); ?></span>
+                <span class="dashboard_details_table_tab_second">$
+                  <?php 
+                  $totalAmount = array_sum($totalAmount); 
+                  $totalAmount = number_format((float)$totalAmount, 2, '.', '');
+                  echo $totalAmount;  
+                  ?></span>
               </div>
             </div>
           </div>
@@ -431,8 +447,12 @@ form .error {
 
   <script>
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
-
-  </script>
+    var siteurl = "<?php echo site_url('/dashboard?tab=2'); ?>";
+    var is_video = 0;
+    <?php if(isset($_REQUEST['tab']) && $_REQUEST['tab'] == '2') { ?>
+    var is_video = 1;
+    <?php } ?>     
+  </script>    
 
 
 
@@ -442,7 +462,7 @@ form .error {
         <div class="modal-body">      
           <div class="form-group">
             <label for="exampleInputEmail1">Amount($)</label>
-            <input type="text" class="form-control" id="amountWidthDraw" placeholder="Enter amount">
+            <input type="text" class="form-control" id="amountWidthDraw" placeholder="Enter amount" value="<?php echo $balance; ?>">
           </div>
         </div>
         <div class="modal-footer">

@@ -69,7 +69,7 @@ section.pricing {
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://www.paypal.com/sdk/js?client-id=AcS1rDqcqURwDJzNP0vnl_qMxqm5rixVvlf8PRdc_X4JCEgRIoy_FX25Si5ySQOlI_x_3OnIrcWsQ0Kz&vault=true&intent=subscription"></script> 
+<script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_CLIENT_ID; ?>&vault=true&intent=subscription"></script> 
 
 
 <div id="loader" style="z-index:9999999999;"></div>
@@ -108,6 +108,7 @@ section.pricing {
 
 <script>
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    var site_url = "<?php echo site_url('dashboard'); ?>";
     paypal.Buttons({
       createSubscription: function(data, actions) {
         return actions.subscription.create({

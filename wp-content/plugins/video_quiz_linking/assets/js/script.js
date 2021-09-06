@@ -17,7 +17,7 @@ jQuery(document).ready(function () {
         }
     });
     video.addEventListener('seeking', function() {
-        return false;
+        //return false;
         var delta = video.currentTime - supposedCurrentTime;
         if (Math.abs(delta) > 0.01) {
             console.log("Seeking is disabled");
@@ -283,10 +283,10 @@ function deleteVideo(id) {
 }
 
 
-function doMassPayment(id) {
+function doMassPayment() {
     Swal.fire({
         title: 'Are you sure?',
-        text: "You want to do payment ?",
+        text: "You want to do payment of $"+totalAmount+" ?",
         icon: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -300,7 +300,6 @@ function doMassPayment(id) {
                 type: 'POST',
                 data: {
                     action: "VideoLinkingController::mass_payment",
-                    id : id
                 },               
                 dataType: 'json',
                 success: function (response) {
@@ -395,7 +394,8 @@ function videoCompleted(id) {
                     title: 'Thanks, try another video now!',
                     showConfirmButton: true
                 }).then(function () {
-                    location.reload();
+                    //location.reload();
+                    document.location.href= siteurl;
                 });             
             } else {
                 Swal.fire(
@@ -430,7 +430,7 @@ function savePaypalID(subscriptonID) {
                     title: 'You have subscribed successfully',
                     showConfirmButton: true
                 }).then(function () {
-                    document.location.href='?page_id=15814'
+                    document.location.href=site_url;
                 });             
             } else {  
                 Swal.fire(
@@ -447,47 +447,62 @@ function savePaypalID(subscriptonID) {
 }
 
 function withdraw() {
-    jQuery("#widthdrawMoney").modal('show');
+    //jQuery("#widthdrawMoney").modal('show');
+    submitAmount();
 }
-
+   
 function submitAmount() {
     jQuery("#loader").addClass('loader');
     var amount = jQuery("#amountWidthDraw").val();
-    if(amount == '' || isNaN(amount)) {
-        jQuery("#amountWidthDraw").addClass('has-error');
+    countError = 0;
+    if(amount == '' || isNaN(amount) || amount<2) {
+        jQuery("#loader").removeClass('loader');
+        Swal.fire(
+        'Error!',
+        'Amount must be greater than $2',
+        'error'
+        )    
         countError++;
-    } else {     
-        jQuery("#amountWidthDraw").removeClass('has-error');
-    }
-    jQuery.ajax({
-        url: ajaxurl,
-        type: 'POST',
-        data: {
-            action: "VideoLinkingController::withdraw",
-            amount : amount,
-            nonce: ajax_var.nonce
-        },                             
-        dataType: 'json',
-        success: function (response) {
-            jQuery("#loader").removeClass('loader');
-            if (response.status == '1') {
-                Swal.fire({       
-                    icon: 'success',
-                    title: 'You requested Withdrwal amount successfully, Within 2-3 days amount will be credited to your paypal account',
-                    showConfirmButton: true
-                }).then(function () {
-                    document.location.reload();
-                });             
-            } else {  
-                Swal.fire(
-                    'Error!',
-                    response.msg,
-                    'error'
-                    )
+        return false;
+    }                      
+    if(countError == 0) {
+        jQuery.ajax({
+            url: ajaxurl,
+            type: 'POST',
+            data: {
+                action: "VideoLinkingController::withdraw",
+                nonce: ajax_var.nonce
+            },                             
+            dataType: 'json',
+            success: function (response) {
+                jQuery("#loader").removeClass('loader');
+                if (response.status == '1') {
+                    Swal.fire({       
+                        icon: 'success',
+                        title: 'You requested Withdrwal amount successfully, Within 3-5 days amount will be credited to your paypal account',
+                        showConfirmButton: true
+                    }).then(function () {
+                        document.location.reload();
+                    });             
+                } else {  
+                    Swal.fire(
+                        'Error!',
+                        response.msg,
+                        'error'
+                        )
+                }
+            },
+            error: function (responce) {
+                jQuery("#loader").removeClass('loader');
             }
-        },
-        error: function (responce) {
-            jQuery("#loader").removeClass('loader');
-        }
-    });
+        });    
+    }    
+    
 }
+
+
+jQuery(document).ready(function() {
+    if(is_video == '1') {
+        jQuery("#tab_video").trigger('click');
+    }
+});
