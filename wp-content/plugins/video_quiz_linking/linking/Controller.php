@@ -510,6 +510,7 @@ class VideoLinkingController
             require $plugin_dir . 'merchant-sdk-php/vendor/autoload.php';
             require $plugin_dir . 'merchant-sdk-php/samples/Configuration.php';
         }
+
         $massPayRequest = new MassPayRequestType();   
         $massPayRequest->MassPayItem = array();
         $db_withdraw = $wpdb->prefix . 'withdraw';
@@ -517,9 +518,13 @@ class VideoLinkingController
         $sql = "select * from ".$db_withdraw." where is_paid = '0' ";   
         $withDrawData = $wpdb->get_results($sql);
 
+        $allEmails = array();
+        $userAmount = array();
         if(!empty($withDrawData)) {
             foreach($withDrawData as $key => $value) {
                 $userMeta = get_user_meta($value->user_id);
+                $user_info = get_userdata($value->user_id);
+                $mailaddress = $user_info->user_email;
                 $amount = $value->amount;
                 $email = $userMeta['userpaypalEmail'][0];    
                 $masspayItem = new MassPayRequestItemType();
@@ -531,7 +536,16 @@ class VideoLinkingController
                 $massPayReq->MassPayRequest = $massPayRequest;
                 $paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
                 $massPayResponse = $paypalService->MassPay($massPayReq);
-                $wpdb->query("update ".$db_withdraw." set is_paid = 1 where id=".$value->id);
+                if(!empty($massPayResponse) && $massPayResponse->Ack == 'Success') {
+                    $wpdb->query("update ".$db_withdraw." set is_paid = 1 where id=".$value->id);
+                    $allEmails[]=$mailaddress;
+                    $userAmount[]=$amount;
+                    $headers = array('Content-Type: text/html; charset=UTF-8');
+                    $to = $mailaddress;
+                    $subject = 'Payment completed successfully!';
+                    $message = "$".$mailaddress.", credited to your paypal account";
+                    wp_mail($to,$subject,$message,$headers);
+                }
             }       
             echo json_encode(array('status' => 1, 'data' => $massPayResponse));     
         } else {
@@ -715,7 +729,7 @@ class VideoLinkingController
         if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
             die ( 'Busted!');
         }
-        global $wpdb;
+        global $wpdb,$current_user;
         $table_name = $wpdb->prefix . "aysquiz_quizes";
         $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
         $table_user_quiz = $wpdb->prefix . 'user_quiz';
@@ -749,7 +763,18 @@ class VideoLinkingController
             }    
         }
         $pending = array_sum($totalAmount) - $paid;    
-        $wpdb->insert($db_withdraw,array('user_id'=>$loginUserID,'amount'=>$pending,'is_paid'=>0));    
+        if($pending<2) {
+            echo json_encode(array('status'=>0,'msg'=>"Amount must be greater than $2 to withdraw"));
+            die;    
+        } 
+        $wpdb->insert($db_withdraw,array('user_id'=>$loginUserID,'amount'=>$pending,'is_paid'=>0));        
+        get_currentuserinfo();
+        $email = (string) $current_user->user_email; 
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+        $to = $email;
+        $subject = 'Withdraw Money!';
+        $message = "You have withdraw money of $".$pending.", you will get that money in your account within 3-5 days ";
+        wp_mail($to,$subject,$message,$headers);
         echo json_encode(array('status'=>1));
         die;
     }    

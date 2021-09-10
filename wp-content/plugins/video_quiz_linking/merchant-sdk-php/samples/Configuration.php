@@ -1,12 +1,12 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
 class Configuration
 {
 	// For a full list of configuration parameters refer in wiki page (https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK)
 	public static function getConfig()
 	{
-		$environment = ''
+		$environment = '';
 		if(IS_SANDBOX == '1') {
 			$environment = 'sandbox';
 		} else {
