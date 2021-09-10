@@ -1,6 +1,6 @@
 <?php
 //error_reporting(E_ALL & ~E_NOTICE);
-//ini_set('display_errors', '1');
+//ini_set('display_errors', '1');      
        
 use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\PayPalAPI\MassPayReq;
@@ -8,7 +8,7 @@ use PayPal\PayPalAPI\MassPayRequestItemType;
 use PayPal\PayPalAPI\MassPayRequestType;
 use PayPal\Service\PayPalAPIInterfaceServiceService;
 use PayPal\Auth\PPSignatureCredential;    
-use PayPal\Auth\PPTokenAuthorization;
+use PayPal\Auth\PPTokenAuthorization; 
    
 add_action('admin_menu', 'custom_quiz_linking_menu');
     
@@ -186,7 +186,7 @@ function videoDashboard() {
     if(empty($userMetadata)) {
         wp_redirect(site_url('pricing'));
     }  
-
+    
     ob_start();
     wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
     wp_enqueue_style('dashboard', plugins_url('../assets/css/dashboard.css', __FILE__), false, '1.0.0', 'all');
@@ -330,7 +330,7 @@ function pricing(){
     $userMetadata = $wpdb->get_results("SELECT * FROM $usermetaTable WHERE user_id = $loginUserID AND meta_key = 'userpaypalEmail' ");
     if(!empty($userMetadata)) {
         wp_redirect(site_url('dashboard'));
-    } 
+    }     
 
     ob_start();
     wp_enqueue_style('clone_style', plugins_url('../assets/css/style.css', __FILE__), false, '1.0.0', 'all');
@@ -558,8 +558,13 @@ class VideoLinkingController
     public static function get_subscription_detail($subscriptionID,$accessToken) {
         $curl = curl_init();
 
+        $isSandbox = '';
+        if(IS_SANDBOX == '1') {
+            $isSandbox = 'sandbox.';
+        }
+
         curl_setopt_array($curl, array(
-          CURLOPT_URL => 'https://api-m.paypal.com/v1/billing/subscriptions/'.$subscriptionID,
+          CURLOPT_URL => 'https://api-m.'.$isSandbox.'paypal.com/v1/billing/subscriptions/'.$subscriptionID,
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => '',
           CURLOPT_MAXREDIRS => 10,
@@ -609,9 +614,13 @@ class VideoLinkingController
     }
 
     public static function curlCall($url,$method,$postdata,$contentType,$accessToken) {
+        $isSandbox = '';
+        if(IS_SANDBOX == '1') {
+            $isSandbox = 'sandbox.';
+        }    
         $curl = curl_init();
         curl_setopt_array($curl, array(
-          CURLOPT_URL => 'https://api-m.paypal.com/v1/'.$url,
+          CURLOPT_URL => 'https://api-m.'.$isSandbox.'paypal.com/v1/'.$url,
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => '',
           CURLOPT_MAXREDIRS => 10,

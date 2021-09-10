@@ -8,7 +8,7 @@
  * Author: Nikul Panchal
  * Author URI: 
  * License: GPL2
- */
+ */ 
 
 define('WCP_QUIZ_LINKING_PLUGIN_VERSION', '1.0.0');
 define('WCP_QUIZ_LINKING_PLUGIN_DOMAIN', 'website-custom-plugin');
@@ -42,6 +42,7 @@ define('PAYPAL_SECRET_ID',$secret_id);
 define('PAYPAL_BUSINESS_ID',$business_id);
 define('PAYPAL_BUSINESS_PASSWORD',$business_password);
 define('PAYPAL_BUSINESS_SIGNATURE',$business_signature);
+define('IS_SANDBOX',1);    
 
 function quizLinkingCreateTable() {
     global $wpdb;  

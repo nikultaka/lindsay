@@ -504,5 +504,7 @@ function submitAmount() {
 jQuery(document).ready(function() {
     if(is_video == '1') {
         jQuery("#tab_video").trigger('click');
+    } else {
+        is_video == '0';
     }
 });

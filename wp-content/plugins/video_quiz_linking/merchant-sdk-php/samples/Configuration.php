@@ -6,11 +6,17 @@ class Configuration
 	// For a full list of configuration parameters refer in wiki page (https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK)
 	public static function getConfig()
 	{
+		$environment = ''
+		if(IS_SANDBOX == '1') {
+			$environment = 'sandbox';
+		} else {
+			$environment = 'live';
+		}
 		$config = array(
 				// values: 'sandbox' for testing
 				//		   'live' for production
                 //         'tls' for testing if your server supports TLSv1.2
-				"mode" => "live",    
+				"mode" => $environment,    
                 // TLSv1.2 Check: Comment the above line, and switch the mode to tls as shown below
                 // "mode" => "tls"
 
@@ -22,7 +28,7 @@ class Configuration
 				// "http.ConnectionTimeOut" => "5000",
 				// "http.Retry" => "2",
 		);
-		return $config;
+		return $config;   
 	}
 	
 	// Creates a configuration array containing credentials and other required configuration parameters.
