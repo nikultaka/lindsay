@@ -63,5 +63,16 @@ $instagramShortcode = get_theme_mod( 'brnhmbx_bourz_InstagramShortcode', '' );
 </div><!-- /body-outer -->
 
 <?php wp_footer(); ?>
+
+<script>
+    /*jQuery(document).ready(function () {  
+        setTimeout(function() { 
+            jQuery("#load_flatpickr").flatpickr({
+                maxDate: '2017-05-04' //new Date().getFullYear() - 18
+            });    
+        }, 3000);    
+    });*/ 
+</script>
+
 </body>
 </html>
