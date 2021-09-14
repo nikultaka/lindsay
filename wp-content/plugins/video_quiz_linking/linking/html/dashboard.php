@@ -299,7 +299,7 @@ form .error {
                 <span class="dashboard_details_table_tab_first">Balance</span>
                 <span class="dashboard_details_table_tab_second">$<?php echo $balance; ?></span>
                 <span style="float:right;color: blue;cursor: pointer;" onclick="withdraw();">
-                  [Withdraw]   
+                  [Redeem] 
                 </span>
               </div>   
               <div class="dashboard_details_table_row">

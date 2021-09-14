@@ -31,8 +31,8 @@ jQuery(document).ready(function () {
         supposedCurrentTime = 0;
         return Swal.fire({
             icon: 'success',
-            title: 'Thanks, you need to give answers for the quiz now!',
-            showConfirmButton: true,
+            title: 'Thank you for viewing this video, please take a moment to answer a few questions.',
+            showConfirmButton: true,    
         }).then(function () {
             jQuery("#videoID_"+videoDataID).hide();
             jQuery("#quizID_"+videoDataID).show();
@@ -394,7 +394,7 @@ function videoCompleted(id) {
             if (response.status == '1') {
                 Swal.fire({       
                     icon: 'success',
-                    title: 'Thanks, try another video now!',
+                    title: 'Thanks for taking the quiz, would you like to watch another video?',
                     showConfirmButton: true
                 }).then(function () {
                     //location.reload();
