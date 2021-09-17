@@ -235,6 +235,12 @@ form .error {
 .show {
   opacity: 0.6;
 }
+.ays_cb_and_a {
+  display: none !important;    
+}
+.ays_average {
+  display: none !important;     
+}          
 </style>
 
 <div id="loader" style="z-index:9999999999;"></div>
@@ -244,8 +250,8 @@ form .error {
 <div class="container-fluid" style="margin: 20px;min-height: 700px;">
   <!-- Nav tabs -->
   <ul class="nav nav-pills nav-stacked col-md-3">
-    <li><a href="#tab_f" data-toggle="pill" class="navtabs active"><i class="fas fa-camera-retro"></i> Global</a></li>    
-    <li><a href="#tab_a" id="tab_video" data-toggle="pill" class="navtabs"><i class="fas fa-camera-retro"></i> See video</a></li>
+    <li><a href="#tab_f" data-toggle="pill" class="navtabs active"><i class="fas fa-camera-retro"></i> Dashboard</a></li>    
+    <li><a href="#tab_a" id="tab_video" data-toggle="pill" class="navtabs"><i class="fas fa-camera-retro"></i> Watch more earn more</a></li>
     <li><a href="#tab_b" data-toggle="pill" class="navtabs"><i class="fab fa-paypal"></i> Paypal Email</a></li>
     <li><a href="#tab_c" data-toggle="pill" class="navtabs"><i class="far fa-credit-card"></i> Video Status</a></li>
     <!-- <li><a href="#tab_d" data-toggle="pill" class="navtabs"><i class="fas fa-camera-retro"></i> Video Ads</a></li>
@@ -256,7 +262,7 @@ form .error {
     <li><a href="#tab_d" data-toggle="pill" class="navtabs"><i class="fas fa-camera-retro"></i> Video Ads</a></li> -->
   </ul>
   <div class="tab-content col-md-9">
-
+  
 
     <div class="tab-pane active" id="tab_f">
       <h3 style="margin-top: 0px; margin-left: 10px;">Watch More Earn More</h3>
@@ -377,7 +383,7 @@ form .error {
         </div>
 
         <div id="videoID_<?php echo $frontendQuizData->id; ?>">
-          <video id="linkVid_<?php echo $frontendQuizData->id; ?>" data_id="<?php echo $frontendQuizData->id; ?>" class="linkVid" width="320" height="500" controls controlsList="nodownload" disablePictureInPicture style="<?php echo $style; ?>">
+          <video id="linkVid_<?php echo $frontendQuizData->id; ?>" data_id="<?php echo $frontendQuizData->id; ?>" class="linkVid" width="320" height="500" controlsList="nodownload" disablePictureInPicture disablePlaybackRate style="<?php echo $style; ?>" controls="false" style="pointer-events: none;">                  
             <source src="<?php echo $frontendQuizData->link; ?>">
               Your browser does not support the video tag.
             </video>
@@ -419,9 +425,9 @@ form .error {
           <tbody>
             <?php if (!empty($userquizSqlData)) {
               foreach ($userquizSqlData as $key => $value) {
-                $status = 'Reward not earned';
+                $status = 'Rewards not earned';
                 if ($value->status == '1') {
-                  $status = 'Reward earned';
+                  $status = 'Rewards earned';
                 }  
                 $is_paid = 'No';
                 if ($value->is_paid == '1') {

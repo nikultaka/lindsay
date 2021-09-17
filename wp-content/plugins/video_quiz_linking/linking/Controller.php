@@ -22,7 +22,7 @@ function custom_quiz_linking_menu()
         'manage_options', // capability
         'video-linking', // slug  
         'display_video_linking' // callback
-    );
+    );   
 
     add_submenu_page(
         'video-linking', // parent slug 

@@ -462,7 +462,7 @@ function submitAmount() {
         jQuery("#loader").removeClass('loader');
         Swal.fire(
         'Error!',
-        'Amount must be greater than $2',
+        'Withdrawal minimum should be $2.00',
         'error'
         )    
         countError++;
