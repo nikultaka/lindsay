@@ -1,7 +1,7 @@
 <?php
 //error_reporting(E_ALL & ~E_NOTICE);
 //ini_set('display_errors', '1');      
-       
+                 
 use PayPal\CoreComponentTypes\BasicAmountType;
 use PayPal\PayPalAPI\MassPayReq;
 use PayPal\PayPalAPI\MassPayRequestItemType;
@@ -807,3 +807,10 @@ function admin_default_page() {
     return site_url('pricing');  //'/pricing';
 }    
 add_filter('login_redirect', 'admin_default_page');
+
+
+function my_custom_js() {
+        echo '<script type="text/javascript">
+        jQuery(document).ready(function() { jQuery(".user-registration").parent("div").prepend("<ul><li>To join in Aspire rewards program, you must be at least 18 years old.</li></ul>") });</script>';
+}
+add_action('wp_head', 'my_custom_js');

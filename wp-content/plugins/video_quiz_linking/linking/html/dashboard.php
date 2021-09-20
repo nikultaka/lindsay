@@ -1,7 +1,7 @@
 <style>
 form .error {
   color: #ff0000;
-}       
+}               
    
 .article-content-outer-sidebar {
   margin: 0px 0px 0px 0px !important;
@@ -383,10 +383,10 @@ form .error {
         </div>
 
         <div id="videoID_<?php echo $frontendQuizData->id; ?>">
-          <video id="linkVid_<?php echo $frontendQuizData->id; ?>" data_id="<?php echo $frontendQuizData->id; ?>" class="linkVid" width="320" height="500" controlsList="nodownload" disablePictureInPicture disablePlaybackRate style="<?php echo $style; ?>" controls="false" style="pointer-events: none;">                  
-            <source src="<?php echo $frontendQuizData->link; ?>">
+          <video id="linkVid_<?php echo $frontendQuizData->id; ?>" data_id="<?php echo $frontendQuizData->id; ?>" class="linkVid" width="320" height="500" controlsList="nodownload noplaybackrate" disablePictureInPicture disablePlaybackRate noplaybackrate style="<?php echo $style; ?>" controls style="pointer-events: none;">                  
+            <source src="<?php echo $frontendQuizData->link; ?>">     
               Your browser does not support the video tag.
-            </video>
+            </video>     
           </div>
           <div id="quizID_<?php echo $frontendQuizData->id; ?>" style="display: none;">
             <?php echo do_shortcode('[ays_quiz id="' . $frontendQuizData->quiz_id . '"]'); ?>
