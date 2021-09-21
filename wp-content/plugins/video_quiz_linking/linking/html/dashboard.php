@@ -309,6 +309,15 @@ form .error {
                 </span>
               </div>   
               <div class="dashboard_details_table_row">
+                <span class="dashboard_details_table_tab_first">Pending Withdrawls</span>
+                <span class="dashboard_details_table_tab_second">$
+                <?php 
+                  $withdrawalPending = array_sum($withDrawalPending); 
+                  $withdrawalPending = number_format((float)$withdrawalPending, 2, '.', '');
+                  echo $withdrawalPending;   
+                ?></span>
+              </div>
+              <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Payments Received</span>
                 <span class="dashboard_details_table_tab_second">$
                   <?php 
@@ -317,15 +326,6 @@ form .error {
                     echo $withDrawalAccepted;
                   ?>  
                   </span>
-              </div>
-              <div class="dashboard_details_table_row">
-                <span class="dashboard_details_table_tab_first">Pending Withdrawls</span>
-                <span class="dashboard_details_table_tab_second">$
-                <?php 
-                  $withdrawalPending = array_sum($withDrawalPending); 
-                  $withdrawalPending = number_format((float)$withdrawalPending, 2, '.', '');
-                  echo $withdrawalPending;   
-                ?></span>
               </div>
             </div>
           </div>
