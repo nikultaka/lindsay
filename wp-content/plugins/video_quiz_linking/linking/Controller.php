@@ -510,6 +510,22 @@ class VideoLinkingController
             require $plugin_dir . 'merchant-sdk-php/vendor/autoload.php';
             require $plugin_dir . 'merchant-sdk-php/samples/Configuration.php';
         }
+        if (file_exists($plugin_dir . 'adaptivepayments-sdk-php/vendor/autoload.php')) {
+            require $plugin_dir . 'adaptivepayments-sdk-php/vendor/autoload.php';
+            require $plugin_dir . 'adaptivepayments-sdk-php/samples/Configuration.php';
+        }
+
+        $environment = '';
+        if(IS_SANDBOX == '1') {
+            $environment = 'sandbox';
+        } else {
+            $environment = 'live';
+        }
+        $config = array(
+            'mode' => $environment,
+            'acct1.UserName' => PAYPAL_BUSINESS_ID,
+            'acct1.Password' => PAYPAL_BUSINESS_PASSWORD
+        );
 
         $massPayRequest = new MassPayRequestType();   
         $massPayRequest->MassPayItem = array();
@@ -533,7 +549,7 @@ class VideoLinkingController
                 $massPayRequest->MassPayItem[] = $masspayItem;
 
                 $massPayReq = new MassPayReq();
-                $massPayReq->MassPayRequest = $massPayRequest;
+                $massPayReq->MassPayRequest = $massPayRequest;     
                 $paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
                 $massPayResponse = $paypalService->MassPay($massPayReq);
                 if(!empty($massPayResponse) && $massPayResponse->Ack == 'Success') {

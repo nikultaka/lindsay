@@ -20,7 +20,7 @@ jQuery(document).ready(function () {
         }
     });
     video.addEventListener('seeking', function() {
-        //return false;
+        return false;
         var delta = video.currentTime - supposedCurrentTime;
         if (Math.abs(delta) > 0.01) {
             console.log("Seeking is disabled");

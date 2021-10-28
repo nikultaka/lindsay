@@ -346,7 +346,8 @@ form .error {
                   <?php 
                   $totalAmount = array_sum($totalAmount); 
                   $totalAmount = number_format((float)$totalAmount, 2, '.', '');
-                  echo $totalAmount;  
+                  //echo $totalAmount;  
+                  echo $withDrawalAccepted;
                   ?></span>
               </div>
             </div>

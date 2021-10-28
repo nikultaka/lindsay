@@ -42,7 +42,7 @@ define('PAYPAL_SECRET_ID',$secret_id);
 define('PAYPAL_BUSINESS_ID',$business_id);
 define('PAYPAL_BUSINESS_PASSWORD',$business_password);
 define('PAYPAL_BUSINESS_SIGNATURE',$business_signature);
-define('IS_SANDBOX',0);            
+define('IS_SANDBOX',1);            
 
 function quizLinkingCreateTable() {
     global $wpdb;  
