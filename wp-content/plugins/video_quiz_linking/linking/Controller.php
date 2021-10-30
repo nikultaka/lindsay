@@ -60,12 +60,12 @@ function witdrawalrequest() {
     wp_enqueue_script('sweetalert-script', '//cdn.jsdelivr.net/npm/sweetalert2@10', array('jquery'));
     wp_enqueue_script('script', plugins_url('../assets/js/script.js', __FILE__));
 
-    global $wpdb;
+    global $wpdb;   
     $db_withdraw = $wpdb->prefix . 'withdraw';
     $db_users = $wpdb->prefix . 'users';
 
     $query = "SELECT w.*,u.display_name from ".$db_withdraw." as w 
-    inner join " .$db_users. " as u on u.ID = w.user_id";
+                inner join " .$db_users. " as u on u.ID = w.user_id";
 
     $tableData = $wpdb->get_results($query);                  
 

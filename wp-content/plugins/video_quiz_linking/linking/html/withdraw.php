@@ -29,15 +29,16 @@
     </div>         
   </div>
 
-  <div class="row">   
-    <div class="col-md-12">
-      <button type="button" class="btn btn-primary pull-left" onclick="doMassPayment();">Mass Payment</button>    
+  <div class="row my-2">   
+    <div class="col-md-12 pr-2">
+      <button type="button" class="btn btn-primary pull-left" style="margin-right: 10px;" onclick="doMassPayment();">Mass Payment</button>    
+      <button type="button" class="btn btn-success pull-left" onclick="exportCsv();">Export Csv</button>    
     </div>       
   </div>
 
 
-  <table id="example" class="display" style="width:100%">
-    <thead>
+  <table id="example" class="display table table-bordered" style="width:100%">
+    <thead class="thead-dark">
       <tr>
         <th>User</th>
         <th>Amount</th>
@@ -87,5 +88,13 @@
 
   <script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    var plugins_url = "<?php echo plugins_url('/video_quiz_linking/linking/html/csv_export.php') ?>";
     var totalAmount = "<?php echo $totalAmount; ?>";
+    function exportCsv(){
+      var conf = confirm("Export users to CSV?");
+            if(conf == true)
+            {
+                window.open(plugins_url, '_blank');
+            }
+    }
   </script>
