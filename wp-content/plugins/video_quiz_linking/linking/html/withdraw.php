@@ -31,7 +31,7 @@
 
   <div class="row my-2">   
     <div class="col-md-12 pr-2">
-      <button type="button" class="btn btn-primary pull-left" style="margin-right: 10px;" onclick="doMassPayment();">Mass Payment</button>    
+      <!-- <button type="button" class="btn btn-primary pull-left" style="margin-right: 10px;" onclick="doMassPayment();">Mass Payment</button>     -->
       <button type="button" class="btn btn-success pull-left" onclick="exportCsv();">Export Csv</button>    
     </div>       
   </div>

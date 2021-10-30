@@ -12,30 +12,39 @@ $db_withdraw = $wpdb->prefix . 'withdraw';
 $db_users = $wpdb->prefix . 'users';
 
 $query = "SELECT w.*,u.display_name,u.user_email from ".$db_withdraw." as w 
-         inner join " .$db_users. " as u on u.ID = w.user_id";
+         inner join " .$db_users. " as u on u.ID = w.user_id
+         where w.is_paid = '0' ";     
 
 $tableData = $wpdb->get_results($query); 
 
 $tableDataArray = array();
 $csvDataArray = array();
+$updateID = array();
 foreach($tableData as $tableDataKey => $tableDataVal){
     $tableDataArray['user_email']     = $tableDataVal->user_email;
-    $tableDataArray['display_name']     = $tableDataVal->display_name;
+    //$tableDataArray['display_name']     = $tableDataVal->display_name;
     $tableDataArray['amount']           = $tableDataVal->amount;
     $tableDataArray['currencyCode']     = 'USD';
     $tableDataArray['noteRecipient']    = 'Mass Payment';
     $tableDataArray['recipientWallet']  = 'PayPal';
     $csvDataArray[] = $tableDataArray;
+    $updateID[] = $tableDataVal->id;
 }
 
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename='.date("Y-m-d").'_mass_payment_details.csv');
 $output = fopen('php://output', 'w');
-fputcsv($output, array('Email/Phone','name','Amount', 'Currency code', 'Note to recipient','Recipient wallet'));
+fputcsv($output, array('Email/Phone','Amount', 'Currency code', 'Note to recipient','Recipient wallet'));
 
 if (count($csvDataArray) > 0) {
     foreach ($csvDataArray as $row) {
         fputcsv($output, $row);
     }
 }
+
+if(!empty($updateID)) {
+    $updateID = implode(",",$updateID);
+    $wpdb->query("update ".$db_withdraw." set is_paid = '1' where id in (".$updateID.") ");    
+}
+
 ?>
