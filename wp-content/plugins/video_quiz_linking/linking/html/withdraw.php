@@ -43,6 +43,7 @@
         <th>User</th>
         <th>Amount</th>
         <th>Status</th>
+        <th>Payout Type</th>
         <th>Created At</th>
         <!-- <th>Action</th> -->
       </tr>
@@ -63,6 +64,7 @@
           <td><?php echo $value->display_name; ?></td>
           <td><?php echo $value->amount; ?></td>
           <td><?php echo $status; ?></td>      
+          <td><?php echo isset($value->payout_by) && $value->payout_by != '' ? ucwords($value->payout_by) : '-'; ?></td>      
           <td><?php echo date("d F Y",strtotime($value->created_at)); ?></td>      
           <!-- <td>
             <?php if($status == 'Processing') { ?>
@@ -80,6 +82,7 @@
         <th>User</th>
         <th>Amount</th>
         <th>Status</th>
+        <th>Payout Type</th>
         <th>Created At</th>
         <!-- <th>Action</th> -->
       </tr>          

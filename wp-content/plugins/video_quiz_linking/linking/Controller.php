@@ -95,6 +95,7 @@ function subscription() {
     $business_password = '';
     $business_signature = '';
     $amount = '';
+    $payout_by = '';
     if(!empty($settingsData)) {
         $client_id = $settingsData[0]->client_id;
         $secret_id = $settingsData[0]->secret_id;
@@ -102,6 +103,8 @@ function subscription() {
         $business_password = $settingsData[0]->business_password;
         $business_signature = $settingsData[0]->business_signature;
         $amount = $settingsData[0]->amount;
+        $payout_by = $settingsData[0]->payout_by;
+
     }
 
     include(dirname(__FILE__) . "/html/subscription.php");
@@ -677,9 +680,10 @@ class VideoLinkingController
         $business_id = $_POST['business_id'];
         $business_password = $_POST['business_password'];
         $business_signature = $_POST['business_signature'];
+        $payout_by = $_POST['payout_by'];
         $amount = $_POST['amount'];    
         $db_settings = $wpdb->prefix . 'membership_settings';
-        $data =  array('client_id'=>$client_id,'secret_id'=>$secret_id,'business_id'=>$business_id,'business_password'=>$business_password,'business_signature'=>$business_signature,'amount'=>$amount);
+        $data =  array('client_id'=>$client_id,'secret_id'=>$secret_id,'business_id'=>$business_id,'business_password'=>$business_password,'business_signature'=>$business_signature,'amount'=>$amount,'payout_by'=>$payout_by);
         $settingsData = $wpdb->get_results("select * from ".$db_settings);
 
         if(!empty($settingsData)) {

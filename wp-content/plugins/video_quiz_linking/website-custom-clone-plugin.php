@@ -24,6 +24,7 @@ $db_settings = $wpdb->prefix . 'membership_settings';
 $query = "SELECT  * from ".$db_settings." ";
 $settingsData = $wpdb->get_results($query);
 
+
 $client_id = '';
 $secret_id = '';
 $business_id = '';
@@ -33,6 +34,7 @@ if(!empty($settingsData)) {
     $client_id = $settingsData[0]->client_id;
     $secret_id = $settingsData[0]->secret_id;
     $business_id = $settingsData[0]->business_id;
+    $payout_by = isset($settingsData[0]->payout_by) ? $settingsData[0]->payout_by : '';
     $business_password = $settingsData[0]->business_password;
     $business_signature = $settingsData[0]->business_signature;
 }
@@ -42,7 +44,7 @@ define('PAYPAL_SECRET_ID',$secret_id);
 define('PAYPAL_BUSINESS_ID',$business_id);
 define('PAYPAL_BUSINESS_PASSWORD',$business_password);
 define('PAYPAL_BUSINESS_SIGNATURE',$business_signature);
-define('IS_SANDBOX',0);            
+define('IS_SANDBOX',1);            
 
 function quizLinkingCreateTable() {
     global $wpdb;  
@@ -104,6 +106,7 @@ function quizLinkingCreateTable() {
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `client_id` varchar(255) NOT NULL,
         `secret_id` varchar(255) NOT NULL,
+        `payout_by` varchar(255) NOT NULL,
         `business_id` varchar(255) NOT NULL,
         `business_password` varchar(255) NOT NULL,
         `business_signature` varchar(255) NOT NULL,
@@ -123,6 +126,7 @@ function quizLinkingCreateTable() {
         `user_id` int(11) NOT NULL,
         `amount` decimal(5,2) NOT NULL,
         `is_paid` tinyint(11) NOT NULL,
+        `payout_by` varchar(255) NOT NULL,
         `created_at` datetime NULL DEFAULT CURRENT_TIMESTAMP,
         `updated_at` datetime NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`)

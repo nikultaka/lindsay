@@ -52,6 +52,7 @@ function addVideo() {
 
 function saveSettings() {
     var client_id = jQuery("#client_id").val();
+    var payout_by = jQuery("#payout_by").val();
     var secret_id = jQuery('#secret_id').val();
     var business_id = jQuery('#business_id').val();
     var business_password = jQuery('#business_password').val();
@@ -64,6 +65,13 @@ function saveSettings() {
         countError++;
     } else {
         jQuery("#client_id").removeClass('has-error');
+    }
+
+    if(payout_by == '') {
+        jQuery("#payout_by").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#payout_by").removeClass('has-error');
     }
 
     if(secret_id == '') {
