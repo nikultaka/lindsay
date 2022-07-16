@@ -51,4 +51,6 @@ if(!empty($updateID)) {
     $wpdb->query("update ".$db_withdraw." set is_paid = '1',payout_by = '".$payout_by."' where id in (".$updateID.") ");    
 }
 
+header('Refresh: 0; url=http://localhost/aspirecanada/wp-admin/admin.php?page=witdrawal-request');
+
 ?>

@@ -98,6 +98,7 @@
             if(conf == true)
             {
                 window.open(plugins_url, '_blank');
+                window.location.reload(true);
             }
     }
   </script>
