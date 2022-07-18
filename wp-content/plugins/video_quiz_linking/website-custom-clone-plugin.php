@@ -30,8 +30,8 @@ $secret_id = '';
 $business_id = '';
 $business_password = '';
 $business_signature = '';
-$point_reward = '';
-$usd_reward = '';
+$point_reward = 50;
+$usd_reward = 1;
 if(!empty($settingsData)) {
     $client_id = $settingsData[0]->client_id;
     $secret_id = $settingsData[0]->secret_id;
