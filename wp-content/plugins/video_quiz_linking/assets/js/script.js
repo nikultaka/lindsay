@@ -53,6 +53,8 @@ function addVideo() {
 function saveSettings() {
     var client_id = jQuery("#client_id").val();
     var payout_by = jQuery("#payout_by").val();
+    var usd_reward = jQuery("#usd_reward").val();
+    var point_reward = jQuery("#point_reward").val();
     var secret_id = jQuery('#secret_id').val();
     var business_id = jQuery('#business_id').val();
     var business_password = jQuery('#business_password').val();
@@ -65,6 +67,18 @@ function saveSettings() {
         countError++;
     } else {
         jQuery("#client_id").removeClass('has-error');
+    }
+    if(usd_reward == '') {
+        jQuery("#usd_reward").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#usd_reward").removeClass('has-error');
+    }
+    if(point_reward == '') {
+        jQuery("#point_reward").addClass('has-error');
+        countError++;
+    } else {
+        jQuery("#point_reward").removeClass('has-error');
     }
 
     if(payout_by == '') {
@@ -463,10 +477,9 @@ function withdraw() {
 }
    
 function submitAmount() {
-    jQuery("#loader").addClass('loader');
     var amount = jQuery("#amountWidthDraw").val();
-    countError = 0;
-    if(amount == '' || isNaN(amount) || amount<2) {
+    var amountUsd = jQuery("#amountWidthDrawUsd").val();
+    if(amountUsd == '' || isNaN(amountUsd) || amountUsd<2) {
         jQuery("#loader").removeClass('loader');
         Swal.fire(
         'Error!',
@@ -475,40 +488,61 @@ function submitAmount() {
         )    
         countError++;
         return false;
-    }                      
-    if(countError == 0) {
-        jQuery.ajax({
-            url: ajaxurl,
-            type: 'POST',
-            data: {
-                action: "VideoLinkingController::withdraw",
-                nonce: ajax_var.nonce
-            },                             
-            dataType: 'json',
-            success: function (response) {
-                jQuery("#loader").removeClass('loader');
-                if (response.status == '1') {
-                    Swal.fire({       
-                        icon: 'success',
-                        title: 'You requested Withdrwal amount successfully, Within 3-5 days amount will be credited to your paypal account',
-                        showConfirmButton: true
-                    }).then(function () {
-                        document.location.reload();
-                    });             
-                } else {  
-                    Swal.fire(
-                        'Error!',
-                        response.msg,
-                        'error'
-                        )
+    }
+    Swal.fire({
+        title: 'WidthDraw',
+        text: 'Are you sure to WidthDraw '+amountUsd+' USD ?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, WidthDraw!'
+      }).then((result) => {
+        jQuery("#loader").addClass('loader');
+        // return false;
+        countError = 0;
+        if(countError == 0) {
+            jQuery.ajax({
+                url: ajaxurl,
+                type: 'POST',
+                data: {
+                    action: "VideoLinkingController::withdraw",
+                    nonce: ajax_var.nonce
+                },                             
+                dataType: 'json',
+                success: function (response) {
+                    jQuery("#loader").removeClass('loader');
+                    if (response.status == '1') {
+                        Swal.fire({       
+                            icon: 'success',
+                            title: 'You requested Withdrwal amount successfully, Within 3-5 days amount will be credited to your paypal account',
+                            showConfirmButton: true
+                        }).then(function () {
+                            document.location.reload();
+                        });             
+                    } else {  
+                        Swal.fire(
+                            'Error!',
+                            response.msg,
+                            'error'
+                            )
+                    }
+                },
+                error: function (responce) {
+                    jQuery("#loader").removeClass('loader');
                 }
-            },
-            error: function (responce) {
-                jQuery("#loader").removeClass('loader');
-            }
-        });    
-    }    
-    
+            });    
+        }  
+
+        // if (result.isConfirmed) {
+        //   Swal.fire(
+        //     'Deleted!',
+        //     'Your file has been deleted.',
+        //     'success'
+        //   )
+        // }
+      })
+ 
 }
 
 

@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Amount (USD)</label>
+                  <label>Point</label>
                   <input type="text" class="form-control" name="amount" id="amount" value="">
                 </div>
 

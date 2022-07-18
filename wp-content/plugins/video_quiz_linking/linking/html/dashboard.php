@@ -303,28 +303,31 @@ form .error {
             <div class="dashboard_details_table_body">
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Balance</span>
-                <span class="dashboard_details_table_tab_second">$<?php echo $balance; ?></span>
+                <?php  $balanceUsd = (($balance * USD_REWARD) / POINT_REWARD); ?>
+                <span class="dashboard_details_table_tab_second"><?php echo $balance; ?> Points (<?php echo number_format((float)$balanceUsd, 2, '.', '');?> $)</span>
                 <span style="float:right;color: blue;cursor: pointer;" onclick="withdraw();">
                   [Redeem] 
                 </span>
               </div>   
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Pending Withdrawls</span>
-                <span class="dashboard_details_table_tab_second">$
+                <span class="dashboard_details_table_tab_second">
                 <?php 
                   $withdrawalPending = array_sum($withDrawalPending); 
+                  $withdrawalPendingUsd = array_sum($withDrawalPendingUsd); 
                   $withdrawalPending = number_format((float)$withdrawalPending, 2, '.', '');
                   echo $withdrawalPending;   
-                ?></span>
+                ?> Points ( <?php echo number_format((float)$withdrawalPendingUsd, 2, '.', '') ?> $ )</span>
               </div>
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Payments Received</span>
-                <span class="dashboard_details_table_tab_second">$
+                <span class="dashboard_details_table_tab_second">
                   <?php 
                     $withDrawalAccepted = array_sum($withDrawalAccepted); 
+                    $withDrawalAcceptedUsd = array_sum($withDrawalAcceptedUsd); 
                     $withDrawalAccepted = number_format((float)$withDrawalAccepted, 2, '.', '');
                     echo $withDrawalAccepted;
-                  ?>  
+                  ?> Point ( <?php echo number_format((float)$withDrawalAcceptedUsd, 2, '.', '') ?> $ )
                   </span>
               </div>
             </div>
@@ -342,13 +345,14 @@ form .error {
               </div>
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Earned</span>
-                <span class="dashboard_details_table_tab_second">$
+                <span class="dashboard_details_table_tab_second">
                   <?php 
                   $totalAmount = array_sum($totalAmount); 
                   $totalAmount = number_format((float)$totalAmount, 2, '.', '');
+                  // $withDrawalAcceptedUSD = (($withDrawalAccepted * USD_REWARD) / POINT_REWARD);
                   //echo $totalAmount;  
                   echo $withDrawalAccepted;
-                  ?></span>
+                  ?>  Point ( <?php echo number_format((float)$withDrawalAcceptedUsd, 2, '.', '') ?> $ ) </span>
               </div>
             </div>
           </div>
@@ -470,6 +474,7 @@ form .error {
           <div class="form-group">
             <label for="exampleInputEmail1">Amount($)</label>
             <input type="text" class="form-control" id="amountWidthDraw" placeholder="Enter amount" value="<?php echo $balance; ?>">
+            <input type="hidden" class="form-control" id="amountWidthDrawUsd" value="<?php echo number_format((float)$balanceUsd, 2, '.', '');?>">
           </div>
         </div>
         <div class="modal-footer">

@@ -22,7 +22,7 @@
     <div id="loader" style="z-index:9999999999;"></div>
   
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-11">
         <h1>Settings</h1>
         <hr>
         <form id="formdata">
@@ -36,6 +36,20 @@
               <input class="form-check-input" type="radio" name="payout_by" id="manual" value="manual" <?php if($payout_by == 'manual'){echo "checked";} ?>>
               <label class="form-check-label" for="manual">Manual</label>
             </div>
+          </div>
+          <label">Points to USD :</label>
+          <div class="input-group">
+          <div class="input-group-prepend">
+                <span class="input-group-text" style="border: 1px solid #8c8f94;">POINTS</span>
+              </div>
+            <input type="text" class="form-control" name="point_reward" id="point_reward" value="<?php echo $point_reward; ?>">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="border: 1px solid #8c8f94;">=</span>
+              </div>
+            <input type="text" class="form-control" name="usd_reward" id="usd_reward" value="<?php echo $usd_reward; ?>">
+            <div class="input-group-prepend">
+                <span class="input-group-text" style="border: 1px solid #8c8f94;">USD</span>
+              </div>
           </div>
           <div class="form-group">
             <label">Client ID</label>

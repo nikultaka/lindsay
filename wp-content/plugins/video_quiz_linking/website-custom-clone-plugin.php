@@ -30,6 +30,8 @@ $secret_id = '';
 $business_id = '';
 $business_password = '';
 $business_signature = '';
+$point_reward = '';
+$usd_reward = '';
 if(!empty($settingsData)) {
     $client_id = $settingsData[0]->client_id;
     $secret_id = $settingsData[0]->secret_id;
@@ -37,6 +39,8 @@ if(!empty($settingsData)) {
     $payout_by = isset($settingsData[0]->payout_by) ? $settingsData[0]->payout_by : '';
     $business_password = $settingsData[0]->business_password;
     $business_signature = $settingsData[0]->business_signature;
+    $point_reward = $settingsData[0]->point_reward;
+    $usd_reward = $settingsData[0]->usd_reward;
 }
 
 define('PAYPAL_CLIENT_ID',$client_id);
@@ -44,6 +48,8 @@ define('PAYPAL_SECRET_ID',$secret_id);
 define('PAYPAL_BUSINESS_ID',$business_id);
 define('PAYPAL_BUSINESS_PASSWORD',$business_password);
 define('PAYPAL_BUSINESS_SIGNATURE',$business_signature);
+define('POINT_REWARD',$point_reward);
+define('USD_REWARD',$usd_reward);
 define('IS_SANDBOX',0);            
 
 function quizLinkingCreateTable() {
@@ -115,6 +121,9 @@ function quizLinkingCreateTable() {
     ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
 
     $wpdb->query("alter table  `$db_settings` add column payout_by varchar(255) null");
+    $wpdb->query("alter table  `$db_settings` add column usd_reward INT null");
+    $wpdb->query("alter table  `$db_settings` add column point_reward INT null");
+    
     
     if ($wpdb->get_var("SHOW TABLES LIKE '$db_settings'") != $db_settings) {
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -133,6 +142,7 @@ function quizLinkingCreateTable() {
     ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
 
     $wpdb->query("alter table  `$db_withdraw` add column payout_by varchar(255) null");
+    $wpdb->query("alter table  `$db_withdraw` add column amount_usd decimal(5,2) null");
     
     if ($wpdb->get_var("SHOW TABLES LIKE '$db_withdraw'") != $db_withdraw) {
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');

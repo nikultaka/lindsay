@@ -96,6 +96,8 @@ function subscription() {
     $business_signature = '';
     $amount = '';
     $payout_by = '';
+    $point_reward = '';
+    $usd_reward = '';
     if(!empty($settingsData)) {
         $client_id = $settingsData[0]->client_id;
         $secret_id = $settingsData[0]->secret_id;
@@ -104,9 +106,9 @@ function subscription() {
         $business_signature = $settingsData[0]->business_signature;
         $amount = $settingsData[0]->amount;
         $payout_by = $settingsData[0]->payout_by;
-
+        $point_reward = $settingsData[0]->point_reward;
+        $usd_reward = $settingsData[0]->usd_reward;
     }
-
     include(dirname(__FILE__) . "/html/subscription.php");
     $s = ob_get_contents();
     ob_end_clean();
@@ -230,12 +232,16 @@ function videoDashboard() {
     //echo '<pre>'; print_r($withdrawalRequest); exit;
 
     $withDrawalPending = array();
+    $withDrawalPendingUsd = array();
     $withDrawalAccepted = array();
+    $withDrawalAcceptedUsd = array();
     if(!empty($withdrawalRequest)) {
         foreach($withdrawalRequest as $key => $value) {
             if($value->is_paid == '0') {
+                $withDrawalPendingUsd[] = $value->amount_usd;
                 $withDrawalPending[] = $value->amount;
             } else if($value->is_paid == '1') {
+                $withDrawalAcceptedUsd[] = $value->amount_usd;
                 $withDrawalAccepted[] = $value->amount;
             }
         }
@@ -681,9 +687,11 @@ class VideoLinkingController
         $business_password = $_POST['business_password'];
         $business_signature = $_POST['business_signature'];
         $payout_by = $_POST['payout_by'];
+        $point_reward = $_POST['point_reward'];
+        $usd_reward = $_POST['usd_reward'];
         $amount = $_POST['amount'];    
         $db_settings = $wpdb->prefix . 'membership_settings';
-        $data =  array('client_id'=>$client_id,'secret_id'=>$secret_id,'business_id'=>$business_id,'business_password'=>$business_password,'business_signature'=>$business_signature,'amount'=>$amount,'payout_by'=>$payout_by);
+        $data =  array('client_id'=>$client_id,'secret_id'=>$secret_id,'business_id'=>$business_id,'business_password'=>$business_password,'business_signature'=>$business_signature,'amount'=>$amount,'payout_by'=>$payout_by,'point_reward'=>$point_reward,'usd_reward'=>$usd_reward);
         $settingsData = $wpdb->get_results("select * from ".$db_settings);
 
         if(!empty($settingsData)) {
@@ -746,6 +754,8 @@ class VideoLinkingController
     }
 
     public function withdraw() {
+        
+        
         if ( ! wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
             die ( 'Busted!');
         }
@@ -763,6 +773,10 @@ class VideoLinkingController
         LEFT JOIN " . $table_quiz_linking . " ON " . $table_quiz_linking . ".id = " . $table_user_quiz . ".video_id
         WHERE $usersTable.ID = $loginUserID";
         $userquizSqlData = $wpdb->get_results($userquizSql);
+        
+        // echo '<pre>';
+        // print_r($userquizSql);
+        // die;
 
         $withdrawalData = $wpdb->get_results("select sum(amount) as amount from ".$db_withdraw." where user_id = ".$loginUserID." group by user_id ");    
 
@@ -782,18 +796,29 @@ class VideoLinkingController
                 }
             }    
         }
+        
+
+      
         $pending = array_sum($totalAmount) - $paid;    
-        if($pending<2) {
-            echo json_encode(array('status'=>0,'msg'=>"Amount must be greater than $2 to withdraw"));
+
+        // USD_REWARD POINT_REWARD
+        $reqRewardPoint =  ((2 * POINT_REWARD) / USD_REWARD);
+        $rewardUsd = (($pending * USD_REWARD) / POINT_REWARD);
+        
+
+        
+        // if((int)$pending > $reqRewardPoint) {
+        if((int)$pending < $reqRewardPoint) {
+            echo json_encode(array('status'=> 0,'msg'=>"Amount must be greater than $2 And greater than ".$reqRewardPoint." Points to withdraw"));
             die;    
         } 
-        $wpdb->insert($db_withdraw,array('user_id'=>$loginUserID,'amount'=>$pending,'is_paid'=>0));        
+        $wpdb->insert($db_withdraw,array('user_id'=>$loginUserID,'amount_usd'=>$rewardUsd,'amount'=>$pending,'is_paid'=>0));        
         get_currentuserinfo();
         $email = (string) $current_user->user_email; 
         $headers = array('Content-Type: text/html; charset=UTF-8');
         $to = $email;
         $subject = 'Withdraw Money!';
-        $message = "You have withdraw money of $".$pending.", you will get that money in your account within 3-5 days ";
+        $message = "You have withdraw money of $".$rewardUsd." And Point ".$pending.", you will get that money in your account within 3-5 days ";
         wp_mail($to,$subject,$message,$headers);
         echo json_encode(array('status'=>1));
         die;

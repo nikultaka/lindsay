@@ -23,7 +23,7 @@ define('DB_NAME', 'lindsay');
 /** MySQL database username */
 define('DB_USER', 'root');
 /** MySQL database password */
-define('DB_PASSWORD', 'Testing@123');      
+define('DB_PASSWORD', '');      
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 /** Database Charset to use in creating database tables. */
@@ -77,7 +77,7 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 define('FORCE_SSL', false);
 define('FORCE_SSL_ADMIN', false);  
 define('FORCE_SSL_LOGIN',false);
