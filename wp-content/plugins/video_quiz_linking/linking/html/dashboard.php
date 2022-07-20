@@ -304,7 +304,8 @@ form .error {
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Balance</span>
                 <?php  $balanceUsd = (($balance * USD_REWARD) / POINT_REWARD); ?>
-                <span class="dashboard_details_table_tab_second"><?php echo $balance; ?> Points (<?php echo number_format((float)$balanceUsd, 2, '.', '');?> $)</span>
+                <!-- <span class="dashboard_details_table_tab_second"><?php echo $balance; ?> Points <?php echo number_format((float)$balanceUsd, 2, '.', '');?> $)</span> -->
+                <span class="dashboard_details_table_tab_second"><?php echo $balance; ?> Points </span>
                 <span style="float:right;color: blue;cursor: pointer;" onclick="withdraw();">
                   [Redeem] 
                 </span>
@@ -317,7 +318,9 @@ form .error {
                   $withdrawalPendingUsd = array_sum($withDrawalPendingUsd); 
                   $withdrawalPending = number_format((float)$withdrawalPending, 2, '.', '');
                   echo $withdrawalPending;   
-                ?> Points ( <?php echo number_format((float)$withdrawalPendingUsd, 2, '.', '') ?> $ )</span>
+                // ?>
+                 <!-- Points ( <?php echo number_format((float)$withdrawalPendingUsd, 2, '.', '') ?> $ )</span> -->
+                 Points </span>
               </div>
               <div class="dashboard_details_table_row">
                 <span class="dashboard_details_table_tab_first">Payments Received</span>
@@ -327,7 +330,7 @@ form .error {
                     $withDrawalAcceptedUsd = array_sum($withDrawalAcceptedUsd); 
                     $withDrawalAccepted = number_format((float)$withDrawalAccepted, 2, '.', '');
                     echo $withDrawalAccepted;
-                  ?> Point ( <?php echo number_format((float)$withDrawalAcceptedUsd, 2, '.', '') ?> $ )
+                  ?> Points
                   </span>
               </div>
             </div>
@@ -352,7 +355,7 @@ form .error {
                   // $withDrawalAcceptedUSD = (($withDrawalAccepted * USD_REWARD) / POINT_REWARD);
                   //echo $totalAmount;  
                   echo $withDrawalAccepted;
-                  ?>  Point ( <?php echo number_format((float)$withDrawalAcceptedUsd, 2, '.', '') ?> $ ) </span>
+                  // ?>  Points  </span>
               </div>
             </div>
           </div>
