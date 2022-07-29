@@ -33,6 +33,7 @@
   <table id="example" class="display" style="width:100%">
     <thead>
       <tr>
+        <th>ID</th>
         <th>User</th>
         <th>Video</th>
         <th>Amount</th>
@@ -48,6 +49,7 @@
         }     
         ?>
         <tr>
+          <td><?php echo $value->tuqId; ?></td>
           <td><?php echo $value->display_name; ?></td>
           <td><?php echo $value->video_name; ?></td>
           <td><?php echo $value->amount; ?></td>
@@ -60,6 +62,7 @@
     </tbody>
     <tfoot>
       <tr>
+        <th>Id</th>
         <th>User</th>
         <th>Video</th>
         <th>Amount</th>

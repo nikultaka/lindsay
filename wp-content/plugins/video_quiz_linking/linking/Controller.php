@@ -67,7 +67,9 @@ function witdrawalrequest() {
     $query = "SELECT w.*,u.display_name from ".$db_withdraw." as w 
                 inner join " .$db_users. " as u on u.ID = w.user_id";
 
+
     $tableData = $wpdb->get_results($query);                  
+    
 
     include(dirname(__FILE__) . "/html/withdraw.php");
     $s = ob_get_contents();     
@@ -131,8 +133,10 @@ function display_video_linking()
     $query = "SELECT * from " . $table_name;
     $quizesData = $wpdb->get_results($query);
 
-    $query = "SELECT ql.id,ql.video_name,ql.amount,aq.title,ql.status from " . $table_quiz_linking . " as ql left join " . $table_name . " as aq on aq.id = ql.quiz_id";
+    $query = "SELECT ql.id,ql.video_name,ql.amount,aq.title,ql.status from " . $table_quiz_linking . " as ql left join " . $table_name . " as aq on aq.id = ql.quiz_id ORDER BY ql.id DESC";
+    
     $tableData = $wpdb->get_results($query);
+    
 
     $args = array(
         'post_type' => 'attachment',
@@ -165,13 +169,13 @@ function payout()
     $table_quiz_linking = $wpdb->prefix . "video_quiz_linking";
     $table_user_quiz = $wpdb->prefix . "user_quiz";
 
-    $query = "SELECT ql.id,ql.video_name,ql.amount,aq.title,tuq.status,u.display_name,tuq.is_paid
+    $query = "SELECT ql.id,ql.video_name,ql.amount,aq.title,tuq.id as tuqId,tuq.status,u.display_name,tuq.is_paid
     from " . $table_users . " as u
     inner join " . $table_user_quiz . " as tuq on tuq.user_id = u.ID and tuq.status='1'
     inner join " . $table_quiz_linking . " as ql on ql.id = tuq.video_id
     inner join " . $table_name . " as aq on aq.id = ql.quiz_id";
     $tableData = $wpdb->get_results($query);        
-
+    
     include(dirname(__FILE__) . "/html/payout.php");
     $s = ob_get_contents();
     ob_end_clean();

@@ -100,6 +100,7 @@
       <table id="example" class="display" style="width:100%">
         <thead>
           <tr>
+            <th>Id</th>
             <th>Video Name</th>
             <th>Quiz Title</th>
             <th>Status</th>
@@ -107,7 +108,8 @@
           </tr>
         </thead>
         <tbody>
-         <?php if(!empty($tableData)) { 
+         <?php if(!empty($tableData)) {
+          
           foreach($tableData as $key => $value) { 
             $status = 'Inactive';
             if($value->status == '1') {
@@ -115,6 +117,7 @@
             }
             ?>
             <tr>
+              <td><?php echo $value->id; ?></td>
               <td><?php echo $value->video_name; ?></td>
               <td><?php echo $value->title; ?></td>
               <td><?php echo $status; ?></td>
@@ -131,6 +134,7 @@
         </tbody>
         <tfoot>
           <tr>
+            <th>Id</th>
             <th>Video Name</th>
             <th>Quize Title</th>
             <th>Status</th>

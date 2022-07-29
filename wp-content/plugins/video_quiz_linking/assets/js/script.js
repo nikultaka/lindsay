@@ -7,6 +7,7 @@ jQuery(document).ready(function () {
 
     jQuery('#example').DataTable({ 
         // dom: "Bfrtip",
+        order: [[0, 'desc']],
     });
     jQuery('#videoPaymentDataTable').DataTable();
     var video = document.getElementsByClassName('linkVid')[0];

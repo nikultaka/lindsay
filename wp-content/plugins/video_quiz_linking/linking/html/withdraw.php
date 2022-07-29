@@ -40,6 +40,7 @@
   <table id="example" class="display table table-bordered" style="width:100%">
     <thead class="thead-dark">
       <tr>
+        <th>Id</th>
         <th>User</th>
         <th>Amount</th>
         <th>Point</th>
@@ -62,6 +63,7 @@
         
         ?>
         <tr>
+          <td><?php echo $value->id; ?></td>
           <td><?php echo $value->display_name; ?></td>
           <td><?php echo $value->amount_usd; ?> $</td>
           <td><?php echo $value->amount; ?></td>
@@ -81,6 +83,7 @@
     </tbody>
     <tfoot>
       <tr>
+        <th>Id</th>
         <th>User</th>
         <th>Amount</th>
         <th>Point</th>
