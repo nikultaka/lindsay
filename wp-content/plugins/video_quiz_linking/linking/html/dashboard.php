@@ -323,7 +323,7 @@ form .error {
                  Points </span>
               </div>
               <div class="dashboard_details_table_row">
-                <span class="dashboard_details_table_tab_first">Payments Received</span>
+                <span class="dashboard_details_table_tab_first">Points Earned</span>
                 <span class="dashboard_details_table_tab_second">
                   <?php 
                     $withDrawalAccepted = array_sum($withDrawalAccepted); 
