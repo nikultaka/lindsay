@@ -491,13 +491,13 @@ function submitAmount() {
         return false;
     }
     Swal.fire({
-        title: 'WidthDraw',
-        text: 'Are you sure to WidthDraw '+amountUsd+' USD ?',
+        title: 'Withdraw',
+        text: 'Are you sure to Withdraw '+amountUsd+' USD ?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, WidthDraw!'
+        confirmButtonText: 'Yes, Withdraw!'
       }).then((result) => {
         jQuery("#loader").addClass('loader');
         // return false;
