@@ -731,7 +731,8 @@ class VideoLinkingController
                             "interval_count": 1
                           },
                           "tenure_type": "REGULAR",
-                          "sequence": 1,
+                          "sequence": 2,
+                          "total_cycles": 12,
                           "pricing_scheme": {
                             "fixed_price": {
                               "value": "'.$amount.'",
