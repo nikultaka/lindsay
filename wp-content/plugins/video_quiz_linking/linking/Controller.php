@@ -672,18 +672,25 @@ class VideoLinkingController
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => $method,
           CURLOPT_POSTFIELDS => $postdata,  
+          CURLOPT_SSL_VERIFYHOST => 0,
+          CURLOPT_SSL_VERIFYPEER => 0,
           CURLOPT_HTTPHEADER => array(
             'Authorization: '.$accessToken,
             'Content-Type: '.$contentType
         ),
       ));  
         $response = curl_exec($curl);
+        if (curl_errno($curl)) {
+            echo $error_msg = curl_error($curl);
+            die;
+        }
         curl_close($curl);
         $response = json_decode($response);
         return $response;     
     }
 
     public function save_settings() {   
+        
         global $wpdb;
         $client_id = $_POST['client_id'];
         $secret_id = $_POST['secret_id'];
@@ -719,6 +726,7 @@ class VideoLinkingController
                   }';
                   $accessToken = $response->access_token;
                   $response = self::curlCall('catalogs/products','POST',$postString,'application/json','Bearer '.$accessToken);
+                  
                   if(!empty($response) && isset($response->id)) {
                     $postString = '{
                       "product_id": "'.$response->id.'",
@@ -731,7 +739,7 @@ class VideoLinkingController
                             "interval_count": 1
                           },
                           "tenure_type": "REGULAR",
-                          "sequence": 2,
+                          "sequence": 1,
                           "total_cycles": 12,
                           "pricing_scheme": {
                             "fixed_price": {
@@ -748,6 +756,9 @@ class VideoLinkingController
                       }
                     }';
                     $response = self::curlCall('billing/plans','POST',$postString,'application/json','Bearer '.$accessToken);
+                    // echo '<pre>';
+                    // print_r($response);
+                    // die;
                     if(!empty($response) && isset($response->id)) {
                         $wpdb->update($db_settings,array('plan_id'=>$response->id),array('id'=>1));        
                     }

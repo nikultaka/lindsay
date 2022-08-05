@@ -516,7 +516,7 @@ function submitAmount() {
                     if (response.status == '1') {
                         Swal.fire({       
                             icon: 'success',
-                            title: 'You requested Withdrwal amount successfully, Within 3-5 days amount will be credited to your paypal account',
+                            title: 'You requested withdraw amount successfully, Within 3-5 days amount will be credited to your paypal account',
                             showConfirmButton: true
                         }).then(function () {
                             document.location.reload();
