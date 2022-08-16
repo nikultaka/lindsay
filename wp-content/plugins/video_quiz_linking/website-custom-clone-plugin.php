@@ -50,7 +50,7 @@ define('PAYPAL_BUSINESS_PASSWORD',$business_password);
 define('PAYPAL_BUSINESS_SIGNATURE',$business_signature);
 define('POINT_REWARD',$point_reward);
 define('USD_REWARD',$usd_reward);
-define('IS_SANDBOX',1);            
+define('IS_SANDBOX',0);            
 
 function quizLinkingCreateTable() {
     global $wpdb;  

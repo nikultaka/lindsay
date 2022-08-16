@@ -65,7 +65,7 @@
         <tr>
           <td><?php echo $value->id; ?></td>
           <td><?php echo $value->display_name; ?></td>
-          <td><?php echo $value->amount_usd; ?> $</td>
+          <td>$<?php echo $value->amount_usd; ?></td>
           <td><?php echo $value->amount; ?></td>
           <td><?php echo $status; ?></td>      
           <td><?php echo isset($value->payout_by) && $value->payout_by != '' ? ucwords($value->payout_by) : '-'; ?></td>      
