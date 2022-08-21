@@ -240,14 +240,48 @@ form .error {
 }
 .ays_average {
   display: none !important;     
-}          
+}
+@media(max-width:767px){
+  .dashboard-container{
+    margin: 0 !important;
+    padding: 15px 0 !important;
+  }
+  .card_style{
+    margin-bottom: 20px;
+  }
+  .dash_board_profile_row{
+    flex-direction: column;
+    padding: 15px 15px;
+  }
+  .dashboard_details_table_row{
+    flex-wrap: wrap;
+  }
+  .dash_board_profile_image{
+  margin: 0 auto;
+  display: flex;
+  justify-content:center;
+  width: auto;  
+  }
+  .tab-pane.active{
+  margin-top: 15px;
+  }
+  .dash_board_profile_calender{
+    width:180px;
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+  .calender_box{
+    width: 180px;
+  }  
+}
+        
 </style>
 
 <div id="loader" style="z-index:9999999999;"></div>
 
 
 <!--========================================================================================================= -->
-<div class="container-fluid" style="margin: 20px;min-height: 700px;">
+<div class="container-fluid dashboard-container" style="margin: 20px;min-height: 700px;">
   <!-- Nav tabs -->
   <ul class="nav nav-pills nav-stacked col-md-3">
     <li><a href="#tab_f" data-toggle="pill" class="navtabs active"><i class="fas fa-camera-retro"></i> Dashboard</a></li>    
