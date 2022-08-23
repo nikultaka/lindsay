@@ -821,11 +821,11 @@ class VideoLinkingController
         $reqRewardPoint =  ((2 * POINT_REWARD) / USD_REWARD);
         $rewardUsd = (($pending * USD_REWARD) / POINT_REWARD);
         
-
+        //echo json_encode(array('status'=>1)); die;
         
         // if((int)$pending > $reqRewardPoint) {
         if((int)$pending < $reqRewardPoint) {
-            echo json_encode(array('status'=> 0,'msg'=>"Amount must be greater than $2 And greater than ".$reqRewardPoint." Points to withdraw"));
+            echo json_encode(array('status'=> 0,'msg'=>"Amount must be greater than $20 And greater than ".$reqRewardPoint." Points to withdraw"));
             die;    
         } 
         $wpdb->insert($db_withdraw,array('user_id'=>$loginUserID,'amount_usd'=>$rewardUsd,'amount'=>$pending,'is_paid'=>0));        

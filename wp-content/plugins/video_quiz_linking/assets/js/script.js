@@ -480,6 +480,7 @@ function withdraw() {
 function submitAmount() {
     var amount = jQuery("#amountWidthDraw").val();
     var amountUsd = jQuery("#amountWidthDrawUsd").val();
+    //amountUsd = 30;     
     if(amountUsd == '' || isNaN(amountUsd) || amountUsd<20) {
         jQuery("#loader").removeClass('loader');
         Swal.fire(
@@ -499,40 +500,44 @@ function submitAmount() {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, Withdraw!'
       }).then((result) => {
-        jQuery("#loader").addClass('loader');
+        
         // return false;
-        countError = 0;
-        if(countError == 0) {
-            jQuery.ajax({
-                url: ajaxurl,
-                type: 'POST',
-                data: {
-                    action: "VideoLinkingController::withdraw",
-                    nonce: ajax_var.nonce
-                },                             
-                dataType: 'json',
-                success: function (response) {
-                    jQuery("#loader").removeClass('loader');
-                    if (response.status == '1') {
-                        Swal.fire({       
-                            icon: 'success',
-                            title: 'You requested withdraw amount successfully, Within 3-5 days amount will be credited to your paypal account',
-                            showConfirmButton: true
-                        }).then(function () {
-                            document.location.reload();
-                        });             
-                    } else {  
-                        Swal.fire(
-                            'Error!',
-                            response.msg,
-                            'error'
-                            )
+        //console.log(result);
+        if (result.value) {
+            jQuery("#loader").addClass('loader');
+            countError = 0;
+            if(countError == 0) {
+                jQuery.ajax({
+                    url: ajaxurl,
+                    type: 'POST',
+                    data: {
+                        action: "VideoLinkingController::withdraw",
+                        nonce: ajax_var.nonce
+                    },                             
+                    dataType: 'json',
+                    success: function (response) {
+                        jQuery("#loader").removeClass('loader');
+                        if (response.status == '1') {
+                            Swal.fire({       
+                                icon: 'success',
+                                title: 'You requested withdraw amount successfully, Within 3-5 days amount will be credited to your paypal account',
+                                showConfirmButton: true
+                            }).then(function () {
+                                document.location.reload();
+                            });             
+                        } else {  
+                            Swal.fire(
+                                'Error!',
+                                response.msg,
+                                'error'
+                                )
+                        }
+                    },
+                    error: function (responce) {
+                        jQuery("#loader").removeClass('loader');
                     }
-                },
-                error: function (responce) {
-                    jQuery("#loader").removeClass('loader');
-                }
-            });    
+                });    
+            }
         }  
 
         // if (result.isConfirmed) {
