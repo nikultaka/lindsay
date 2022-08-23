@@ -480,19 +480,19 @@ function withdraw() {
 function submitAmount() {
     var amount = jQuery("#amountWidthDraw").val();
     var amountUsd = jQuery("#amountWidthDrawUsd").val();
-    if(amountUsd == '' || isNaN(amountUsd) || amountUsd<2) {
+    if(amountUsd == '' || isNaN(amountUsd) || amountUsd<20) {
         jQuery("#loader").removeClass('loader');
         Swal.fire(
         'Error!',
-        'Withdrawal minimum should be $2.00',
+        'Withdrawal minimum should be $20.00',
         'error'
         )    
         countError++;
         return false;
     }
     Swal.fire({
-        title: 'Withdraw',
-        text: 'Are you sure to Withdraw '+amountUsd+' USD ?',
+        title: 'Withdrawal',
+        text: 'Are you sure that you want to withdraw '+amountUsd+' USD ?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

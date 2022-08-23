@@ -35,8 +35,8 @@ function custom_quiz_linking_menu()
 
     add_submenu_page(
         'video-linking', // parent slug 
-        'Witdrawal Request', // page title
-        'Witdrawal Request', // menu title
+        'Withdrawal Request', // page title
+        'Withdrawal Request', // menu title
         'manage_options', // capability
         'witdrawal-request', // slug
         'witdrawalrequest' // callback 
